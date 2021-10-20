@@ -4,11 +4,49 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2021/10/20/Linux/"/>
+      <url>/2021/10/20/Linux/</url>
+      
+        <content type="html"><![CDATA[<pre class="line-numbers language-none"><code class="language-none">dfdf 以磁盘分区为单位查看文件系统，可以获取硬盘被占用了多少空间，目前还剩下多少空间等信息。df -hl：查看磁盘剩余空间df -h：查看每个根路径的分区大小du -sh [目录名]：返回该目录的大小du -sm [文件夹]：返回该文件夹总M数du -h [目录名]：查看指定文件夹下的所有文件大小（包含子文件夹）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><img src="C:\Users\17292\AppData\Roaming\Typora\typora-user-images\image-20211011152719555.png" alt="image-20211011152719555"></p><pre class="line-numbers language-none"><code class="language-none">显示文件使用空间：du例如，以 M 为单位显示内存使用情况：free -mfree -h<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>vim编辑</p><pre class="line-numbers language-none"><code class="language-none">:q! 退出不保存:wq! 保存退出从开头搜索在命令模式下，输入&#x2F;你要查找的字符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>删除</p><pre class="line-numbers language-none"><code class="language-none">rm -f + 文件名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>解压</p><pre class="line-numbers language-none"><code class="language-none">tar -zxvf +文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ul><li>查进程</li></ul><pre class="line-numbers language-none"><code class="language-none">ps -ef|grep rediskill -9 pid <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><ul><li>后台并 重定向日志</li></ul><pre class="line-numbers language-none"><code class="language-none">nohup java -jar xxxx &gt; log.txt &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux的常规命令</title>
+      <link href="/2021/10/20/linux%E7%9A%84%E5%B8%B8%E8%A7%84%E5%91%BD%E4%BB%A4/"/>
+      <url>/2021/10/20/linux%E7%9A%84%E5%B8%B8%E8%A7%84%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>mysql的sql语法</title>
       <link href="/2021/10/20/mysql%E7%9A%84sql%E8%AF%AD%E6%B3%95/"/>
       <url>/2021/10/20/mysql%E7%9A%84sql%E8%AF%AD%E6%B3%95/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<ul><li>语法 case when用法</li></ul><pre class="line-numbers language-none"><code class="language-none">简单函数   类似于 switch 函数   SELECT*,CASE compareWHEN &#39;L&#39; THEN &#39;大于&#39;WHEN &#39;LE&#39; THEN &#39;大于等于&#39;ELSE &#39;无&#39;END &#39;com&#39;FROMbase_warn_config搜索函数  SELECT*,CASE WHEN val&lt;10 THEN &#39;大于&#39;WHEN val&lt;60 THEN &#39;大于等于&#39;WHEN val&gt;160 THEN &#39;大于等于&#39;ELSE &#39;无&#39;END &#39;com&#39;FROMbase_warn_config简单函数CASE [col_name] WHEN [value1] THEN [result1]…ELSE [default] END搜索函数CASE WHEN [expr] THEN [result1]…ELSE [default] END<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li>时间函数  DATE_ADD(date,INTERVAL expr unit) </li></ul><pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 得到当前时间增加1个小时的结果select date_add(now(),interval 1 hour)&#x2F;&#x2F; 得到当前时间增加1天的结果select date_add(now(),interval 1 day)&#x2F;&#x2F; 得到当前时间减少72个小时的结果select date_add(now(),interval -72 hour)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
       <categories>
