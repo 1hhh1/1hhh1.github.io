@@ -527,6 +527,52 @@ select date_add(now(),interval 1 day)
 &#x2F;&#x2F; 得到当前时间减少72个小时的结果
 select date_add(now(),interval -72 hour)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<ul>
+<li>用转义字符把”&gt;“和”&lt;”替换掉，就没有问题了。<br>mapper文件示例代码:</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">&lt;if test&#x3D;&quot;startTime !&#x3D; null &quot;&gt;
+    AND order_date &gt;&#x3D; #&#123;startTime,jdbcType&#x3D;DATE&#125; 
+&lt;&#x2F;if&gt;
+&lt;if test&#x3D;&quot;endTime !&#x3D; null &quot;&gt;
+    AND order_date &lt;&#x3D; #&#123;endTime,jdbcType&#x3D;DATE&#125; 
+&lt;&#x2F;if&gt;
+123456<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>附：XML转义字符</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>符号</th>
+<th align="center">解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;</td>
+<td>&lt;</td>
+<td align="center">小于号</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>&gt;</td>
+<td align="center">大于号</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>&amp;</td>
+<td align="center">和</td>
+</tr>
+<tr>
+<td>&apos;</td>
+<td>’</td>
+<td align="center">单引号</td>
+</tr>
+<tr>
+<td>&quot;</td>
+<td>“</td>
+<td align="center">双引号</td>
+</tr>
+</tbody></table>
 
                 
             </div>
