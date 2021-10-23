@@ -542,41 +542,34 @@ select date_add(now(),interval -72 hour)<span aria-hidden="true" class="line-num
 &lt;&#x2F;if&gt;
 123456<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>附：XML转义字符</p>
-<table>
-<thead>
-<tr>
-<th>字符</th>
-<th>符号</th>
-<th align="center">解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>&lt;</td>
-<td>&lt;</td>
-<td align="center">小于号</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>&gt;</td>
-<td align="center">大于号</td>
-</tr>
-<tr>
-<td>&amp;</td>
-<td>&amp;</td>
-<td align="center">和</td>
-</tr>
-<tr>
-<td>&apos;</td>
-<td>’</td>
-<td align="center">单引号</td>
-</tr>
-<tr>
-<td>&quot;</td>
-<td>“</td>
-<td align="center">双引号</td>
-</tr>
-</tbody></table>
+<pre class="line-numbers language-none"><code class="language-none">方法一：使用特殊转义字符
+例如，&gt;&#x3D;开始日期 并且&lt;&#x3D;结束日期
+
+&gt;  &gt;  大于号 
+
+&lt;  &lt;  小于号 
+
+ 
+   &lt;if test&#x3D;&quot;searchTimeBegin !&#x3D; null and searchTimeBegin !&#x3D; &#39;&#39;&quot;&gt;
+       AND tcci.consume_time &gt;&#x3D; CONCAT(#&#123;searchTimeBegin&#125;,&#39; 00:00:00&#39;)
+   &lt;&#x2F;if&gt;
+   &lt;if test&#x3D;&quot;searchTimeEnd !&#x3D; null and searchTimeEnd !&#x3D; &#39;&#39;&quot;&gt;
+       AND tcci.consume_time &lt;&#x3D; CONCAT(#&#123;searchTimeEnd&#125;,&#39; 23:59:59&#39;)
+   &lt;&#x2F;if&gt;
+   
+方法二：使用&lt;![CDATA[ ]]&gt;符号
+这里面的内容将不被解析
+
+    &lt;if test&#x3D;&quot;beginTime!&#x3D;null&quot;&gt;
+      AND DATE (os.show_start_time) &gt;&#x3D; DATE(#&#123;beginTime&#125;)
+    &lt;&#x2F;if&gt;
+    &lt;if test&#x3D;&quot;endTime!&#x3D;null&quot;&gt;
+      AND DATE (os.show_start_time) &lt;![CDATA[&lt;&#x3D;]]&gt; DATE(#&#123;endTime&#125;)
+    &lt;&#x2F;if&gt;
+在mybatis中&lt;&#x3D;不能使用，需要使用上面任意一种方法转义，但是&gt;&#x3D;可以使用！
+
+原文链接：https:&#x2F;&#x2F;blog.csdn.net&#x2F;n950814abc&#x2F;article&#x2F;details&#x2F;83182239<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <ul>
 <li>mybatis xml 文件关键标签用法</li>
 <li>trim 标签</li>
