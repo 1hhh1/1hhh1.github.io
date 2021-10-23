@@ -571,6 +571,28 @@ select date_add(now(),interval -72 hour)<span aria-hidden="true" class="line-num
 原文链接：https:&#x2F;&#x2F;blog.csdn.net&#x2F;n950814abc&#x2F;article&#x2F;details&#x2F;83182239<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
+<li>load data 导入文件</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"> &lt;select id&#x3D;&quot;insertText&quot; parameterType&#x3D;&quot;java.lang.String&quot; &gt;
+            LOAD DATA INFILE #&#123;fileUrl&#125; INTO TABLE &#96;user&#96; CHARACTER
+            SET utf8
+            FIELDS TERMINATED BY &#39;,&#39;
+            OPTIONALLY ENCLOSED BY &#39;&#39;
+            LINES TERMINATED BY &#39;\n&#39;
+            (id, username, password)
+    &lt;&#x2F;select&gt;
+    
+    
+    load data local infile &#39;D:&#x2F;my_user_info.txt&#39; into table user_info
+    CHARACTER SET utf8 -- 可选，避免中文乱码问题
+    FIELDS TERMINATED BY &#39;||&#39; -- 字段分隔符，每个字段(列)以什么字符分隔，默认是 \t
+	OPTIONALLY ENCLOSED BY &#39;&#39; -- 文本限定符，每个字段被什么字符包围，默认是空字符
+    LINES TERMINATED BY &#39;\n&#39; -- 记录分隔符，如字段本身也含\n，那么应先去除，否则load data 会误将其视作另一行记录进行导入
+    (id, name, age, address, create_date) -- 每一行文本按顺序对应的表字段，建议不要省略
+————————————————。
+原文链接：https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_29308413&#x2F;article&#x2F;details&#x2F;109390444<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
 <li>mybatis xml 文件关键标签用法</li>
 <li>trim 标签</li>
 </ul>
