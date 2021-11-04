@@ -661,6 +661,29 @@ foreach标签经常用于遍历集合，构建in条件语句或者批量操作�
 &lt;&#x2F;insert&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
+
+<ul>
+<li>触发器</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">DELETE 触发器在 DELETE 语句执行之前或之后执行。需要知道以下两点：
+1.在 DELETE 触发器代码内，你可以引用一个名为 OLD 的虚拟表，访问被删除的行；
+2.OLD 中的值全都是只读的，不能更新
+
+BEGIN
+DELETE FROM yr_rvdync_b  WHERE RVSCT_CD &#x3D; old.RVSCT_CD;
+DELETE FROM yr_rvcrbud_b  WHERE RVSCT_CD &#x3D; old.RVSCT_CD;
+END
+
+insert 触发器在 insert 语句执行之前或之后执行
+1.在 insert 触发器代码内，你可以引用一个名为 new 的虚拟表，访问被即将新增的行；
+BEGIN
+  SET new.PDO_CD &#x3D; concat( s1, s2 );
+END
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
                 
             </div>
             <hr/>
