@@ -451,10 +451,6 @@
 
 
 
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
-
 
                                 </div>
                             </div>
@@ -488,10 +484,6 @@
 
 
 
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
 
 
                         </div>
@@ -601,7 +593,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"linux","value":1},{"name":"hexo","value":1},{"name":"java","value":1},{"name":"mysql","value":2},{"name":"Markdown","value":1}],
+                data: [{"name":"linux","value":1},{"name":"hexo","value":1},{"name":"mysql","value":2},{"name":"java","value":1},{"name":"Markdown","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -625,7 +617,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["Markdown","mysql","linux","hexo","java","java 基础","work","nivacat","mybatis xml"]
+                data: ["Markdown","mysql","linux","hexo","nivacat","mybatis xml","java","java 基础","work"]
             }
         ],
         yAxis: [
@@ -826,26 +818,8 @@
             
             
             
-            <a href="/tags/java/">
-                <span class="chip center-align waves-effect waves-light chip-default">java</span>
-            </a>
-            
-            
-            
-            <a href="/tags/java-%E5%9F%BA%E7%A1%80/">
-                <span class="chip center-align waves-effect waves-light chip-default">java 基础</span>
-            </a>
-            
-            
-            
             <a href="/tags/mysql/">
                 <span class="chip center-align waves-effect waves-light chip-default">mysql</span>
-            </a>
-            
-            
-            
-            <a href="/tags/work/">
-                <span class="chip center-align waves-effect waves-light chip-default">work</span>
             </a>
             
             
@@ -858,6 +832,24 @@
             
             <a href="/tags/mybatis-xml/">
                 <span class="chip center-align waves-effect waves-light chip-default">mybatis xml</span>
+            </a>
+            
+            
+            
+            <a href="/tags/java/">
+                <span class="chip center-align waves-effect waves-light chip-default">java</span>
+            </a>
+            
+            
+            
+            <a href="/tags/java-%E5%9F%BA%E7%A1%80/">
+                <span class="chip center-align waves-effect waves-light chip-default">java 基础</span>
+            </a>
+            
+            
+            
+            <a href="/tags/work/">
+                <span class="chip center-align waves-effect waves-light chip-default">work</span>
             </a>
             
             
@@ -937,7 +929,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">4.9k</span>
+                        class="white-color">5k</span>
             
             
             
@@ -988,10 +980,6 @@
 
 
 
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
 
 </div>
     </div>
@@ -1122,16 +1110,17 @@ $(function () {
     
 
     
-
-    <!-- 雪花特效 -->
-     
+        
         <script type="text/javascript">
             // 只在桌面版网页启用特效
             var windowWidth = $(window).width();
             if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
             }
         </script>
+    
+
+    <!-- 雪花特效 -->
     
 
     <!-- 鼠标星星特效 -->
