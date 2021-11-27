@@ -486,7 +486,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    473
+                    487
                 </div>
                 
 
@@ -507,43 +507,43 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <ul>
-<li>索引</li>
-<li>mysql索引分类</li>
+<li>&#x7D22;&#x5F15;</li>
+<li>mysql&#x7D22;&#x5F15;&#x5206;&#x7C7B;</li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">一种排好序的快速查找的数据结构
+<pre class="line-numbers language-none"><code class="language-none">&#x4E00;&#x79CD;&#x6392;&#x597D;&#x5E8F;&#x7684;&#x5FEB;&#x901F;&#x67E5;&#x627E;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;
 
-单值索引   可以重复
-唯一索引   不能重复 可以为null
-复合索引   多个单值索引
-主键索引   不能重复，不能为null
+&#x5355;&#x503C;&#x7D22;&#x5F15;   &#x53EF;&#x4EE5;&#x91CD;&#x590D;
+&#x552F;&#x4E00;&#x7D22;&#x5F15;   &#x4E0D;&#x80FD;&#x91CD;&#x590D; &#x53EF;&#x4EE5;&#x4E3A;null
+&#x590D;&#x5408;&#x7D22;&#x5F15;   &#x591A;&#x4E2A;&#x5355;&#x503C;&#x7D22;&#x5F15;
+&#x4E3B;&#x952E;&#x7D22;&#x5F15;   &#x4E0D;&#x80FD;&#x91CD;&#x590D;&#xFF0C;&#x4E0D;&#x80FD;&#x4E3A;null
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>create (unique) index  indexName on mytable (columname)</p>
 <ul>
-<li>mysql 索引结构</li>
+<li>mysql &#x7D22;&#x5F15;&#x7ED3;&#x6784;</li>
 </ul>
 <pre class="line-numbers language-none"><code class="language-none"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ul>
-<li>适合创建索引</li>
+<li>&#x9002;&#x5408;&#x521B;&#x5EFA;&#x7D22;&#x5F15;</li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">主键自动创建唯一索引
-频繁作为查询条件的字符应该创建索引
-查询中与其他表关联的字段，外键字段应该建立索引
-频繁更新的字段不适合创建索引
-where 条件中用不到的字段不创建索引
-组合索引
-排序字段 创建索引大大提高排序速度<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">&#x4E3B;&#x952E;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x552F;&#x4E00;&#x7D22;&#x5F15;
+&#x9891;&#x7E41;&#x4F5C;&#x4E3A;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x7684;&#x5B57;&#x7B26;&#x5E94;&#x8BE5;&#x521B;&#x5EFA;&#x7D22;&#x5F15;
+&#x67E5;&#x8BE2;&#x4E2D;&#x4E0E;&#x5176;&#x4ED6;&#x8868;&#x5173;&#x8054;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x5916;&#x952E;&#x5B57;&#x6BB5;&#x5E94;&#x8BE5;&#x5EFA;&#x7ACB;&#x7D22;&#x5F15;
+&#x9891;&#x7E41;&#x66F4;&#x65B0;&#x7684;&#x5B57;&#x6BB5;&#x4E0D;&#x9002;&#x5408;&#x521B;&#x5EFA;&#x7D22;&#x5F15;
+where &#x6761;&#x4EF6;&#x4E2D;&#x7528;&#x4E0D;&#x5230;&#x7684;&#x5B57;&#x6BB5;&#x4E0D;&#x521B;&#x5EFA;&#x7D22;&#x5F15;
+&#x7EC4;&#x5408;&#x7D22;&#x5F15;
+&#x6392;&#x5E8F;&#x5B57;&#x6BB5; &#x521B;&#x5EFA;&#x7D22;&#x5F15;&#x5927;&#x5927;&#x63D0;&#x9AD8;&#x6392;&#x5E8F;&#x901F;&#x5EA6;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>索引的选择性是指索引列中不同值的数目与表中记录数的比</p>
-<p>该值越接近1，索引效率越高</p>
-<p>性能分析 explain</p>
-<p>explain+sql语句</p>
+<p>&#x7D22;&#x5F15;&#x7684;&#x9009;&#x62E9;&#x6027;&#x662F;&#x6307;&#x7D22;&#x5F15;&#x5217;&#x4E2D;&#x4E0D;&#x540C;&#x503C;&#x7684;&#x6570;&#x76EE;&#x4E0E;&#x8868;&#x4E2D;&#x8BB0;&#x5F55;&#x6570;&#x7684;&#x6BD4;</p>
+<p>&#x8BE5;&#x503C;&#x8D8A;&#x63A5;&#x8FD1;1&#xFF0C;&#x7D22;&#x5F15;&#x6548;&#x7387;&#x8D8A;&#x9AD8;</p>
+<p>&#x6027;&#x80FD;&#x5206;&#x6790; explain</p>
+<p>explain+sql&#x8BED;&#x53E5;</p>
 <pre class="line-numbers language-none"><code class="language-none">mysql&gt; explain select * from user;
 
-id:执行顺序 id越大优先级最高 越先执行
-select_type:查询类型 simple 单表  primaky 主表 sub_query 子查询  derived虚表 
-type:访问类型 
+id:&#x6267;&#x884C;&#x987A;&#x5E8F; id&#x8D8A;&#x5927;&#x4F18;&#x5148;&#x7EA7;&#x6700;&#x9AD8; &#x8D8A;&#x5148;&#x6267;&#x884C;
+select_type:&#x67E5;&#x8BE2;&#x7C7B;&#x578B; simple &#x5355;&#x8868;  primaky &#x4E3B;&#x8868; sub_query &#x5B50;&#x67E5;&#x8BE2;  derived&#x865A;&#x8868; 
+type:&#x8BBF;&#x95EE;&#x7C7B;&#x578B; 
 	system&gt;const&gt;eq_ref&gt;ref&gt;range&gt;index&gt;ALL
  
 +----+-------------+-------+------+---------------+------+---------+------+------+-------+
@@ -554,14 +554,14 @@ type:访问类型
 
 
 
-<p>单表索引优化</p>
-<p>1.索引，  最左匹配原则   索引是从左到右按顺序匹配</p>
-<p>如果使用 &gt; ,&lt; ,!= 条件进行筛选 ，那么这个字段及这个字段右边的字段就不走索引，</p>
-<p>范围查询不走索引</p>
-<p>2.双表  索引优化</p>
-<p>a left join b  A表左连接B表</p>
-<p>查询A的全部，搜索B表中满足条件的去 连接A表中的数据</p>
-<p>所以 索引应该建立在 b 表中 才会生效。如果建立在a表中，因为是a左连接b ，首先是先要查询出a的全部，不走索引，条件是用来筛选B表的</p>
+<p>&#x5355;&#x8868;&#x7D22;&#x5F15;&#x4F18;&#x5316;</p>
+<p>1.&#x7D22;&#x5F15;&#xFF0C;  &#x6700;&#x5DE6;&#x5339;&#x914D;&#x539F;&#x5219;   &#x7D22;&#x5F15;&#x662F;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#x6309;&#x987A;&#x5E8F;&#x5339;&#x914D;</p>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528; &gt; ,&lt; ,!= &#x6761;&#x4EF6;&#x8FDB;&#x884C;&#x7B5B;&#x9009; &#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x53CA;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x53F3;&#x8FB9;&#x7684;&#x5B57;&#x6BB5;&#x5C31;&#x4E0D;&#x8D70;&#x7D22;&#x5F15;&#xFF0C;</p>
+<p>&#x8303;&#x56F4;&#x67E5;&#x8BE2;&#x4E0D;&#x8D70;&#x7D22;&#x5F15;</p>
+<p>2.&#x53CC;&#x8868;  &#x7D22;&#x5F15;&#x4F18;&#x5316;</p>
+<p>a left join b  A&#x8868;&#x5DE6;&#x8FDE;&#x63A5;B&#x8868;</p>
+<p>&#x67E5;&#x8BE2;A&#x7684;&#x5168;&#x90E8;&#xFF0C;&#x641C;&#x7D22;B&#x8868;&#x4E2D;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x53BB; &#x8FDE;&#x63A5;A&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;</p>
+<p>&#x6240;&#x4EE5; &#x7D22;&#x5F15;&#x5E94;&#x8BE5;&#x5EFA;&#x7ACB;&#x5728; b &#x8868;&#x4E2D; &#x624D;&#x4F1A;&#x751F;&#x6548;&#x3002;&#x5982;&#x679C;&#x5EFA;&#x7ACB;&#x5728;a&#x8868;&#x4E2D;&#xFF0C;&#x56E0;&#x4E3A;&#x662F;a&#x5DE6;&#x8FDE;&#x63A5;b &#xFF0C;&#x9996;&#x5148;&#x662F;&#x5148;&#x8981;&#x67E5;&#x8BE2;&#x51FA;a&#x7684;&#x5168;&#x90E8;&#xFF0C;&#x4E0D;&#x8D70;&#x7D22;&#x5F15;&#xFF0C;&#x6761;&#x4EF6;&#x662F;&#x7528;&#x6765;&#x7B5B;&#x9009;B&#x8868;&#x7684;</p>
 
                 
             </div>
