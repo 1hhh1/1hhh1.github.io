@@ -528,8 +528,8 @@ public class StrategyUseService implements ApplicationContextAware&#123;
 
 <p>策略模式 将 接口作为 类的实例变量 ，利用接口的多态 ，在运行是给接口变量赋值 接口实现类，从而达到在运行中改变行为</p>
 <p>（运行中改变方法）</p>
-<p><img src="workdetail%5CDuck.png" alt="Duck"></p>
-<p><img src="Duck.png" alt="Duck"></p>
+<p><img src="/.io//workdetail%5CDuck.png" alt="Duck"></p>
+<p><img src="/.io//Duck.png" alt="Duck"></p>
 <pre class="line-numbers language-none"><code class="language-none">public class Test &#123;
 
     public static void main(String[] args) &#123;
@@ -614,8 +614,8 @@ delete from table1 where id in (select n.id from (select id from table1 where id
 
 <p>*ReflectTest.class.getResourceAsStream(String path)：</p>
 <p> <em>默认则是从ClassPath根下获取，path不能以’/‘开头，最终是由ClassLoader获取资源。</em></p>
-<h2 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h2><p><img src="%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F.png" alt="装饰者模式"></p>
-<p><img src="workdetail/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F.png" alt="装饰者模式"></p>
+<h2 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h2><p><img src="/.io//%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F.png" alt="装饰者模式"></p>
+<p><img src="/.io//%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F.png" alt="装饰者模式"></p>
 <p>被装饰者组件：HanGroundCoffee 手磨咖啡  Espresso  浓缩咖啡</p>
 <p>共同超类: Beverage 饮料抽象类</p>
 <p>抽象装饰者类：继承  Beverage 饮料抽象类</p>
@@ -630,7 +630,7 @@ delete from table1 where id in (select n.id from (select id from table1 where id
 
 
 <h2 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h2><p>![WeatherData]WeatherData.png)</p>
-<p><img src="E:\工作随笔\MyNotes\myBlog\source_posts\workdetail\WeatherData.png" alt="WeatherData"></p>
+<p><img src="/.io//工作随笔\MyNotes\myBlog\source_posts\workdetail\WeatherData.png" alt="WeatherData"></p>
 <p>主题接口: 三个方法 注册 通知 注销</p>
 <p>观察者接口： 一个方法  接收通知</p>
 <hr>
@@ -640,8 +640,8 @@ delete from table1 where id in (select n.id from (select id from table1 where id
 <p>观察者实现观察者接口，实现update()方法指定被通知 以后的行为。</p>
 <h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><h4 id="简单工厂"><a href="#简单工厂" class="headerlink" title="简单工厂"></a>简单工厂</h4><p>案例：比萨店 生成 比萨</p>
 <p>1.书写一个类专门用来生成对象，进行解构，将对象的创建交给方法 代替new 关键字 来创建对象</p>
-<p><img src="CheesePizza.png" alt="CheesePizza"></p>
-<p><img src="workdetail/CheesePizza.png" alt="CheesePizza"></p>
+<p><img src="/.io//CheesePizza.png" alt="CheesePizza"></p>
+<p><img src="/.io//CheesePizza.png" alt="CheesePizza"></p>
 <p>SimplePizza 简单工厂 ：负责生成Pizza</p>
 <p>PizzaStore 比萨商店 ，加上一个SimplePizza的引用给变量 factory,并在构造方法中给factory赋值。并在orderPizza方法中调用 </p>
 <p>factory.createPizza() 方法来创建 Pizza 对象。</p>
