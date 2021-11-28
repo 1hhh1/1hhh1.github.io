@@ -443,12 +443,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hexo/">
-                                <span class="chip bg-color">hexo</span>
-                            </a>
-                        
                             <a href="/tags/Markdown/">
                                 <span class="chip bg-color">Markdown</span>
+                            </a>
+                        
+                            <a href="/tags/hexo/">
+                                <span class="chip bg-color">hexo</span>
                             </a>
                         
                     </div>
@@ -479,7 +479,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-27
+                    2021-11-28
                 </div>
                 
 
@@ -522,18 +522,17 @@
 <pre class="line-numbers language-none"><code class="language-none">npm install<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>&#x7136;&#x540E;&#x6267;&#x884C;hexo clean,hexo g,hexo s&#x7B49;&#x4E00;&#x7CFB;&#x5217;&#x547D;&#x4EE4;&#xFF0C;&#x5373;&#x53EF;&#x770B;&#x5230;&#x7F51;&#x9875;&#x4E0A;&#x4E0A;&#x4F20;&#x4E86;&#x672C;&#x5730;&#x56FE;&#x7247;</p>
-<h1 id="&#x4FEE;&#x6539;&#x9875;&#x9762;"><a href="#&#x4FEE;&#x6539;&#x9875;&#x9762;" class="headerlink" title="&#x4FEE;&#x6539;&#x9875;&#x9762;"></a>&#x4FEE;&#x6539;&#x9875;&#x9762;</h1><pre><code>    E:\&#x5DE5;&#x4F5C;&#x968F;&#x7B14;\MyNotes\myBlog\themes\hexo-theme-matery\layout\_partial\index-cover.ejs
-    &lt;%#    &lt;% if (theme.indexbtn &amp;&amp; theme.indexbtn.enable) { %&gt;
-                &lt;a href=&quot;&lt;%- url_for(theme.indexbtn.url) %&gt;&quot; class=&quot;waves-effect waves-light btn&quot; target=&quot;_blank&quot;&gt;
-                    &lt;i class=&quot;&lt;%- theme.indexbtn.icon %&gt;&quot;&gt;&lt;/i&gt;&lt;%= theme.indexbtn.name %&gt;
-                &lt;/a&gt;
-            &lt;% } else if (theme.githubLink.enable) { %&gt;
-                &lt;a href=&quot;&lt;%- theme.githubLink.url %&gt;&quot; class=&quot;waves-effect waves-light btn&quot; target=&quot;_blank&quot;&gt;
-                    &lt;i class=&quot;fab fa-github %&gt;&quot;&gt;&lt;/i&gt;&lt;%= theme.githubLink.title %&gt;
-                &lt;/a&gt;
-            &lt;% } %&gt; %&gt;
-</code></pre>
-<p><img src="/2021/11/28/hexo%E7%9A%84%E7%94%A8%E6%B3%95/E:\&#x5DE5;&#x4F5C;&#x968F;&#x7B14;\MyNotes\myBlog\source_posts\hexo&#x7684;&#x7528;&#x6CD5;\&#x4FEE;&#x6539;1.png"></p>
+<h1 id="&#x4FEE;&#x6539;&#x9875;&#x9762;"><a href="#&#x4FEE;&#x6539;&#x9875;&#x9762;" class="headerlink" title="&#x4FEE;&#x6539;&#x9875;&#x9762;"></a>&#x4FEE;&#x6539;&#x9875;&#x9762;</h1><pre class="line-numbers language-ejs" data-language="ejs"><code class="language-ejs">E:\&#x5DE5;&#x4F5C;&#x968F;&#x7B14;\MyNotes\myBlog\themes\hexo-theme-matery\layout\_partial\index-cover.ejs
+<span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%</span><span class="token comment">#    &lt;% if (theme.indexbtn &amp;&amp; theme.indexbtn.enable) { </span><span class="token delimiter punctuation">%&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%-</span><span class="token language-javascript"> <span class="token function">url_for</span><span class="token punctuation">(</span>theme<span class="token punctuation">.</span>indexbtn<span class="token punctuation">.</span>url<span class="token punctuation">)</span> </span><span class="token delimiter punctuation">%&gt;</span></span><span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>waves-effect waves-light btn<span class="token punctuation">&quot;</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>_blank<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%-</span><span class="token language-javascript"> theme<span class="token punctuation">.</span>indexbtn<span class="token punctuation">.</span>icon </span><span class="token delimiter punctuation">%&gt;</span></span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%=</span><span class="token language-javascript"> theme<span class="token punctuation">.</span>indexbtn<span class="token punctuation">.</span>name </span><span class="token delimiter punctuation">%&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+        <span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%</span><span class="token language-javascript"> <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>githubLink<span class="token punctuation">.</span>enable<span class="token punctuation">)</span> <span class="token punctuation">{</span> </span><span class="token delimiter punctuation">%&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%-</span><span class="token language-javascript"> theme<span class="token punctuation">.</span>githubLink<span class="token punctuation">.</span>url </span><span class="token delimiter punctuation">%&gt;</span></span><span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>waves-effect waves-light btn<span class="token punctuation">&quot;</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>_blank<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>fab fa-github %&gt;<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%=</span><span class="token language-javascript"> theme<span class="token punctuation">.</span>githubLink<span class="token punctuation">.</span>title </span><span class="token delimiter punctuation">%&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+        <span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%</span><span class="token language-javascript"> <span class="token punctuation">}</span> </span><span class="token delimiter punctuation">%&gt;</span></span> %&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/2021/11/28/hexo%E7%9A%84%E7%94%A8%E6%B3%95/hexo%E7%9A%84%E7%94%A8%E6%B3%95%5C%E4%BF%AE%E6%94%B91.png"></p>
 
                 
             </div>
@@ -598,12 +597,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/hexo/">
-                                    <span class="chip bg-color">hexo</span>
-                                </a>
-                            
                                 <a href="/tags/Markdown/">
                                     <span class="chip bg-color">Markdown</span>
+                                </a>
+                            
+                                <a href="/tags/hexo/">
+                                    <span class="chip bg-color">hexo</span>
                                 </a>
                             
                         </div>
@@ -842,12 +841,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
-                    </a>
-                    
                     <a href="/tags/Markdown/">
                         <span class="chip bg-color">Markdown</span>
+                    </a>
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
                     </a>
                     
                 </div>
