@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>并发编程</title>
+      <link href="/2021/11/29/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+      <url>/2021/11/29/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<hr><h1 id="&#x4F4D;&#x8FD0;&#x7B97;"><a href="#&#x4F4D;&#x8FD0;&#x7B97;" class="headerlink" title="&#x4F4D;&#x8FD0;&#x7B97;"></a>&#x4F4D;&#x8FD0;&#x7B97;</h1><ul><li><p>&amp; &#x4E0E;&#x8FD0;&#x7B97; &#x6709;0&#x4E3A;0        1111 0000  &amp;  1010 0000   =1010 0000</p></li><li><p>| &#x6216;&#x8FD0;&#x7B97;  &#x6709;1&#x4E3A;1        1111 0000  |  1010 0000   = 1111 0000</p></li><li><p>&lt;&lt; &#x5DE6;&#x79FB;&#x8FD0;&#x7B97;   &#x5DE6;&#x79FB;&#x4E00;&#x4F4D; &#x7B49;&#x4E8E; &#x4E58; 2</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> juc </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo的用法</title>
       <link href="/2021/11/28/hexo%E7%9A%84%E7%94%A8%E6%B3%95/"/>
       <url>/2021/11/28/hexo%E7%9A%84%E7%94%A8%E6%B3%95/</url>
