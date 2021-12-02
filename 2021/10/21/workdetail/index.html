@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-30
+                    2021-12-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.3k
                 </div>
                 
 
@@ -659,11 +659,14 @@ delete from table1 where id in (select n.id from (select id from table1 where id
 <h4 id="springboot-&#x6253;&#x5305;&#x6210;jar&#x8BFB;&#x53D6;-resource-&#x4E0B;&#x8D44;&#x6E90;"><a href="#springboot-&#x6253;&#x5305;&#x6210;jar&#x8BFB;&#x53D6;-resource-&#x4E0B;&#x8D44;&#x6E90;" class="headerlink" title="springboot &#x6253;&#x5305;&#x6210;jar&#x8BFB;&#x53D6; resource &#x4E0B;&#x8D44;&#x6E90;"></a>springboot &#x6253;&#x5305;&#x6210;jar&#x8BFB;&#x53D6; resource &#x4E0B;&#x8D44;&#x6E90;</h4><p>&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x6D41;&#x53BB;&#x8BFB;&#x53D6; &#x9700;&#x8981;&#x52A0;&#x4E0A; &#x201C;/&#x201D;</p>
 <pre class="line-numbers language-none"><code class="language-none">InputStream is = PdfUtil.class.getResourceAsStream(&quot;/&quot; + pdfTemplate);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<p>&#x540E;&#x7AEF;Date&#x5BF9;&#x8C61;&#x63A5;&#x6536;&#x7528; @JsonFormat &#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x63A5;&#x6536;&#x6210; Date</p>
+<pre class="line-numbers language-none"><code class="language-none">@JsonFormat(timezone = &quot;GMT+8&quot;, pattern = &quot;yyyy-MM-dd&quot;)
+@ApiModelProperty(value = &quot;&#x8BB0;&#x5F55;&#x751F;&#x6548;&#x65F6;&#x95F4;&quot;,required = true)
+private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 
 
-
-<p>AD</p>
+<p>1.8</p>
 
                 
             </div>
@@ -1212,7 +1215,7 @@ delete from table1 where id in (select n.id from (select id from table1 where id
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">5.1k</span>
+                        class="white-color">7.8k</span>
             
             
             
