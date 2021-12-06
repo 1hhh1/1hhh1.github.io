@@ -482,7 +482,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.6k
                 </div>
                 
 
@@ -667,6 +667,66 @@ private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><spa
 
 
 <p>1.8</p>
+<pre class="line-numbers language-none"><code class="language-none">   List&lt;String&gt; list = Arrays.asList(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;);
+        List&lt;String&gt; list1 = Arrays.asList(&quot;4&quot;, &quot;5&quot;, &quot;6&quot;);
+
+        String collect1 = Stream.of(list, list1).map(e -&gt; e + &quot;11&quot;).collect(Collectors.joining());
+        System.out.println(&quot;===&quot;+collect1);  //===[1, 2, 3]11[4, 5, 6]11
+        //flatMap  &lt;R&gt; Stream&lt;R&gt; flatMap(Function&lt;? super T, ? extends Stream&lt;? extends R&gt;&gt; mapper)
+        // &#x53C2;&#x6570;  Function&lt;? super T, ? extends Stream&lt;? extends R&gt;&gt; mapper
+        // &#x53C2;&#x6570;&#x8FD4;&#x56DE; &#x6D41;
+        String collect2 = Stream.of(list, list1).flatMap(Collection::stream).collect(Collectors.joining());
+        System.out.println(&quot;+++&quot;+collect2);  //+++123456
+
+        String collect = list.parallelStream().collect(Collectors.joining());
+//        System.out.println(collect);
+
+
+        System.out.println(list.stream().map(e -&gt; e + &quot;1&quot;).collect(Collectors.joining()));
+        System.out.println(list.stream().flatMap(e -&gt; Arrays.stream(e.split(&quot;&quot;))).collect(Collectors.toList()));
+
+        Optional&lt;String&gt; s1 = Optional.of(&quot;2&quot;).flatMap(e -&gt; Optional.of(e + &quot;1&quot;));
+        System.out.println(s1.get());
+
+
+        // ifPresent &#x5982;&#x679C;&#x5B58;&#x5728;&#x503C;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x8BE5;&#x503C;&#x8C03;&#x7528;&#x6307;&#x5B9A;&#x7684;&#x4F7F;&#x7528;&#x8005;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x6267;&#x884C;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;
+        Optional.of(list).ifPresent(System.out::println);
+        // &#x8FD4;&#x56DE; Optional&lt;T&gt; &#x5BF9;&#x8C61;
+        Optional&lt;String&gt; s = Optional.ofNullable(&quot;1&quot;);
+        // &#x82E5; T&#x503C;&#x4E3A;null, &#x90A3;&#x4E48;T = &quot;2&quot;
+        System.out.println(s.orElse(&quot;2&quot;));
+        //
+        Optional.ofNullable(&quot;f&quot;).orElseGet(() -&gt; System.out.println(&quot;12&quot;));
+
+        //map
+        HzzJbdResp hzzJbdResp = null;
+
+
+        //
+        List&lt;BaseFileInfoResp&gt; baseFileInfoResps = Optional.of(hzzJbdResp).map(e -&gt; e.getFileFqys()).orElse(
+                Collections.emptyList());
+        System.out.println(baseFileInfoResps);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 
             </div>
@@ -935,6 +995,55 @@ private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><spa
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2021/10/21/Linux%E5%B8%B8%E8%A7%84%E5%91%BD%E4%BB%A4/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/1hhh1/1hhh1.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="linux的常规命令">
+                        
+                        <span class="card-title">linux的常规命令</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            常用命令
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/linux/" class="post-category">
+                                    linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2021/10/21/mysql%E7%9A%84sql%E8%AF%AD%E6%B3%95/">
                     <div class="card-image">
                         
@@ -951,9 +1060,9 @@ private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><spa
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -979,56 +1088,6 @@ private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><spa
                     
                     <a href="/tags/mybatis-xml/">
                         <span class="chip bg-color">mybatis xml</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/10/21/workdetail/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/1hhh1/1hhh1.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="workdetail">
-                        
-                        <span class="card-title">workdetail</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            工作总结
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Markdown/" class="post-category">
-                                    Markdown
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/work/">
-                        <span class="chip bg-color">work</span>
                     </a>
                     
                 </div>
@@ -1215,7 +1274,7 @@ private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><spa
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">7.8k</span>
+                        class="white-color">9.6k</span>
             
             
             
