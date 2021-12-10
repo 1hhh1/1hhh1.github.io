@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-02
+                    2021-12-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.8k
                 </div>
                 
 
@@ -667,51 +667,74 @@ private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><spa
 
 
 <p>1.8</p>
-<pre class="line-numbers language-none"><code class="language-none">   List&lt;String&gt; list = Arrays.asList(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;);
-        List&lt;String&gt; list1 = Arrays.asList(&quot;4&quot;, &quot;5&quot;, &quot;6&quot;);
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">   <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;2&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;3&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> list1 <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">&quot;4&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;5&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;6&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        String collect1 = Stream.of(list, list1).map(e -&gt; e + &quot;11&quot;).collect(Collectors.joining());
-        System.out.println(&quot;===&quot;+collect1);  //===[1, 2, 3]11[4, 5, 6]11
-        //flatMap  &lt;R&gt; Stream&lt;R&gt; flatMap(Function&lt;? super T, ? extends Stream&lt;? extends R&gt;&gt; mapper)
-        // &#x53C2;&#x6570;  Function&lt;? super T, ? extends Stream&lt;? extends R&gt;&gt; mapper
-        // &#x53C2;&#x6570;&#x8FD4;&#x56DE; &#x6D41;
-        String collect2 = Stream.of(list, list1).flatMap(Collection::stream).collect(Collectors.joining());
-        System.out.println(&quot;+++&quot;+collect2);  //+++123456
+        <span class="token class-name">String</span> collect1 <span class="token operator">=</span> <span class="token class-name">Stream</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>list<span class="token punctuation">,</span> list1<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>e <span class="token operator">-&gt;</span> e <span class="token operator">+</span> <span class="token string">&quot;11&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">joining</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;===&quot;</span><span class="token operator">+</span>collect1<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//===[1, 2, 3]11[4, 5, 6]11</span>
+        <span class="token comment">//flatMap  &lt;R&gt; Stream&lt;R&gt; flatMap(Function&lt;? super T, ? extends Stream&lt;? extends R&gt;&gt; mapper)</span>
+        <span class="token comment">// &#x53C2;&#x6570;  Function&lt;? super T, ? extends Stream&lt;? extends R&gt;&gt; mapper</span>
+        <span class="token comment">// &#x53C2;&#x6570;&#x8FD4;&#x56DE; &#x6D41;</span>
+        <span class="token class-name">String</span> collect2 <span class="token operator">=</span> <span class="token class-name">Stream</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>list<span class="token punctuation">,</span> list1<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">flatMap</span><span class="token punctuation">(</span><span class="token class-name">Collection</span><span class="token operator">::</span><span class="token function">stream</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">joining</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;+++&quot;</span><span class="token operator">+</span>collect2<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//+++123456</span>
 
-        String collect = list.parallelStream().collect(Collectors.joining());
-//        System.out.println(collect);
-
-
-        System.out.println(list.stream().map(e -&gt; e + &quot;1&quot;).collect(Collectors.joining()));
-        System.out.println(list.stream().flatMap(e -&gt; Arrays.stream(e.split(&quot;&quot;))).collect(Collectors.toList()));
-
-        Optional&lt;String&gt; s1 = Optional.of(&quot;2&quot;).flatMap(e -&gt; Optional.of(e + &quot;1&quot;));
-        System.out.println(s1.get());
+        <span class="token class-name">String</span> collect <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">parallelStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">joining</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//        System.out.println(collect);</span>
 
 
-        // ifPresent &#x5982;&#x679C;&#x5B58;&#x5728;&#x503C;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x8BE5;&#x503C;&#x8C03;&#x7528;&#x6307;&#x5B9A;&#x7684;&#x4F7F;&#x7528;&#x8005;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x6267;&#x884C;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;
-        Optional.of(list).ifPresent(System.out::println);
-        // &#x8FD4;&#x56DE; Optional&lt;T&gt; &#x5BF9;&#x8C61;
-        Optional&lt;String&gt; s = Optional.ofNullable(&quot;1&quot;);
-        // &#x82E5; T&#x503C;&#x4E3A;null, &#x90A3;&#x4E48;T = &quot;2&quot;
-        System.out.println(s.orElse(&quot;2&quot;));
-        //
-        Optional.ofNullable(&quot;f&quot;).orElseGet(() -&gt; System.out.println(&quot;12&quot;));
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>e <span class="token operator">-&gt;</span> e <span class="token operator">+</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">joining</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">flatMap</span><span class="token punctuation">(</span>e <span class="token operator">-&gt;</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        //map
-        HzzJbdResp hzzJbdResp = null;
+        <span class="token class-name">Optional</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> s1 <span class="token operator">=</span> <span class="token class-name">Optional</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">&quot;2&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">flatMap</span><span class="token punctuation">(</span>e <span class="token operator">-&gt;</span> <span class="token class-name">Optional</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>e <span class="token operator">+</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 
-        //
-        List&lt;BaseFileInfoResp&gt; baseFileInfoResps = Optional.of(hzzJbdResp).map(e -&gt; e.getFileFqys()).orElse(
-                Collections.emptyList());
-        System.out.println(baseFileInfoResps);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token comment">// ifPresent &#x5982;&#x679C;&#x5B58;&#x5728;&#x503C;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x8BE5;&#x503C;&#x8C03;&#x7528;&#x6307;&#x5B9A;&#x7684;&#x4F7F;&#x7528;&#x8005;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x6267;&#x884C;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;</span>
+        <span class="token class-name">Optional</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ifPresent</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token operator">::</span><span class="token function">println</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x8FD4;&#x56DE; Optional&lt;T&gt; &#x5BF9;&#x8C61;</span>
+        <span class="token class-name">Optional</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> s <span class="token operator">=</span> <span class="token class-name">Optional</span><span class="token punctuation">.</span><span class="token function">ofNullable</span><span class="token punctuation">(</span><span class="token string">&quot;1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x82E5; T&#x503C;&#x4E3A;null, &#x90A3;&#x4E48;T = &quot;2&quot;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">orElse</span><span class="token punctuation">(</span><span class="token string">&quot;2&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//</span>
+        <span class="token class-name">Optional</span><span class="token punctuation">.</span><span class="token function">ofNullable</span><span class="token punctuation">(</span><span class="token string">&quot;f&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">orElseGet</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;12&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
+        <span class="token comment">//map</span>
+        <span class="token class-name">HzzJbdResp</span> hzzJbdResp <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+
+        <span class="token comment">//</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">BaseFileInfoResp</span><span class="token punctuation">&gt;</span></span> baseFileInfoResps <span class="token operator">=</span> <span class="token class-name">Optional</span><span class="token punctuation">.</span><span class="token function">ofNullable</span><span class="token punctuation">(</span>hzzJbdResp<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>e <span class="token operator">-&gt;</span> e<span class="token punctuation">.</span><span class="token function">getFileFqys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">orElse</span><span class="token punctuation">(</span><span class="token class-name">Collections</span><span class="token punctuation">.</span><span class="token function">emptyList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>baseFileInfoResps<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
+<h3 id="java5-&#x591A;&#x53C2;&#x6570;-&#x6570;&#x7EC4;&#x7684;&#x5F62;&#x5F0F;"><a href="#java5-&#x591A;&#x53C2;&#x6570;-&#x6570;&#x7EC4;&#x7684;&#x5F62;&#x5F0F;" class="headerlink" title="java5 &#x591A;&#x53C2;&#x6570;  &#x6570;&#x7EC4;&#x7684;&#x5F62;&#x5F0F;"></a>java5 &#x591A;&#x53C2;&#x6570;  &#x6570;&#x7EC4;&#x7684;&#x5F62;&#x5F0F;</h3><p>Object&#x2026; params &#x53EF;&#x4EE5;&#x4F20;&#x4EFB;&#x4F55;&#x5C5E;&#x6027;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x4F20;</p>
+<p>Object&#x662F;&#x6240;&#x6709;&#x7C7B;&#x7684;&#x7236;&#x7C7B;&#xFF0C;&#x5229;&#x7528;&#x7EE7;&#x627F;&#x7684;&#x591A;&#x6001;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;Object&#x7C7B;&#x63A5;&#x6536;&#x4E00;&#x5207;&#x7C7B;</p>
+<p>java5&#x7279;&#x6027; &#x591A;&#x53C2;&#x6570;&#xFF0C;&#x8BE5;&#x53C2;&#x6570;&#x53EA;&#x80FD;&#x5728;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x4F20;&#x591A;&#x4E2A;&#x503C;&#xFF0C;&#x6216;&#x8005;&#x4E0D;&#x4F20;&#x503C;&#x3002;</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> strings <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    strings<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">&quot;123123&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> stringStringHashMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    stringStringHashMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;11&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;aa&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    stringStringHashMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;22&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;bb&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">sdfs</span><span class="token punctuation">(</span>stringStringHashMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">sdfs</span><span class="token punctuation">(</span><span class="token class-name">Object</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> params<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>params<span class="token punctuation">.</span>length<span class="token operator">!=</span><span class="token number">0</span> <span class="token operator">&amp;&amp;</span> params<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token keyword">instanceof</span> <span class="token class-name">Map</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> stringStringHashMap <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">)</span> params<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>stringStringHashMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;22&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>params<span class="token punctuation">.</span>length<span class="token operator">!=</span><span class="token number">0</span> <span class="token operator">&amp;&amp;</span> params<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token keyword">instanceof</span> <span class="token class-name">List</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+
+    <span class="token punctuation">}</span>
+
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -995,55 +1018,6 @@ private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><spa
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/10/21/Linux%E5%B8%B8%E8%A7%84%E5%91%BD%E4%BB%A4/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/1hhh1/1hhh1.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="linux的常规命令">
-                        
-                        <span class="card-title">linux的常规命令</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            常用命令
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/linux/" class="post-category">
-                                    linux
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2021/10/21/mysql%E7%9A%84sql%E8%AF%AD%E6%B3%95/">
                     <div class="card-image">
                         
@@ -1060,9 +1034,9 @@ private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><spa
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1088,6 +1062,56 @@ private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><spa
                     
                     <a href="/tags/mybatis-xml/">
                         <span class="chip bg-color">mybatis xml</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/10/21/workdetail/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/1hhh1/1hhh1.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="workdetail">
+                        
+                        <span class="card-title">workdetail</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            工作总结
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Markdown/" class="post-category">
+                                    Markdown
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/work/">
+                        <span class="chip bg-color">work</span>
                     </a>
                     
                 </div>
@@ -1274,7 +1298,7 @@ private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><spa
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">10.4k</span>
+                        class="white-color">10.8k</span>
             
             
             
