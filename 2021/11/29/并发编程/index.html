@@ -479,7 +479,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-07
+                    2021-12-13
                 </div>
                 
 
@@ -601,18 +601,19 @@ public enum State {
 <li><p>&#x4FEE;&#x9970;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x4F5C;&#x7528;&#x5BF9;&#x8C61;&#x5C31;&#x662F;&#x8FD9;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;</p>
 </li>
 <li><p>&#x4FEE;&#x9970;&#x4E00;&#x4E2A;&#x7C7B;</p>
-<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">//&#x540C;&#x6B65;&#x65B9;&#x6CD5;&#xFF0C;&#x9501;&#x4F4F;&#x7684;&#x5BF9;&#x8C61;&#x5C31;&#x662F; &#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x5BF9;&#x8C61;
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">Dog dog = new Dog();
+//&#x540C;&#x6B65;&#x65B9;&#x6CD5;&#xFF0C;&#x9501;&#x4F4F;&#x7684;&#x5BF9;&#x8C61;&#x5C31;&#x662F; &#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x5BF9;&#x8C61; dog
 public synchronized void sdfs() {
 	// do something
 s}
 
 public void sdf(){
-//&#x540C;&#x6B65;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x9501;&#x4F4F;&#x7684;&#x5BF9;&#x8C61;&#x5C31;&#x662F; this &#x5BF9;&#x8C61;
+//&#x540C;&#x6B65;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x9501;&#x4F4F;&#x7684;&#x5BF9;&#x8C61;&#x5C31;&#x662F; this &#x5BF9;&#x8C61; dog
     synchronized (this) {
         // do something
     }
 }
-   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h3 id="&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;"><a href="#&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;" class="headerlink" title="&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;"></a>&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;</h3><ul>
 <li>&#x7EE7;&#x627F; Thread &#x7C7B;         &#x91CD;&#x5199; run&#x65B9;&#x6CD5;</li>
