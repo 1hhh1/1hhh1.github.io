@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>vue基础</title>
+      <link href="/2021/12/20/vue%E5%9F%BA%E7%A1%80/"/>
+      <url>/2021/12/20/vue%E5%9F%BA%E7%A1%80/</url>
+      
+        <content type="html"><![CDATA[<hr><h1 id><a href="#" class="headerlink" title></a></h1><h1 id="&#x4E00;&#x3001;&#x521D;&#x8BC6;vue"><a href="#&#x4E00;&#x3001;&#x521D;&#x8BC6;vue" class="headerlink" title="&#x4E00;&#x3001;&#x521D;&#x8BC6;vue"></a>&#x4E00;&#x3001;&#x521D;&#x8BC6;vue</h1><ul><li>&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;vue&#x5B9E;&#x4F8B;</li><li>    **vue&#x4E2D;&#x7279;&#x6B8A;&#x8BED;&#x6CD5;&#xFF0C;&#x7528;&#x6765;&#x8BFB;&#x53D6;vue&#x5B9E;&#x4F8B;data&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x6570;&#x636E;   &#x4E5F;&#x53EF;&#x4EE5;&#x8BFB;&#x53D6;---&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x7684;js&#x8BED;&#x53E5;-</li><li>&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#x4E5F;&#x79F0;&#x4E3A; vue&#x6A21;&#x677F;</li><li>&#x771F;&#x5B9E;&#x5F00;&#x53D1;&#x4E2D;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;</li></ul><pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;!-- &#x5F15;&#x5165;vue.js --&gt;    &lt;script src=&quot;../js/vue.js&quot;&gt; &lt;/script&gt;    &lt;title&gt;Document&lt;/title&gt;&lt;/head&gt;&lt;body&gt;    &lt;!-- &#x51C6;&#x5907;&#x4E00;&#x4E2A;&#x5BB9;&#x5668; --&gt;    &lt;div id=&quot;root&quot;&gt;        &lt;p&gt;{{message}}  {{Date.now()}}&lt;/p&gt;          &lt;!-- //&#x8BFB;&#x53D6;data&#x4E2D;&#x6570;&#x636E;  &#x7C7B;&#x4F3C; jsp&#x4E2D; ${} --&gt;    &lt;/div&gt;    &lt;script&gt;        // &#x5173;&#x95ED;&#x8B66;&#x544A;        Vue.config.productionTip = false        // &#x521B;&#x5EFA;&#x4E00;&#x4E2A;Vue&#x5B9E;&#x4F8B;  &#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;        const vue =  new Vue({            el: &apos;#root&apos;, // &#x6307;&#x5B9A;&#x5BB9;&#x5668;            data: {      // &#x6570;&#x636E;                message: &apos;hello vue&apos;            }        })    &lt;/script&gt;    &lt;/body&gt;&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>new Vue(){} &#x6784;&#x9020;&#x65B9;&#x6CD5;</strong></p><p><strong>vue.js &#x4E2D;&#x7684;&#x65B9;&#x6CD5; &#x4F1A;&#x9A8C;&#x8BC1; this&#x662F;&#x5426;&#x662F; vue</strong></p><pre class="line-numbers language-none"><code class="language-none">function Vue (options) {  if (!(this instanceof Vue)  ) {  //&#x63D0;&#x9192;&#x9519;&#x8BEF;    warn(&apos;Vue is a constructor and should be called with the `new` keyword&apos;);  }  this._init(options);}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>工作详细</title>
       <link href="/2021/12/17/%E5%B7%A5%E4%BD%9C%E8%AF%A6%E7%BB%86/"/>
       <url>/2021/12/17/%E5%B7%A5%E4%BD%9C%E8%AF%A6%E7%BB%86/</url>

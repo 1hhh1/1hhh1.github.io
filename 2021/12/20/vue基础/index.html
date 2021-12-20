@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="hexo的用法, hhh">
-    <meta name="description" content="hexo的用法">
+    <meta name="keywords" content="vue基础, hhh">
+    <meta name="description" content="vue">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>hexo的用法 | hhh</title>
+    <title>vue基础 | hhh</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/1hhh1/1hhh1.github.io/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/1hhh1/1hhh1.github.io/libs/awesome/css/all.min.css">
@@ -309,7 +309,7 @@
 <script src="https://cdn.jsdelivr.net/gh/1hhh1/1hhh1.github.io/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = '24d166cd6c8b826c779040b49d5b6708d649b236558e8744339dfee6afe11999';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -322,12 +322,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/1hhh1/1hhh1.github.io/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/1hhh1/1hhh1.github.io/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">hexo的用法</h1>
+                    <h1 class="description center-align post-title">vue基础</h1>
                 </div>
             </div>
         </div>
@@ -443,12 +443,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Markdown/">
-                                <span class="chip bg-color">Markdown</span>
-                            </a>
-                        
-                            <a href="/tags/hexo/">
-                                <span class="chip bg-color">hexo</span>
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
                             </a>
                         
                     </div>
@@ -459,8 +455,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/hexo/" class="post-category">
-                                hexo
+                            <a href="/categories/vue/" class="post-category">
+                                vue
                             </a>
                         
                     </div>
@@ -472,21 +468,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-27
+                    2021-12-20
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-28
+                    2021-12-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    453
+                    301
                 </div>
                 
 
@@ -507,32 +503,61 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <hr>
-<h1 id="&#x56FE;&#x7247;&#x7684;&#x63D2;&#x5165;"><a href="#&#x56FE;&#x7247;&#x7684;&#x63D2;&#x5165;" class="headerlink" title="&#x56FE;&#x7247;&#x7684;&#x63D2;&#x5165;"></a>&#x56FE;&#x7247;&#x7684;&#x63D2;&#x5165;</h1><p>1.&#x6253;&#x5F00;&#x535A;&#x5BA2;&#x914D;&#x7F6E;&#x6587;&#x4EF6;_config.yml&#xFF0C;&#x5C06;post_asset_folder&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x8BBE;&#x7F6E;&#x4E3A;true</p>
-<pre class="line-numbers language-none"><code class="language-none">post_asset_floder: true<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1 id><a href="#" class="headerlink" title></a></h1><h1 id="&#x4E00;&#x3001;&#x521D;&#x8BC6;vue"><a href="#&#x4E00;&#x3001;&#x521D;&#x8BC6;vue" class="headerlink" title="&#x4E00;&#x3001;&#x521D;&#x8BC6;vue"></a>&#x4E00;&#x3001;&#x521D;&#x8BC6;vue</h1><ul>
+<li>&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;vue&#x5B9E;&#x4F8B;</li>
+<li>    **vue&#x4E2D;&#x7279;&#x6B8A;&#x8BED;&#x6CD5;&#xFF0C;&#x7528;&#x6765;&#x8BFB;&#x53D6;vue&#x5B9E;&#x4F8B;data&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x6570;&#x636E;   &#x4E5F;&#x53EF;&#x4EE5;&#x8BFB;&#x53D6;---&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x7684;js&#x8BED;&#x53E5;-</li>
+<li>&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#x4E5F;&#x79F0;&#x4E3A; vue&#x6A21;&#x677F;</li>
+<li>&#x771F;&#x5B9E;&#x5F00;&#x53D1;&#x4E2D;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;</li>
+</ul>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
 
-<p>2.cd&#x5230;&#x535A;&#x5BA2;&#x6587;&#x4EF6;&#x6839;&#x76EE;&#x5F55;&#xFF0C;&#x8F93;&#x5165;&#x547D;&#x4EE4;&#x884C;</p>
-<pre class="line-numbers language-none"><code class="language-none">npm install hexo-asset-image --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+    &lt;!-- &#x5F15;&#x5165;vue.js --&gt;
+    &lt;script src=&quot;../js/vue.js&quot;&gt; &lt;/script&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- &#x51C6;&#x5907;&#x4E00;&#x4E2A;&#x5BB9;&#x5668; --&gt;
+    &lt;div id=&quot;root&quot;&gt;
+        &lt;p&gt;{{message}}  {{Date.now()}}&lt;/p&gt;  
+        &lt;!-- //&#x8BFB;&#x53D6;data&#x4E2D;&#x6570;&#x636E;  &#x7C7B;&#x4F3C; jsp&#x4E2D; ${} --&gt;
+    &lt;/div&gt;
 
-<p>&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x4E0A;&#x4F20;&#x672C;&#x5730;&#x56FE;&#x7247;&#x7684;&#x63D2;&#x4EF6;</p>
-<p>3.&#x5728;&#x8FD0;&#x884C;<code>hexo new xxx</code>&#x6765;&#x751F;&#x6210;md&#x683C;&#x5F0F;&#x535A;&#x6587;&#x540E;&#xFF0C;&#x5728;/source/_posts&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x9664;&#x4E86;&#x4F1A;&#x751F;&#x6210;xxx.md&#x6587;&#x4EF6;&#xFF0C;&#x8FD8;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x540C;&#x540D;&#x6587;&#x4EF6;&#x5939;</p>
-<p>4.&#x5728;xxx.md&#x4E2D;&#x60F3;&#x5F15;&#x5165;&#x672C;&#x5730;&#x56FE;&#x7247;&#x65F6;&#xFF0C;&#x5148;&#x628A;&#x56FE;&#x7247;&#x590D;&#x5236;&#x5230;&#x540C;&#x540D;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x9700;&#x8981;&#x5F15;&#x7528;&#x56FE;&#x7247;&#x7684;&#x5730;&#x65B9;&#x6309;&#x7167;markdown&#x7684;&#x683C;&#x5F0F;&#x8F93;&#x5165;</p>
-<pre class="line-numbers language-none"><code class="language-none">![&#x56FE;&#x7247;&#x6807;&#x9898;](xxx/&#x56FE;&#x7247;&#x540D;.jpg)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+    &lt;script&gt;
+        // &#x5173;&#x95ED;&#x8B66;&#x544A;
+        Vue.config.productionTip = false
 
-<h2 id="&#x4E0A;&#x4F20;&#x56FE;&#x7247;&#x6CA1;&#x6709;&#x663E;&#x793A;"><a href="#&#x4E0A;&#x4F20;&#x56FE;&#x7247;&#x6CA1;&#x6709;&#x663E;&#x793A;" class="headerlink" title="&#x4E0A;&#x4F20;&#x56FE;&#x7247;&#x6CA1;&#x6709;&#x663E;&#x793A;"></a>&#x4E0A;&#x4F20;&#x56FE;&#x7247;&#x6CA1;&#x6709;&#x663E;&#x793A;</h2><p>&#x5B8C;&#x6210;&#x4EE5;&#x4E0A;&#x64CD;&#x4F5C;&#x540E;&#x4F60;&#x53EF;&#x80FD;&#x53D1;&#x73B0;&#x6253;&#x5F00;&#x7F51;&#x9875;&#x56FE;&#x7247;&#x6CA1;&#x6709;&#x663E;&#x793A;&#xFF0C;&#x53EF;&#x80FD;&#x7684;&#x539F;&#x56E0;&#x5C31;&#x662F;hexo-asset-image&#x7684;&#x7248;&#x672C;&#x4E0D;&#x5BF9;&#xFF0C;&#x6211;&#x4EEC;&#x9ED8;&#x8BA4;&#x4E0B;&#x8F7D;&#x7684;&#x662F;1.0.0&#x7248;&#x672C;&#x3002;&#x5728;&#x7F51;&#x4E0A;&#x67E5;&#x9605;&#x8D44;&#x6599;&#x540E;&#x5F97;&#x77E5;0.0.1&#x7248;&#x672C;&#x53EF;&#x884C;&#x3002;&#x4E8E;&#x662F;&#x6253;&#x5F00;&#x535A;&#x5BA2;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x7684;package.ison&#x6587;&#x4EF6;&#xFF0C;&#x5C06;kexo-asset-image&#x7684;&#x7248;&#x672C;&#x53F7;&#x6539;&#x6210;0.0.1&#xFF0C;&#x7136;&#x540E;&#x5728;&#x8BE5;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x6267;&#x884C;</p>
-<pre class="line-numbers language-none"><code class="language-none">npm install<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+        // &#x521B;&#x5EFA;&#x4E00;&#x4E2A;Vue&#x5B9E;&#x4F8B;  &#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;
+        const vue =  new Vue({
+            el: &apos;#root&apos;, // &#x6307;&#x5B9A;&#x5BB9;&#x5668;
+            data: {      // &#x6570;&#x636E;
+                message: &apos;hello vue&apos;
+            }
+        })
 
-<p>&#x7136;&#x540E;&#x6267;&#x884C;hexo clean,hexo g,hexo s&#x7B49;&#x4E00;&#x7CFB;&#x5217;&#x547D;&#x4EE4;&#xFF0C;&#x5373;&#x53EF;&#x770B;&#x5230;&#x7F51;&#x9875;&#x4E0A;&#x4E0A;&#x4F20;&#x4E86;&#x672C;&#x5730;&#x56FE;&#x7247;</p>
-<h1 id="&#x4FEE;&#x6539;&#x9875;&#x9762;"><a href="#&#x4FEE;&#x6539;&#x9875;&#x9762;" class="headerlink" title="&#x4FEE;&#x6539;&#x9875;&#x9762;"></a>&#x4FEE;&#x6539;&#x9875;&#x9762;</h1><pre class="line-numbers language-ejs" data-language="ejs"><code class="language-ejs">E:\&#x5DE5;&#x4F5C;&#x968F;&#x7B14;\MyNotes\myBlog\themes\hexo-theme-matery\layout\_partial\index-cover.ejs
-<span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%</span><span class="token comment">#    &lt;% if (theme.indexbtn &amp;&amp; theme.indexbtn.enable) { </span><span class="token delimiter punctuation">%&gt;</span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%-</span><span class="token language-javascript"> <span class="token function">url_for</span><span class="token punctuation">(</span>theme<span class="token punctuation">.</span>indexbtn<span class="token punctuation">.</span>url<span class="token punctuation">)</span> </span><span class="token delimiter punctuation">%&gt;</span></span><span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>waves-effect waves-light btn<span class="token punctuation">&quot;</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>_blank<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%-</span><span class="token language-javascript"> theme<span class="token punctuation">.</span>indexbtn<span class="token punctuation">.</span>icon </span><span class="token delimiter punctuation">%&gt;</span></span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%=</span><span class="token language-javascript"> theme<span class="token punctuation">.</span>indexbtn<span class="token punctuation">.</span>name </span><span class="token delimiter punctuation">%&gt;</span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
-        <span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%</span><span class="token language-javascript"> <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>githubLink<span class="token punctuation">.</span>enable<span class="token punctuation">)</span> <span class="token punctuation">{</span> </span><span class="token delimiter punctuation">%&gt;</span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span><span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%-</span><span class="token language-javascript"> theme<span class="token punctuation">.</span>githubLink<span class="token punctuation">.</span>url </span><span class="token delimiter punctuation">%&gt;</span></span><span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>waves-effect waves-light btn<span class="token punctuation">&quot;</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>_blank<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>fab fa-github %&gt;<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%=</span><span class="token language-javascript"> theme<span class="token punctuation">.</span>githubLink<span class="token punctuation">.</span>title </span><span class="token delimiter punctuation">%&gt;</span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
-        <span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%</span><span class="token language-javascript"> <span class="token punctuation">}</span> </span><span class="token delimiter punctuation">%&gt;</span></span> %&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="/2021/11/28/hexo%E7%9A%84%E7%94%A8%E6%B3%95/%E4%BF%AE%E6%94%B91.png"></p>
+
+    &lt;/script&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><strong>new Vue(){} &#x6784;&#x9020;&#x65B9;&#x6CD5;</strong></p>
+<p><strong>vue.js &#x4E2D;&#x7684;&#x65B9;&#x6CD5; &#x4F1A;&#x9A8C;&#x8BC1; this&#x662F;&#x5426;&#x662F; vue</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">function Vue (options) {
+  if (!(this instanceof Vue)
+  ) {
+  //&#x63D0;&#x9192;&#x9519;&#x8BEF;
+    warn(&apos;Vue is a constructor and should be called with the `new` keyword&apos;);
+  }
+  this._init(options);
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -559,7 +584,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://1hhh1.github.io/2021/11/28/hexo%E7%9A%84%E7%94%A8%E6%B3%95/">http://1hhh1.github.io/2021/11/28/hexo%E7%9A%84%E7%94%A8%E6%B3%95/</a>
+                    <a href="http://1hhh1.github.io/2021/12/20/vue%E5%9F%BA%E7%A1%80/">http://1hhh1.github.io/2021/12/20/vue%E5%9F%BA%E7%A1%80/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -597,12 +622,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Markdown/">
-                                    <span class="chip bg-color">Markdown</span>
-                                </a>
-                            
-                                <a href="/tags/hexo/">
-                                    <span class="chip bg-color">hexo</span>
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
                                 </a>
                             
                         </div>
@@ -773,7 +794,7 @@
         repo: '1hhh1.github.io',
         owner: '1hhh1',
         admin: "1hhh1",
-        id: '2021-11-27T22-29-24',
+        id: '2021-12-20T14-34-44',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -801,50 +822,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/11/29/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">
+                <a href="/2021/12/20/vue%E5%9F%BA%E7%A1%80/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/1hhh1/1hhh1.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="并发编程">
+                        <img src="https://cdn.jsdelivr.net/gh/1hhh1/1hhh1.github.io/medias/featureimages/20.jpg" class="responsive-img" alt="vue基础">
                         
-                        <span class="card-title">并发编程</span>
+                        <span class="card-title">vue基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            并发编程
+                            vue
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java/" class="post-category">
-                                    java
+                            <a href="/categories/vue/" class="post-category">
+                                    vue
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
-                    </a>
-                    
-                    <a href="/tags/juc/">
-                        <span class="chip bg-color">juc</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
@@ -858,31 +877,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/11/14/java%E5%9F%BA%E7%A1%80/">
+                <a href="/2021/12/17/%E5%B7%A5%E4%BD%9C%E8%AF%A6%E7%BB%86/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/1hhh1/1hhh1.github.io/medias/featureimages/16.jpg" class="responsive-img" alt="java基础">
+                        <img src="https://cdn.jsdelivr.net/gh/1hhh1/1hhh1.github.io/medias/featureimages/7.jpg" class="responsive-img" alt="工作详细">
                         
-                        <span class="card-title">java基础</span>
+                        <span class="card-title">工作详细</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            java基础概念
+                            工作详细-一些内容
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java/" class="post-category">
-                                    java
+                            <a href="/categories/Markdown/" class="post-category">
+                                    Markdown
                                 </a>
                             
                             
@@ -892,12 +911,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
                     </a>
                     
-                    <a href="/tags/java-%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">java 基础</span>
+                    <a href="/tags/work/">
+                        <span class="chip bg-color">work</span>
                     </a>
                     
                 </div>
