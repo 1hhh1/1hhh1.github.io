@@ -479,14 +479,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-27
+                    2021-12-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    487
+                    1.3k
                 </div>
                 
 
@@ -562,6 +562,39 @@ type:&#x8BBF;&#x95EE;&#x7C7B;&#x578B;
 <p>a left join b  A&#x8868;&#x5DE6;&#x8FDE;&#x63A5;B&#x8868;</p>
 <p>&#x67E5;&#x8BE2;A&#x7684;&#x5168;&#x90E8;&#xFF0C;&#x641C;&#x7D22;B&#x8868;&#x4E2D;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x53BB; &#x8FDE;&#x63A5;A&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;</p>
 <p>&#x6240;&#x4EE5; &#x7D22;&#x5F15;&#x5E94;&#x8BE5;&#x5EFA;&#x7ACB;&#x5728; b &#x8868;&#x4E2D; &#x624D;&#x4F1A;&#x751F;&#x6548;&#x3002;&#x5982;&#x679C;&#x5EFA;&#x7ACB;&#x5728;a&#x8868;&#x4E2D;&#xFF0C;&#x56E0;&#x4E3A;&#x662F;a&#x5DE6;&#x8FDE;&#x63A5;b &#xFF0C;&#x9996;&#x5148;&#x662F;&#x5148;&#x8981;&#x67E5;&#x8BE2;&#x51FA;a&#x7684;&#x5168;&#x90E8;&#xFF0C;&#x4E0D;&#x8D70;&#x7D22;&#x5F15;&#xFF0C;&#x6761;&#x4EF6;&#x662F;&#x7528;&#x6765;&#x7B5B;&#x9009;B&#x8868;&#x7684;</p>
+<p>MySQL explain &#x547D;&#x4EE4;&#x662F;&#x67E5;&#x8BE2;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x4E0D;&#x53EF;&#x7F3A;&#x5C11;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x8BE5;&#x6587;&#x4E3B;&#x8981;&#x8BB2;&#x89E3; explain &#x547D;&#x4EE4;&#x7684;&#x4F7F;&#x7528;&#x53CA;&#x76F8;&#x5173;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x3002;</p>
+<hr>
+<h2 id="explain-&#x547D;&#x4EE4;&#x57FA;&#x672C;&#x4F7F;&#x7528;"><a href="#explain-&#x547D;&#x4EE4;&#x57FA;&#x672C;&#x4F7F;&#x7528;" class="headerlink" title="explain &#x547D;&#x4EE4;&#x57FA;&#x672C;&#x4F7F;&#x7528;"></a>explain &#x547D;&#x4EE4;&#x57FA;&#x672C;&#x4F7F;&#x7528;</h2><p>&#x5728;&#x65E5;&#x5E38;&#x5DE5;&#x4F5C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x6709;&#x65F6;&#x4F1A;&#x5F00;&#x6162;&#x67E5;&#x8BE2;&#x53BB;&#x8BB0;&#x5F55;&#x4E00;&#x4E9B;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x6BD4;&#x8F83;&#x4E45;&#x7684; SQL &#x8BED;&#x53E5;&#xFF0C;&#x627E;&#x51FA;&#x8FD9;&#x4E9B; SQL &#x8BED;&#x53E5;&#x5E76;&#x4E0D;&#x610F;&#x5473;&#x7740;&#x5B8C;&#x4E8B;&#x4E86;&#x3002;</p>
+<p><strong>&#x6B64;&#x65F6;&#x6211;&#x4EEC;&#x5E38;&#x5E38;&#x7528;&#x5230; explain &#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x6765;&#x67E5;&#x770B;&#x4E00;&#x4E2A;&#x8FD9;&#x4E9B; SQL &#x8BED;&#x53E5;&#x7684;&#x6267;&#x884C;&#x8BA1;&#x5212;&#xFF0C;&#x67E5;&#x770B;&#x8BE5; SQL &#x8BED;&#x53E5;&#x6709;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x4E0A;&#x4E86;&#x7D22;&#x5F15;&#xFF0C;&#x6709;&#x6CA1;&#x6709;&#x505A;&#x5168;&#x8868;&#x626B;&#x63CF;&#x3002;</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">mysql&gt; explain select * from servers;
++----+-------------+---------+------+---------------+------+---------+------+------+-------+
+| id | select_type | table   | type | possible_keys | key  | key_len | ref  | rows | Extra |
++----+-------------+---------+------+---------------+------+---------+------+------+-------+
+|  1 | SIMPLE      | servers | ALL  | NULL          | NULL | NULL    | NULL |    1 | NULL  |
++----+-------------+---------+------+---------------+------+---------+------+------+-------+
+1 row in set (0.03 sec)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>expain &#x51FA;&#x6765;&#x7684;&#x4FE1;&#x606F;&#x6709; 10 &#x5217;&#xFF0C;&#x5206;&#x522B;&#x662F; id&#x3001;select_type&#x3001;table&#x3001;type&#x3001;possible_keys&#x3001;key&#x3001;key_len&#x3001;ref&#x3001;rows&#x3001;Extra,&#x4E0B;&#x9762;&#x5BF9;&#x8FD9;&#x4E9B;&#x5B57;&#x6BB5;&#x51FA;&#x73B0;&#x7684;&#x53EF;&#x80FD;&#x8FDB;&#x884C;&#x89E3;&#x91CA;&#xFF1A;</p>
+<h2 id="EXPLAIN-Output-Columns"><a href="#EXPLAIN-Output-Columns" class="headerlink" title="EXPLAIN Output Columns"></a>EXPLAIN Output Columns</h2><p><img src="https://mmbiz.qpic.cn/mmbiz_png/iaIdQfEric9TwpBy0iaC3Zq8Habbuia3iaqxkBZ2k5BexnaOPY4zgDlaEb0xDsDiaLG8Y75OhHhRDyYEDcAqutkJSnew/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="&#x56FE;&#x7247;"></p>
+<h3 id="id"><a href="#id" class="headerlink" title="id"></a>id</h3><p>id &#x662F;&#x7528;&#x6765;&#x987A;&#x5E8F;&#x6807;&#x8BC6;&#x6574;&#x4E2A;&#x67E5;&#x8BE2;&#x4E2D; SELELCT &#x8BED;&#x53E5;&#x7684;&#xFF0C;&#x5728;&#x5D4C;&#x5957;&#x67E5;&#x8BE2;&#x4E2D; id &#x8D8A;&#x5927;&#x7684;&#x8BED;&#x53E5;&#x8D8A;&#x5148;&#x6267;&#x884C;&#x3002;&#x8BE5;&#x503C;&#x53EF;&#x80FD;&#x4E3A; NULL&#xFF0C;&#x5982;&#x679C;&#x8FD9;&#x4E00;&#x884C;&#x7528;&#x6765;&#x8BF4;&#x660E;&#x7684;&#x662F;&#x5176;&#x4ED6;&#x884C;&#x7684;&#x8054;&#x5408;&#x7ED3;&#x679C;&#x3002;</p>
+<h3 id="select-type"><a href="#select-type" class="headerlink" title="select_type"></a>select_type</h3><p>&#x8868;&#x793A;&#x67E5;&#x8BE2;&#x7684;&#x7C7B;&#x578B;</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iaIdQfEric9TwpBy0iaC3Zq8Habbuia3iaqxkeavhZ29fxibpJlXUOBuBeBusQpl4jXD3zpje0rnIu2cgI4h2kLicO7DA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="&#x56FE;&#x7247;"></p>
+<h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><p>&#x5BF9;&#x5E94;&#x884C;&#x6B63;&#x5728;&#x8BBF;&#x95EE;&#x54EA;&#x4E00;&#x4E2A;&#x8868;&#xFF0C;&#x8868;&#x540D;&#x6216;&#x8005;&#x522B;&#x540D;</p>
+<ul>
+<li>&#x5173;&#x8054;&#x4F18;&#x5316;&#x5668;&#x4F1A;&#x4E3A;&#x67E5;&#x8BE2;&#x9009;&#x62E9;&#x5173;&#x8054;&#x987A;&#x5E8F;&#xFF0C;&#x5DE6;&#x4FA7;&#x6DF1;&#x5EA6;&#x4F18;&#x5148;</li>
+<li>&#x5F53; from &#x4E2D;&#x6709;&#x5B50;&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8868;&#x540D;&#x662F; derivedN &#x7684;&#x5F62;&#x5F0F;&#xFF0C;N &#x6307;&#x5411;&#x5B50;&#x67E5;&#x8BE2;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; explain &#x7ED3;&#x679C;&#x4E2D;&#x7684;&#x4E0B;&#x4E00;&#x5217;</li>
+<li>&#x5F53;&#x6709; union result &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8868;&#x540D;&#x662F; union 1,2 &#x7B49;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;1,2 &#x8868;&#x793A;&#x53C2;&#x4E0E; union &#x7684; query id</li>
+</ul>
+<p>&#x6CE8;&#x610F;&#xFF1A;MySQL &#x5BF9;&#x5F85;&#x8FD9;&#x4E9B;&#x8868;&#x548C;&#x666E;&#x901A;&#x8868;&#x4E00;&#x6837;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E9B;&#x201C;&#x4E34;&#x65F6;&#x8868;&#x201D;&#x662F;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x7D22;&#x5F15;&#x7684;&#x3002;</p>
+<h3 id="type"><a href="#type" class="headerlink" title="type"></a>type</h3><p>type &#x663E;&#x793A;&#x7684;&#x662F;&#x8BBF;&#x95EE;&#x7C7B;&#x578B;&#xFF0C;&#x662F;&#x8F83;&#x4E3A;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x4E2A;&#x6307;&#x6807;&#xFF0C;&#x7ED3;&#x679C;&#x503C;&#x4ECE;&#x597D;&#x5230;&#x574F;&#x4F9D;&#x6B21;&#x662F;&#xFF1A;system &gt; const &gt; eq_ref &gt; ref &gt; fulltext &gt; ref_or_null &gt; index_merge &gt; unique_subquery &gt; index_subquery &gt; range &gt; index &gt; ALL &#xFF0C;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x5F97;&#x4FDD;&#x8BC1;&#x67E5;&#x8BE2;&#x81F3;&#x5C11;&#x8FBE;&#x5230; range &#x7EA7;&#x522B;&#xFF0C;&#x6700;&#x597D;&#x80FD;&#x8FBE;&#x5230; ref&#x3002;</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iaIdQfEric9TwpBy0iaC3Zq8Habbuia3iaqxkVFemSKUzqz9D1PqPBpLAvGQAh5ecY9jrs3iahGXYtDrib2FDg51nClBA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="&#x56FE;&#x7247;"></p>
+<h3 id="possible-keys"><a href="#possible-keys" class="headerlink" title="possible_keys"></a>possible_keys</h3><p>&#x663E;&#x793A;&#x67E5;&#x8BE2;&#x4F7F;&#x7528;&#x4E86;&#x54EA;&#x4E9B;&#x7D22;&#x5F15;&#xFF0C;&#x8868;&#x793A;&#x8BE5;&#x7D22;&#x5F15;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x9AD8;&#x6548;&#x5730;&#x67E5;&#x627E;&#xFF0C;&#x4F46;&#x662F;&#x5217;&#x51FA;&#x6765;&#x7684;&#x7D22;&#x5F15;&#x5BF9;&#x4E8E;&#x540E;&#x7EED;&#x4F18;&#x5316;&#x8FC7;&#x7A0B;&#x53EF;&#x80FD;&#x662F;&#x6CA1;&#x6709;&#x7528;&#x7684;</p>
+<h3 id="key"><a href="#key" class="headerlink" title="key"></a>key</h3><p>key &#x5217;&#x663E;&#x793A; MySQL &#x5B9E;&#x9645;&#x51B3;&#x5B9A;&#x4F7F;&#x7528;&#x7684;&#x952E;&#xFF08;&#x7D22;&#x5F15;&#xFF09;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x9009;&#x62E9;&#x7D22;&#x5F15;&#xFF0C;&#x952E;&#x662F; NULL&#x3002;&#x8981;&#x60F3;&#x5F3A;&#x5236; MySQL &#x4F7F;&#x7528;&#x6216;&#x5FFD;&#x89C6; possible_keys &#x5217;&#x4E2D;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x5728;&#x67E5;&#x8BE2;&#x4E2D;&#x4F7F;&#x7528; FORCE INDEX&#x3001;USE INDEX &#x6216;&#x8005; IGNORE INDEX&#x3002;</p>
+<h3 id="key-len"><a href="#key-len" class="headerlink" title="key_len"></a>key_len</h3><p>key_len &#x5217;&#x663E;&#x793A; MySQL &#x51B3;&#x5B9A;&#x4F7F;&#x7528;&#x7684;&#x952E;&#x957F;&#x5EA6;&#x3002;&#x5982;&#x679C;&#x952E;&#x662F; NULL&#xFF0C;&#x5219;&#x957F;&#x5EA6;&#x4E3A; NULL&#x3002;&#x4F7F;&#x7528;&#x7684;&#x7D22;&#x5F15;&#x7684;&#x957F;&#x5EA6;&#x3002;&#x5728;&#x4E0D;&#x635F;&#x5931;&#x7CBE;&#x786E;&#x6027;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x957F;&#x5EA6;&#x8D8A;&#x77ED;&#x8D8A;&#x597D; &#x3002;</p>
+<h3 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h3><p>ref &#x5217;&#x663E;&#x793A;&#x4F7F;&#x7528;&#x54EA;&#x4E2A;&#x5217;&#x6216;&#x5E38;&#x6570;&#x4E0E; key &#x4E00;&#x8D77;&#x4ECE;&#x8868;&#x4E2D;&#x9009;&#x62E9;&#x884C;&#x3002;</p>
+<h3 id="rows"><a href="#rows" class="headerlink" title="rows"></a>rows</h3><p>rows &#x5217;&#x663E;&#x793A; MySQL &#x8BA4;&#x4E3A;&#x5B83;&#x6267;&#x884C;&#x67E5;&#x8BE2;&#x65F6;&#x5FC5;&#x987B;&#x68C0;&#x67E5;&#x7684;&#x884C;&#x6570;&#x3002;&#x6CE8;&#x610F;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x9884;&#x4F30;&#x503C;&#x3002;</p>
+<h3 id="Extra"><a href="#Extra" class="headerlink" title="Extra"></a>Extra</h3><p>Extra &#x662F; EXPLAIN &#x8F93;&#x51FA;&#x4E2D;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5F88;&#x91CD;&#x8981;&#x7684;&#x5217;&#xFF0C;&#x8BE5;&#x5217;&#x663E;&#x793A; MySQL &#x5728;&#x67E5;&#x8BE2;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x4E00;&#x4E9B;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;MySQL &#x67E5;&#x8BE2;&#x4F18;&#x5316;&#x5668;&#x6267;&#x884C;&#x67E5;&#x8BE2;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x5BF9;&#x67E5;&#x8BE2;&#x8BA1;&#x5212;&#x7684;&#x91CD;&#x8981;&#x8865;&#x5145;&#x4FE1;&#x606F;&#x3002;</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iaIdQfEric9TwpBy0iaC3Zq8Habbuia3iaqxkxFnTR8dLliaflTVokVhtNCQoLF2YiaR1ylG3gfFKYcsR5VBO3vPyFFAg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="&#x56FE;&#x7247;"></p>
 
                 
             </div>
@@ -1109,7 +1142,7 @@ type:&#x8BBF;&#x95EE;&#x7C7B;&#x578B;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">18.7k</span>
+                        class="white-color">19.5k</span>
             
             
             
