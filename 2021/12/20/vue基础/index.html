@@ -482,7 +482,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    2.1k
                 </div>
                 
 
@@ -721,6 +721,80 @@
 
 
 <p><img src="/2021/12/20/vue%E5%9F%BA%E7%A1%80/vue%E5%9F%BA%E7%A1%80%5C%E6%95%B0%E6%8D%AE%E4%BB%A3%E7%90%862.png" alt="&#x6570;&#x636E;&#x4EE3;&#x7406;2"></p>
+<h2 id="&#x6570;&#x636E;&#x4EE3;&#x7406;"><a href="#&#x6570;&#x636E;&#x4EE3;&#x7406;" class="headerlink" title="&#x6570;&#x636E;&#x4EE3;&#x7406;"></a>&#x6570;&#x636E;&#x4EE3;&#x7406;</h2><h3 id="&#x57FA;&#x672C;&#x6982;&#x5FF5;"><a href="#&#x57FA;&#x672C;&#x6982;&#x5FF5;" class="headerlink" title="&#x57FA;&#x672C;&#x6982;&#x5FF5;"></a>&#x57FA;&#x672C;&#x6982;&#x5FF5;</h3><pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;script type=&quot;text/javascript&quot;&gt;
+
+   // vue2 &#x7684;&#x6570;&#x636E;&#x4EE3;&#x7406;  v-model &#x5B9E;&#x73B0;&#x539F;&#x7406; &#x6307;&#x5B9A;&#x8BBF;&#x95EE;&#x5668;
+
+     let number = &quot;&#x5357;&#x4EAC;&quot;;  
+
+     let person = {
+         name:&apos;&#x5F20;&#x4E09;&apos;,
+         age:18,
+       }
+      
+       //&#x4E0D;&#x80FD;&#x540C;&#x65F6;&#x6307;&#x5B9A;&#x8BBF;&#x95EE;&#x5668; &#x548C;   &#x503C;&#x6216;&#x53EF;&#x5199;&#x5C5E;&#x6027;
+       // &#x624B;&#x52A8;&#x7684;&#x8D4B;&#x503C;
+      Object.defineProperty(person,&quot;address&quot;,{
+          value:&apos;&#x6DF1;&#x5733;&apos;,      //&#x8D4B;&#x503C;
+          writable:true,     //&#x662F;&#x5426;&#x53EF;&#x5199;
+          configurable:true, //&#x662F;&#x5426;&#x53EF;&#x914D;&#x7F6E;
+          enumerable:true,    //&#x662F;&#x5426;&#x53EF;&#x904D;&#x5386;
+      })
+
+      //&#x6307;&#x5B9A;&#x8BBF;&#x95EE;&#x5668; &#x8BA9;address&#x503C;&#x4E00;&#x76F4;&#x7B49;&#x4E8E; number&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;
+      Object.defineProperty(person,&quot;address&quot;,{
+           //&#x91CD;&#x5199; get &#x65B9;&#x6CD5;
+           get:function(){
+              return number;
+          },
+          //&#x91CD;&#x5199; set &#x65B9;&#x6CD5;
+          set:function(value){
+              this.address = value;
+          }
+      })
+
+
+
+     console.log(Object.keys(person)) 
+
+
+ &lt;/script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+<pre class="line-numbers language-none"><code class="language-none">let a = {
+      x:100,
+  
+  }
+
+  let adl = {
+      x:300,
+      y:300,
+  }
+
+
+  //&#x4F7F;&#x7528; defineProperty &#x65B9;&#x6CD5;  &#x6539;&#x53D8;adl&#x7684;get set &#x65B9;&#x6CD5;
+  // &#x8BA9; adl &#x4EE3;&#x7406; a
+  Object.defineProperty(adl,&quot;x&quot;,{
+      get:function(){
+          return a.x;
+      },
+      set:function(value){
+          a.x = value;
+      }
+  })
+  
+  
+  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>1.data &#x8D4B;&#x503C; &#x7ED9; _data</p>
+<p>2.&#x5C06; _data&#x4E2D;&#x7684;&#x5C5E;&#x6027;&#x6DFB;&#x52A0;&#x5230;vm&#x5C5E;&#x6027;&#x4E2D;</p>
+<p>3.&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x52A0;&#x5230;vm&#x7684;&#x5C5E;&#x6027; &#x90FD;&#x6570;&#x636E;&#x4EE3;&#x7406;&#xFF08;get set&#xFF09;  &#x76F8;&#x5BF9;&#x5E94;&#x7684;_data&#x4E2D;&#x7684;&#x5C5E;&#x6027;</p>
+<p>4.vm_data&#x7684;&#x5C5E;&#x6027;&#x503C;&#x4E00;&#x65E6;&#x4FEE;&#x6539;&#xFF0C;&#x9875;&#x9762;&#x5C06;&#x91CD;&#x65B0;&#x6E32;&#x67D3;    &#x2014;-  &#x53CC;&#x5411;&#x7ED1;&#x5B9A;</p>
 <pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
@@ -754,22 +828,84 @@
         //vm &#x5C06; data&#x5BF9;&#x8C61; &#x8D4B;&#x503C;&#x7ED9; _data &#x5C5E;&#x6027;
         console.log(vm._data);
         console.log(vm._data === data);
-        //&#x73B0;&#x8C61; &#x901A;&#x8FC7;&#x5BF9; vm._data.message &#x4FEE;&#x6539;  data.message &#x4E5F;&#x4F1A;&#x53D8;&#x5316;,&#x4ECE;&#x800C;&#x9875;&#x9762;&#x4E0A; {{message}} &#x4E5F;&#x4F1A;&#x53D8;&#x5316;
-        // vm._data &#x5BF9; data&#x8FDB;&#x884C;&#x4E86;&#x6570;&#x636E;&#x4EE3;&#x7406;  &#x5C06;data&#x7684;&#x6570;&#x636E;&#x4EE3;&#x7406;&#x5230;vm._data&#x4E0A;
-        // &#x901A;&#x8FC7; defineProperty &#x65B9;&#x6CD5; &#x4FEE;&#x6539; vm._data &#x7684;get set &#x65B9;&#x6CD5;,&#x4F7F;&#x4E4B;&#x64CD;&#x4F5C; data&#x7684;&#x6570;&#x636E;,&#x6700;&#x540E; &#x9875;&#x9762;&#x4E0A;&#x7684;{{message}}&#x7ED1;&#x5B9A;&#x7684;&#x662F;				data,&#x6240;&#x4EE5;&#x4E5F;&#x4F1A;&#x53D1;&#x751F;&#x53D8;&#x5316;
-
+        //1.vm &#x5C06; data&#x5BF9;&#x8C61; &#x8D4B;&#x503C;&#x7ED9; _data &#x5C5E;&#x6027;
+        console.log(vm._data);
+        console.log(vm._data === data);
+        //2. vm.message &#x6570;&#x636E;&#x4EE3;&#x7406; vm._data.message   vm.name &#x6570;&#x636E;&#x4EE3;&#x7406; vm._data.name
 
 
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 
+vue &#x6E90;&#x7801;
+// &#x5C01;&#x88C5;&#x6570;&#x636E;&#x4EE3;&#x7406;&#x65B9;&#x6CD5;
+  function proxy (target, sourceKey, key) {
+    sharedPropertyDefinition.get = function proxyGetter () {
+      return this[sourceKey][key]
+    };
+    sharedPropertyDefinition.set = function proxySetter (val) {
+      this[sourceKey][key] = val;
+    };
+    Object.defineProperty(target, key, sharedPropertyDefinition);
+  }
+
+// &#x6570;&#x636E;&#x4EE3;&#x7406; _data 
+ function initData (vm) {
+    var data = vm.$options.data;
+    //data &#x8D4B;&#x503C; &#x7ED9; _data
+    data = vm._data = typeof data === &apos;function&apos;
+      ? getData(data, vm)
+      : data || {};
+      debugger;
+    if (!isPlainObject(data)) {
+      data = {};
+      warn(
+        &apos;data functions should return an object:\n&apos; +
+        &apos;https://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function&apos;,
+        vm
+      );
+    }
+    // proxy data on instance
+    var keys = Object.keys(data);
+    var props = vm.$options.props;
+    var methods = vm.$options.methods;
+    var i = keys.length;
+    while (i--) {
+      var key = keys[i];
+      {
+        if (methods &amp;&amp; hasOwn(methods, key)) {
+          warn(
+            (&quot;Method \&quot;&quot; + key + &quot;\&quot; has already been defined as a data property.&quot;),
+            vm
+          );
+        }
+      }
+      if (props &amp;&amp; hasOwn(props, key)) {
+        warn(
+          &quot;The data property \&quot;&quot; + key + &quot;\&quot; is already declared as a prop. &quot; +
+          &quot;Use prop default value instead.&quot;,
+          vm
+        );
+      } else if (!isReserved(key)) {
+//&#x5C06; _data&#x4E2D;&#x7684;&#x5C5E;&#x6027;&#x6DFB;&#x52A0;&#x5230;vm&#x5C5E;&#x6027;&#x4E2D;
+//&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x52A0;&#x5230;vm&#x7684;&#x5C5E;&#x6027; &#x90FD;&#x6570;&#x636E;&#x4EE3;&#x7406;&#xFF08;get set&#xFF09;  &#x76F8;&#x5BF9;&#x5E94;&#x7684;_data&#x4E2D;&#x7684;&#x5C5E;&#x6027;
+        proxy(vm, &quot;_data&quot;, key);
+      }
+    }
+    // observe data
+    observe(data, true /* asRootData */);
+  }
+
+
+
+
 //&#x8F93;&#x51FA;
 {__ob__: Observer}message: &#xFF08;&#x2026;&#xFF09;name: &#xFF08;&#x2026;&#xFF09;__ob__: Observer&#xA0;{value: {&#x2026;}, dep: Dep, vmCount: 1}get message: &#x192; reactiveGetter()set message: &#x192; reactiveSetter(newVal)get name: &#x192; reactiveGetter()set name: &#x192; reactiveSetter(newVal)[[Prototype]]: Object
 
 true
 vm._data.message=&quot;11&quot;
-&apos;11&apos;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&apos;11&apos;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -1316,7 +1452,7 @@ vm._data.message=&quot;11&quot;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">23.8k</span>
+                        class="white-color">24.2k</span>
             
             
             
