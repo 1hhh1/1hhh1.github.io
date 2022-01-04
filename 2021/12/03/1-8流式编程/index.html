@@ -486,7 +486,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.9k
+                    3.3k
                 </div>
                 
 
@@ -711,7 +711,27 @@ List&lt;String&gt; filterList = studentList.stream().filter(o -&gt; o.getAge() &
         .collect(Collectors.toList());
 System.out.println(&quot;&#x83B7;&#x53D6;&#x5E74;&#x9F84;&#x5927;&#x4E8E;18&#x7684;&#x5B66;&#x751F;&#x540D;&#x79F0;&#xFF1A;&quot; + filterList);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="3-groupingBy-&#xFF08;&#x5206;&#x7EC4;&#xFF09;&#x548C;-partitioningBy-&#x5206;&#x533A;"><a href="#3-groupingBy-&#xFF08;&#x5206;&#x7EC4;&#xFF09;&#x548C;-partitioningBy-&#x5206;&#x533A;" class="headerlink" title="3.groupingBy()&#xFF08;&#x5206;&#x7EC4;&#xFF09;&#x548C; partitioningBy()(&#x5206;&#x533A;)"></a>3.groupingBy()&#xFF08;&#x5206;&#x7EC4;&#xFF09;&#x548C; partitioningBy()(&#x5206;&#x533A;)</h2><pre class="line-numbers language-none"><code class="language-none">// 1.&#x6309;&#x5730;&#x533A;&#x5206;&#x7EC4;&#xFF0C;&#x5F97;&#x5230;&#x5B66;&#x751F;id&#x7684;Set&#x96C6;&#x5408;
+<h2 id="3-groupingBy-&#xFF08;&#x5206;&#x7EC4;&#xFF09;&#x548C;-partitioningBy-&#x5206;&#x533A;"><a href="#3-groupingBy-&#xFF08;&#x5206;&#x7EC4;&#xFF09;&#x548C;-partitioningBy-&#x5206;&#x533A;" class="headerlink" title="3.groupingBy()&#xFF08;&#x5206;&#x7EC4;&#xFF09;&#x548C; partitioningBy()(&#x5206;&#x533A;)"></a>3.groupingBy()&#xFF08;&#x5206;&#x7EC4;&#xFF09;&#x548C; partitioningBy()(&#x5206;&#x533A;)</h2><h3 id="3-4-groupingBy"><a href="#3-4-groupingBy" class="headerlink" title="3.4 groupingBy"></a>3.4 groupingBy</h3><p>&#x6309;&#x7167;&#x6761;&#x4EF6;&#x5BF9;&#x5143;&#x7D20;&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#xFF0C;&#x548C; <strong>SQL</strong> &#x4E2D;&#x7684; <code>group by</code> &#x7528;&#x6CD5;&#x6709;&#x5F02;&#x66F2;&#x540C;&#x5DE5;&#x4E4B;&#x5999;&#xFF0C;&#x901A;&#x5E38;&#x4E5F;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; <strong>Java</strong> &#x8FDB;&#x884C;&#x5206;&#x7EC4;&#x5904;&#x7406;&#x4EE5;&#x51CF;&#x8F7B;&#x6570;&#x636E;&#x5E93;&#x538B;&#x529B;&#x3002;<code>groupingBy</code> &#x4E5F;&#x6709;&#x4E09;&#x4E2A;&#x91CD;&#x8F7D;&#x65B9;&#x6CD5; &#x6211;&#x4EEC;&#x5C06; <code>servers</code> &#x6309;&#x7167;&#x957F;&#x5EA6;&#x8FDB;&#x884C;&#x5206;&#x7EC4;:</p>
+<pre class="line-numbers language-none"><code class="language-none">// &#x6309;&#x7167;&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#x8FDB;&#x884C;&#x5206;&#x7EC4;    &#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x5143;&#x7D20;&#x5C06;&#x7EC4;&#x6210;&#x4E00;&#x4E2A; List &#x6620;&#x5C04;&#x5230;&#x4EE5;&#x6761;&#x4EF6;&#x957F;&#x5EA6;&#x4E3A;key &#x7684; Map&lt;Integer, List&lt;String&gt;&gt; &#x4E2D;
+servers.stream.collect(Collectors.groupingBy(String::length))
+&#x590D;&#x5236;&#x4EE3;&#x7801;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>&#x5982;&#x679C;&#x6211;&#x4E0D;&#x60F3; <code>Map</code> &#x7684; <code>value</code> &#x4E3A; <code>List</code> &#x600E;&#x4E48;&#x529E;&#xFF1F; &#x4E0A;&#x9762;&#x7684;&#x5B9E;&#x73B0;&#x5B9E;&#x9645;&#x4E0A;&#x8C03;&#x7528;&#x4E86;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre class="line-numbers language-none"><code class="language-none"> //Map&lt;Integer, Set&lt;String&gt;&gt;
+ servers.stream.collect(Collectors.groupingBy(String::length, Collectors.toSet()))
+&#x590D;&#x5236;&#x4EE3;&#x7801;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>&#x6211;&#x8981;&#x8003;&#x8651;&#x540C;&#x6B65;&#x5B89;&#x5168;&#x95EE;&#x9898;&#x600E;&#x4E48;&#x529E;&#xFF1F; &#x5F53;&#x7136;&#x4F7F;&#x7528;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x540C;&#x6B65;&#x5BB9;&#x5668;&#x554A;&#xFF0C;&#x90A3;&#x524D;&#x4E24;&#x79CD;&#x90FD;&#x7528;&#x4E0D;&#x6210;&#x4E86;&#x5427;&#xFF01; &#x522B;&#x6025;&#xFF01; &#x6211;&#x4EEC;&#x6765;&#x63A8;&#x65AD;&#x4E00;&#x4E0B;&#xFF0C;&#x5176;&#x5B9E;&#x7B2C;&#x4E8C;&#x79CD;&#x7B49;&#x540C;&#x4E8E;&#x4E0B;&#x9762;&#x7684;&#x5199;&#x6CD5;:</p>
+<pre class="line-numbers language-none"><code class="language-none">Supplier&lt;Map&lt;Integer,Set&lt;String&gt;&gt;&gt; mapSupplier = HashMap::new;
+Map&lt;Integer,Set&lt;String&gt;&gt; collect = servers.stream.collect(Collectors.groupingBy(String::length, mapSupplier, Collec<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>&#x4EE5;&#x770B;&#x4F5C; <code>groupingBy</code> &#x7684;&#x4E00;&#x4E2A;&#x7279;&#x4F8B;&#xFF0C;&#x57FA;&#x4E8E;&#x65AD;&#x8A00;&#xFF08;<code>Predicate</code>&#xFF09;&#x7B56;&#x7565;&#x5206;&#x7EC4;&#x3002;&#x8FD9;&#x91CC;&#x4E0D;&#x518D;&#x4E3E;&#x4F8B;&#x8BF4;&#x660E;&#x3002;</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//Collectors.mapping(Student::getId, Collectors.toSet()))</span>
+<span class="token comment">// &#x6620;&#x5C04;&#x5BB9;&#x5668;   &#x5C06;&#x6D41;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;  map&#x6620;&#x5C04;&#x4E00;&#x4E0B;  &#x65B9;&#x6CD5; &#x521B;&#x5EFA;&#x7684;&#x96C6;&#x5408; set&#x4E2D; &#x5E76;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;set&#x96C6;&#x5408;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-none"><code class="language-none">// 1.&#x6309;&#x5730;&#x533A;&#x5206;&#x7EC4;&#xFF0C;&#x5F97;&#x5230;&#x5B66;&#x751F;id&#x7684;Set&#x96C6;&#x5408;
 Map&lt;String, Set&lt;Integer&gt;&gt; areaIdSetMap = studentList.stream().collect(Collectors.groupingBy(Student::getArea, Collectors.mapping(Student::getId, Collectors.toSet())));
 System.out.println(&quot;&#x6309;&#x5730;&#x533A;&#x5206;&#x7EC4;&#xFF0C;&#x5F97;&#x5230;&#x5B66;&#x751F;id&#x7684;Set&#x96C6;&#x5408;&#xFF1A;&quot; + areaIdSetMap);
 
@@ -739,11 +759,14 @@ System.out.println(&quot;&#x6C42;&#x5B66;&#x751F;&#x4E2D;&#x7684;&#x6700;&#x9AD8
 // 4.&#x4E00;&#x6B21;&#x6027;&#x7EDF;&#x8BA1;&#x5173;&#x4E8E;&#x5206;&#x6570;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;
 DoubleSummaryStatistics collect = studentList.stream().collect(Collectors.summarizingDouble(Student::getScore));
 System.out.println(&quot;&#x4E00;&#x6B21;&#x6027;&#x7EDF;&#x8BA1;&#x5173;&#x4E8E;&#x5206;&#x6570;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;&#xFF1A;&quot; + collect);
+
+&#x4E00;&#x6B21;&#x6027;&#x7EDF;&#x8BA1;&#x5173;&#x4E8E;&#x5206;&#x6570;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;&#xFF1A;DoubleSummaryStatistics{count=4, sum=355.000000, min=80.000000, average=88.750000, max=100.000000}
+
 // 5.&#x7EDF;&#x8BA1;&#x603B;&#x5206;&#x524D;3&#x7684;&#x5B66;&#x751F;&#x59D3;&#x540D;&#x5E76;&#x6253;&#x5370;&#x51FA;&#x6765;
 Map&lt;String, Integer&gt; map = new HashMap();
 studentList.stream().collect(Collectors.groupingBy(Student::getName))
         .forEach((k, v) -&gt; map.put(k, v.stream().collect(Collectors.summingInt(Student::getScore))));
-map.keySet().stream().sorted(Comparator.comparing(item-&gt;map.get(item)).reversed()).limit(3).collect(Collectors.toList()).forEach(item-&gt; System.out.println(item));<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+map.keySet().stream().sorted(Comparator.comparing(item-&gt;map.get(item)).reversed()).limit(3).collect(Collectors.toList()).forEach(item-&gt; System.out.println(item));<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="5-join-&#x8FDE;&#x63A5;-&#x548C;reduce-&#x6D53;&#x7F29;"><a href="#5-join-&#x8FDE;&#x63A5;-&#x548C;reduce-&#x6D53;&#x7F29;" class="headerlink" title="5.join() (&#x8FDE;&#x63A5;)&#x548C;reduce() (&#x6D53;&#x7F29;)"></a>5.join() (&#x8FDE;&#x63A5;)&#x548C;reduce() (&#x6D53;&#x7F29;)</h2><p>join():&#x5C06;&#x5143;&#x7D20;&#x7528;&#x8FDE;&#x63A5;&#x7B26;&#x8FDE;&#x63A5;&#x8D77;&#x6765; </p>
 <p>reduce():&#x5C06;&#x6D41;&#x6D53;&#x7F29;&#x6210;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x7528;&#x6765;&#x6C42;&#x548C;&#x3001;&#x6C42;&#x6700;&#x5927;&#x503C;&#x7B49;&#x64CD;&#x4F5C;</p>
@@ -1357,7 +1380,7 @@ o<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><s
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">27.9k</span>
+                        class="white-color">28.3k</span>
             
             
             
