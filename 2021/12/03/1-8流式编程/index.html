@@ -479,14 +479,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-07
+                    2022-01-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.6k
+                    2.8k
                 </div>
                 
 
@@ -509,7 +509,6 @@
                 <hr>
 <p>&#x6CA1;&#x6709;&#x7528; java8 stream &#x6D41;&#x5F0F;&#x7F16;&#x7A0B;&#x4E4B;&#x524D;,&#x6211;&#x4EEC;&#x7684;&#x4EE3;&#x7801;&#x91CC;&#x4F1A;&#x5145;&#x65A5;&#x7740;&#x5404;&#x79CD; for &#x5FAA;&#x73AF;,&#x7F16;&#x5199;&#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7801;&#x6548;&#x7387;&#x5DEE;&#x4E14;&#x7E41;&#x7410;&#xFF0C;&#x7A0D;&#x5FAE;&#x590D;&#x6742;&#x4E00;&#x70B9;&#x7684;&#x903B;&#x8F91;&#x4EE3;&#x7801;&#x9605;&#x8BFB;&#x8D77;&#x6765;&#x5C31;&#x4F1A;&#x5341;&#x5206;&#x96BE;&#x53D7;&#x3002;</p>
 <p>&#x7528;&#x4E86; java8 stream &#x6D41;&#x5F0F;&#x7F16;&#x7A0B;&#x4E4B;&#x540E;,&#x660E;&#x663E;&#x611F;&#x89C9;&#x7F16;&#x7801;&#x6548;&#x7387;&#x5927;&#x5927;&#x63D0;&#x5347;,&#x53EF;&#x4EE5;&#x505A;&#x5230;&#x5439;&#x6C34;1&#x5C0F;&#x65F6;&#xFF0C;&#x7F16;&#x7801;5&#x5206;&#x949F;&#xFF0C;&#x5E76;&#x4E14;&#x5199;&#x51FA;&#x6765;&#x7684;&#x4EE3;&#x7801;&#x9605;&#x8BFB;&#x8D77;&#x6765;&#x4E5F;&#x975E;&#x5E38;&#x6E05;&#x723D;&#x3002;</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/paRXy9ic0MZOiaz3RaZvKpqQFVT1Gg3pf7xt4VeV8y5gVibHNdpMznSX9hFDS3JNVcXOTZ516lOeWNdN9hX1PdmJQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="&#x56FE;&#x7247;"></p>
 <h1 id="1-&#x90A3;&#x4E48;-Stream-&#x662F;&#x4EC0;&#x4E48;&#x5462;"><a href="#1-&#x90A3;&#x4E48;-Stream-&#x662F;&#x4EC0;&#x4E48;&#x5462;" class="headerlink" title="1.&#x90A3;&#x4E48; Stream &#x662F;&#x4EC0;&#x4E48;&#x5462;"></a>1.&#x90A3;&#x4E48; Stream &#x662F;&#x4EC0;&#x4E48;&#x5462;</h1><p>Stream &#x662F; Java 8 API &#x4E2D;&#x6DFB;&#x52A0;&#x7684;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x8BED;&#x6CD5;&#x7CD6;,&#x8BA9;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x7528;&#x4E00;&#x79CD;&#x7533;&#x660E;&#x5F0F;&#x7684;&#x9A9A;&#x64CD;&#x4F5C;&#x6765;&#x5904;&#x7406;&#x6570;&#x636E;&#x3002;</p>
 <p>&#x7528;&#x8D77;&#x6765;&#x7684;&#x611F;&#x89C9;&#xFF0C;&#x50CF;&#x662F;&#x5C06;&#x4F60;&#x8981;&#x5904;&#x7406;&#x7684;<strong>&#x5143;&#x7D20;&#x96C6;&#x5408;</strong>&#x770B;&#x4F5C;&#x662F;<strong>&#x6C34;&#x6D41;</strong>&#xFF0C; &#x6C34;&#x5728;&#x7BA1;&#x9053;&#x4E2D;&#x6D41;&#x52A8;&#xFF0C; &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x7BA1;&#x9053;&#x7684;&#x5404;&#x8282;&#x70B9;&#x4E0A;&#x5BF9;&#x5143;&#x7D20;&#x6D41;&#x8FDB;&#x884C;&#x7B5B;&#x9009;&#xFF0C; &#x6392;&#x5E8F;&#xFF0C;&#x805A;&#x5408;&#x7B49;&#x64CD;&#x4F5C;&#x3002;</p>
 <p>&#x8FD9;&#x4E9B;&#x5143;&#x7D20;&#x96C6;&#x5408;&#x7ECF;&#x8FC7;&#x7BA1;&#x9053;&#x7684;<strong>&#x4E2D;&#x95F4;&#x64CD;&#x4F5C;</strong>&#x5904;&#x7406;&#xFF0C;&#x6700;&#x540E;&#x7531;<strong>&#x7EC8;&#x6B62;&#x64CD;&#x4F5C;</strong>&#x5F97;&#x5230;&#x6700;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
@@ -558,7 +557,7 @@ IntStream randomStream = new Random().ints(1,3).limit(3);
 randomStream.forEach(System.out::println);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="3-Stream-&#x7684;&#x4E2D;&#x95F4;&#x64CD;&#x4F5C;"><a href="#3-Stream-&#x7684;&#x4E2D;&#x95F4;&#x64CD;&#x4F5C;" class="headerlink" title="3.Stream &#x7684;&#x4E2D;&#x95F4;&#x64CD;&#x4F5C;"></a>3.Stream &#x7684;&#x4E2D;&#x95F4;&#x64CD;&#x4F5C;</h1><p>&#x8BE5;&#x64CD;&#x4F5C;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6D41;&#xFF0C;&#x76EE;&#x7684;&#x4E3B;&#x8981;&#x662F;&#x5BF9;&#x6D41;&#x505A;&#x6570;&#x636E;&#x6620;&#x5C04;&#x6216;&#x8005;&#x8FC7;&#x6EE4;&#x4E4B;&#x7C7B;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x4E4B;&#x540E;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6D41;&#xFF0C;&#x4EA4;&#x7ED9;&#x4E0B;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;&#x4F7F;&#x7528;&#x3002;&#x8FD9;&#x7C7B;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x60F0;&#x6027;&#x5316;&#x7684;&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x771F;&#x6B63;&#x5BF9;&#x6D41;&#x8FDB;&#x884C;&#x904D;&#x5386;&#x3002;&#x4E00;&#x4E2A;&#x6D41;&#x53EF;&#x4EE5;&#x540E;&#x9762;&#x8DDF;&#x968F; 0 &#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;&#x4E2D;&#x95F4;&#x64CD;&#x4F5C;&#x3002;</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/paRXy9ic0MZOiaz3RaZvKpqQFVT1Gg3pf7lIFJWtuvKiaicble7KI5OH9lm1sF0SW8o4H9pR01AZEmMhW3W1QFiaN5g/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="&#x56FE;&#x7247;"></p>
+<p><img src="/2021/12/03/1-8%E6%B5%81%E5%BC%8F%E7%BC%96%E7%A8%8B/stream1.png" alt="stream1"></p>
 <ul>
 <li>&#x65E0;&#x72B6;&#x6001;&#xFF1A;&#x5143;&#x7D20;&#x7684;&#x64CD;&#x4F5C;&#x4E0D;&#x4F9D;&#x8D56;&#x4E4B;&#x524D;&#x5143;&#x7D20;&#xFF0C;&#x4E0D;&#x53D7;&#x4E4B;&#x524D;&#x5143;&#x7D20;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x6CA1;&#x6709;&#x5185;&#x90E8;&#x72B6;&#x6001;&#xFF0C;&#x79F0;&#x4E3A;&#x65E0;&#x72B6;&#x6001;&#x64CD;&#x4F5C;</li>
 <li>&#x6709;&#x72B6;&#x6001;&#xFF1A;&#x53EA;&#x6709;&#x62FF;&#x5230;&#x6240;&#x6709;&#x7684;&#x5143;&#x7D20;&#x4E4B;&#x540E;&#x624D;&#x80FD;&#x7EE7;&#x7EED;&#x64CD;&#x4F5C;&#xFF0C;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x90FD;&#x9700;&#x8981;&#x5229;&#x7528;&#x5230;&#x4E4B;&#x524D;&#x5143;&#x7D20;&#x7684;&#x5185;&#x90E8;&#x72B6;&#x6001;&#xFF0C;&#x6240;&#x4EE5;&#x79F0;&#x4E3A;&#x6709;&#x72B6;&#x6001;&#x64CD;&#x4F5C;</li>
@@ -586,7 +585,7 @@ Stream.of(str.split(&quot; &quot;)).filter(e -&gt; e.length() &gt; 3)
         .collect(Collectors.toList());<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="4-Stream&#x7684;&#x7EC8;&#x6B62;&#x64CD;&#x4F5C;"><a href="#4-Stream&#x7684;&#x7EC8;&#x6B62;&#x64CD;&#x4F5C;" class="headerlink" title="4.Stream&#x7684;&#x7EC8;&#x6B62;&#x64CD;&#x4F5C;"></a>4.Stream&#x7684;&#x7EC8;&#x6B62;&#x64CD;&#x4F5C;</h1><p>&#x8BE5;&#x64CD;&#x4F5C;&#x624D;&#x4F1A;&#x8FD4;&#x56DE;&#x6700;&#x7EC8;&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x3002;&#x5F53;&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x5C31;&#x65E0;&#x6CD5;&#x7EE7;&#x7EED;&#x64CD;&#x4F5C;&#x4E86;&#x3002;&#x968F;&#x7740;&#x7EC8;&#x6B62;&#x64CD;&#x4F5C;&#x7684;&#x6267;&#x884C;&#xFF0C;&#x624D;&#x4F1A;&#x771F;&#x6B63;&#x5F00;&#x59CB;&#x6D41;&#x7684;&#x904D;&#x5386;&#xFF0C;&#x751F;&#x6210;&#x6267;&#x884C;&#x7ED3;&#x679C;&#xFF0C;&#x4E00;&#x4E2A;&#x6D41;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A;&#x7EC8;&#x6B62;&#x64CD;&#x4F5C;&#x3002;</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/paRXy9ic0MZOiaz3RaZvKpqQFVT1Gg3pf7loNGqZytaad4PbvgPUxSUQSFvvQqJx2uBIC9UPrVtLh8HdZDQ0ZB4A/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="&#x56FE;&#x7247;"></p>
+<p><img src="/2021/12/03/1-8%E6%B5%81%E5%BC%8F%E7%BC%96%E7%A8%8B/stream2.png" alt="stream2"></p>
 <ul>
 <li><p>&#x975E;&#x77ED;&#x8DEF;&#x64CD;&#x4F5C;&#xFF1A;&#x5FC5;&#x987B;&#x6240;&#x6709;&#x5143;&#x7D20;&#x90FD;&#x5904;&#x7406;&#x5B8C;&#x624D;&#x80FD;&#x5F97;&#x5230;&#x6700;&#x7EC8;&#x7684;&#x7ED3;&#x679C;</p>
 </li>
@@ -754,6 +753,44 @@ List&lt;String&gt; sortList3 = studentList.stream()
         .sorted(Comparator.comparing(Student::getScore).thenComparing(Student::getAge)).map(Student::getName)
         .collect(Collectors.toList());
 System.out.println(&quot;&#x5148;&#x6309;&#x5206;&#x6570;&#x518D;&#x6309;&#x5E74;&#x9F84;&#x5347;&#x5E8F;&#x6392;&#x5E8F;&#xFF1A;&quot; + sortList3);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="7-FlatMap-&#x6241;&#x5E73;&#x6D41;"><a href="#7-FlatMap-&#x6241;&#x5E73;&#x6D41;" class="headerlink" title="7.FlatMap (&#x6241;&#x5E73;&#x6D41;)"></a>7.FlatMap (&#x6241;&#x5E73;&#x6D41;)</h2><p><code>&lt;R&gt; Stream&lt;R&gt; flatMap(Function&lt;? super T,? extends Stream&lt;? extends R&gt;&gt; mapper)</code>&#x3002;</p>
+<p>&#x6B64;&#x65B9;&#x6CD5;&#x662F;&#x5C06;Stream&#x4E2D;&#x7684;<strong>&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x6620;&#x5C04;&#x6210; &#x4E00;&#x4E2A;&#x6D41;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x6BCF;&#x4E2A;&#x6D41;&#x7684;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x90FD;&#x53D6;&#x51FA;&#x6765;&#x5408;&#x5E76;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;&#x5408;&#x5E76;&#x540E;&#x7684;&#x65B0;&#x6D41;</strong>&#x3002;</p>
+<p><img src="/2021/12/03/1-8%E6%B5%81%E5%BC%8F%E7%BC%96%E7%A8%8B/FlatMap.png" alt="FlatMap"></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">    <span class="token comment">//FlatMap     &lt;R&gt; Stream&lt;R&gt; flatMap(Function&lt;? super T, ? extends Stream&lt;? extends R&gt;&gt; mapper);</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">&quot;tom&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;jame&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;jerry&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> stream <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Stream</span><span class="token operator">&lt;</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">&gt;</span> streamString <span class="token operator">=</span> stream<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>s<span class="token operator">-&gt;</span>s<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> map <span class="token operator">=</span> streamString<span class="token punctuation">.</span><span class="token function">flatMap</span><span class="token punctuation">(</span>e <span class="token operator">-&gt;</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//  Arrays.stream(e) &#x6570;&#x7EC4; &#x8F6C;&#x5316; &#x6D41;</span>
+        <span class="token comment">//&#x5C06; e &#x6620;&#x5C04;&#x6210; &#x6D41;  &#x5408;&#x5E76;&#x8D77;&#x6765;&#x8FD4;&#x56DE;&#x51FA;&#x53BB;</span>
+
+        map<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>x<span class="token operator">-&gt;</span><span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x8F93;&#x51FA;</span>
+t
+o
+m
+j
+a
+m
+e
+j
+e
+r
+r
+y
+h
+e
+l
+l
+o<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
                 
             </div>
             <hr/>
@@ -1304,7 +1341,7 @@ System.out.println(&quot;&#x5148;&#x6309;&#x5206;&#x6570;&#x518D;&#x6309;&#x5E74
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">27.5k</span>
+                        class="white-color">27.7k</span>
             
             
             
