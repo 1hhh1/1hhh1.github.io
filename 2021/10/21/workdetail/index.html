@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-17
+                    2022-01-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2.6k
                 </div>
                 
 
@@ -802,13 +802,115 @@ private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><spa
 
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x591A;&#x7EE7;&#x627F;-&#x63A5;&#x53E3;&#x4E2D;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;"><a href="#&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x591A;&#x7EE7;&#x627F;-&#x63A5;&#x53E3;&#x4E2D;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;" class="headerlink" title="&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x591A;&#x7EE7;&#x627F; &#x63A5;&#x53E3;&#x4E2D;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;"></a>&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x591A;&#x7EE7;&#x627F; &#x63A5;&#x53E3;&#x4E2D;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;</h3><p>//&#x63A5;&#x53E3;&#x4E2D;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;</p>
+<h4 id="&#x5B9A;&#x4E49;&#x9759;&#x6001;&#x65B9;&#x6CD5;"><a href="#&#x5B9A;&#x4E49;&#x9759;&#x6001;&#x65B9;&#x6CD5;" class="headerlink" title="&#x5B9A;&#x4E49;&#x9759;&#x6001;&#x65B9;&#x6CD5;"></a>&#x5B9A;&#x4E49;&#x9759;&#x6001;&#x65B9;&#x6CD5;</h4><p>&#x3000;&#x3000;&#x5728;&#x63A5;&#x53E3;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x4E0D;&#x662F;&#x62BD;&#x8C61;&#x7684;&#xFF0C;&#x662F;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x63A5;&#x53E3;&#x540D;&#x79F0;&#x8C03;&#x7528;&#x3002;</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">TestMethod</span> <span class="token punctuation">{</span>
+		<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ 
+   <span class="token comment">//1&#x3001;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x7684;&#x5E26;&#x6709;&#x65B9;&#x6CD5;&#x4F53;&#x7684;&#x65B9;&#x6CD5;</span>
+   <span class="token comment">//2&#x3001;&#x63A5;&#x53E3;&#x4E0D;&#x80FD;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#xFF0C;&#x8C03;&#x7528;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x4E0D;&#x9700;&#x8981;&#x5BF9;&#x8C61;</span>
+   <span class="token comment">//3&#x3001;&#x63A5;&#x53E3;&#x540D;&#x8C03;&#x7528;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&#x63A5;&#x53E3;&#x4E2D;&#x9759;&#x6001;&#x65B9;&#x6CD5;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+    
+<span class="token punctuation">}</span>
+
+&#x3000;
+   <span class="token operator">*</span> &#x63A5;&#x53E3;&#x540D;&#x79F0;&#xFF0C;&#x76F4;&#x63A5;&#x8C03;&#x7528;<span class="token operator">--</span><span class="token operator">-</span><span class="token class-name">TestMethod</span>&#xFF08;&#x63A5;&#x53E3;&#x540D;&#x79F0;&#xFF09;
+     <span class="token operator">/</span>
+        <span class="token comment">// TestMethod.method();</span>
+         
+     <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="&#x5B9A;&#x4E49;&#x666E;&#x901A;&#x65B9;&#x6CD5;"><a href="#&#x5B9A;&#x4E49;&#x666E;&#x901A;&#x65B9;&#x6CD5;" class="headerlink" title="&#x5B9A;&#x4E49;&#x666E;&#x901A;&#x65B9;&#x6CD5;"></a>&#x5B9A;&#x4E49;&#x666E;&#x901A;&#x65B9;&#x6CD5;</h4><p>&#x3000;&#x3000;<strong>&#x5728;&#x63A5;&#x53E3;&#x4E2D;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x666E;&#x901A;&#x65B9;&#x6CD5;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x4E0D;&#x8FC7;&#x4E0D;&#x662F;&#x62BD;&#x8C61;&#xFF0C;java8&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5173;&#x952E;&#x5B57;default</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//&#x5B9A;&#x4E49;&#x63A5;&#x53E3;&#x4E2D;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;</span>
+ 
+    <span class="token comment">/**
+     * &#x4E0D;&#x540C;&#x4E8E;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x9759;&#x6001;&#x65B9;&#x6CD5;
+     * &#x5BF9;&#x4E8E;&#x975E;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x8C03;&#x7528;
+     * &#x4F46;&#x662F;&#x63A5;&#x53E3;&#x662F;&#x4E0D;&#x80FD;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x540D;&#x6545;&#x800C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5B50;&#x7C7B;&#x6765;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">default</span> <span class="token keyword">void</span>  <span class="token function">methodDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
 
 
+ &#x4F7F;&#x7528;&#x5B50;&#x7C7B;&#x5BF9;&#x8C61;&#xFF0C;&#x8C03;&#x7528;&#x63A5;&#x53E3;&#x4E2D;&#x7684;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;
+        <span class="token class-name">Inter8Impl</span> inter8 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Inter8Impl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        inter8<span class="token punctuation">.</span><span class="token function">methodDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 
+<span class="token comment">//  &#x4F7F;&#x7528;&#x591A;&#x6001;&#x7684;&#x7279;&#x70B9;&#xFF0C;&#x63A5;&#x53E3;&#x6307;&#x5411;&#x81EA;&#x5DF1;&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#xFF0C;&#x8C03;&#x7528;&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;</span>
+        <span class="token class-name">TestMethod</span> i88<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Inter8Impl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        i88<span class="token punctuation">.</span><span class="token function">methodDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
+<h3 id="java&#x4E2D;&#x6B63;&#x5219;&#x5224;&#x65AD;"><a href="#java&#x4E2D;&#x6B63;&#x5219;&#x5224;&#x65AD;" class="headerlink" title="java&#x4E2D;&#x6B63;&#x5219;&#x5224;&#x65AD;"></a>java&#x4E2D;&#x6B63;&#x5219;&#x5224;&#x65AD;</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">compile</span><span class="token punctuation">(</span><span class="token string">&quot;^.{5,7}$&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">matcher</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span><span class="token function">getWh</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">matches</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">CustomException</span><span class="token punctuation">(</span><span class="token string">&quot;&#x65E0;&#x6CD5;&#x53D1;&#x8D77;&#x7533;&#x8BF7;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x7BA1;&#x7406;&#x5458;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
+
+
+<h3 id="SerializedLambda"><a href="#SerializedLambda" class="headerlink" title="SerializedLambda"></a>SerializedLambda</h3><p>  &#x63A5;&#x53E3;&#x7EE7;&#x627F;GetLambdaName &#x53EF;&#x4EE5;&#x8C03;&#x7528;getLambdaMethodName&#xFF08;&#xFF09;&#x83B7;&#x53D6;&#x5230; lambda&#x65B9;&#x6CD5;&#x540D;&#x79F0;</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
+ * @author lh
+ * @date 2022-01-11 17:06
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> serializableStreamDemo <span class="token punctuation">{</span>
+
+    <span class="token comment">//&#x5B9A;&#x4E49;&#x63A5;&#x53E3;</span>
+    <span class="token keyword">interface</span> <span class="token class-name">GetLambdaName</span> <span class="token keyword">extends</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">final</span> <span class="token keyword">static</span> <span class="token class-name">String</span> METHOD_NAME <span class="token operator">=</span> <span class="token string">&quot;writeReplace&quot;</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;</span>
+        <span class="token keyword">default</span> <span class="token class-name">String</span> <span class="token function">getLambdaMethodName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+            <span class="token class-name">String</span> implMethodName <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                <span class="token comment">//&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x7684;Class&#x5BF9;&#x8C61;</span>
+                <span class="token class-name">Class</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">GetLambdaName</span><span class="token punctuation">&gt;</span></span> aClass <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment">//&#x83B7;&#x53D6; writeReplace &#x65B9;&#x6CD5;</span>
+                <span class="token class-name">Method</span> method <span class="token operator">=</span> aClass<span class="token punctuation">.</span><span class="token function">getDeclaredMethod</span><span class="token punctuation">(</span>METHOD_NAME<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment">//&#x8BBE;&#x7F6E; &#x8BBF;&#x95EE;&#x6743;&#x9650;</span>
+                method<span class="token punctuation">.</span><span class="token function">setAccessible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment">//&#x6267;&#x884C;&#x65B9;&#x6CD5; &#x83B7;&#x53D6;  SerializedLambda</span>
+                <span class="token class-name">SerializedLambda</span> serializedLambda <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">SerializedLambda</span><span class="token punctuation">)</span> method<span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment">//&#x83B7;&#x53D6;&#x65B9;&#x6CD5;</span>
+                implMethodName <span class="token operator">=</span> serializedLambda<span class="token punctuation">.</span><span class="token function">getImplMethodName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+
+            <span class="token keyword">return</span> implMethodName<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+
+    <span class="token comment">//&#x4F7F;&#x7528;&#x65B9;&#x6CD5;  &#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x591A;&#x7EE7;&#x627F;</span>
+    <span class="token keyword">interface</span> <span class="token class-name">MyFunction</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">,</span> <span class="token class-name">R</span><span class="token punctuation">&gt;</span></span> <span class="token keyword">extends</span> <span class="token class-name">Function</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">,</span> <span class="token class-name">R</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">,</span> <span class="token class-name">GetLambdaName</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">final</span> <span class="token class-name">MyFunction</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> getUsername <span class="token operator">=</span> <span class="token class-name">User</span><span class="token operator">::</span><span class="token function">getUsername</span><span class="token punctuation">;</span>
+<span class="token comment">//        String lambdaMethodName = getUsername.getLambdaMethodName();</span>
+        <span class="token class-name">String</span> lambdaMethodName <span class="token operator">=</span> <span class="token string">&quot;getUsername&quot;</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>lambdaMethodName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> get <span class="token operator">=</span> <span class="token class-name">Introspector</span><span class="token punctuation">.</span><span class="token function">decapitalize</span><span class="token punctuation">(</span>lambdaMethodName<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">&quot;get&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>get<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -1084,6 +1186,55 @@ private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><spa
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2021/10/21/Linux%E5%B8%B8%E8%A7%84%E5%91%BD%E4%BB%A4/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/1hhh1/1hhh1.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="linux的常规命令">
+                        
+                        <span class="card-title">linux的常规命令</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            常用命令
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/linux/" class="post-category">
+                                    linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2021/10/21/mysql%E7%9A%84sql%E8%AF%AD%E6%B3%95/">
                     <div class="card-image">
                         
@@ -1100,9 +1251,9 @@ private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><spa
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1128,56 +1279,6 @@ private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><spa
                     
                     <a href="/tags/mybatis-xml/">
                         <span class="chip bg-color">mybatis xml</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/10/21/workdetail/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/1hhh1/1hhh1.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="workdetail">
-                        
-                        <span class="card-title">workdetail</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            工作总结
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Markdown/" class="post-category">
-                                    Markdown
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/work/">
-                        <span class="chip bg-color">work</span>
                     </a>
                     
                 </div>
@@ -1364,7 +1465,7 @@ private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><spa
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">29.1k</span>
+                        class="white-color">30.2k</span>
             
             
             
