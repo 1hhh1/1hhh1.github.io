@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-01-11
+                    2022-01-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.6k
+                    4.1k
                 </div>
                 
 
@@ -912,13 +912,282 @@ private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><spa
 
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="&#x89E3;&#x51B3;-json-&#x65E0;&#x5E8F;"><a href="#&#x89E3;&#x51B3;-json-&#x65E0;&#x5E8F;" class="headerlink" title="&#x89E3;&#x51B3; json  &#x65E0;&#x5E8F;"></a>&#x89E3;&#x51B3; json  &#x65E0;&#x5E8F;</h3><pre class="line-numbers language-none"><code class="language-none">//&#x89E3;&#x51B3; json&#x5B57;&#x7B26;&#x4E32; &#x65E0;&#x5E8F;
+JSONObject jsonObject = JSON.parseObject(s, Feature.OrderedField);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="&#x591A;&#x6001;&#x7684;&#x5E94;&#x7528;"><a href="#&#x591A;&#x6001;&#x7684;&#x5E94;&#x7528;" class="headerlink" title="&#x591A;&#x6001;&#x7684;&#x5E94;&#x7528;"></a>&#x591A;&#x6001;&#x7684;&#x5E94;&#x7528;</h2><h3 id="mybatis-&#x9274;&#x522B;&#x5668;&#x7684;&#x4F7F;&#x7528;"><a href="#mybatis-&#x9274;&#x522B;&#x5668;&#x7684;&#x4F7F;&#x7528;" class="headerlink" title="mybatis &#x9274;&#x522B;&#x5668;&#x7684;&#x4F7F;&#x7528;"></a>mybatis &#x9274;&#x522B;&#x5668;&#x7684;&#x4F7F;&#x7528;</h3><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token comment">&lt;!--    mybatis &#x9274;&#x522B;&#x5668; &#x591A;&#x6001;--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resultMap</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>orgResultMap<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com.example.provide.service.OrgNode<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>discriminator</span> <span class="token attr-name">javaType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>int<span class="token punctuation">&quot;</span></span> <span class="token attr-name">column</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>type<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>case</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>0<span class="token punctuation">&quot;</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com.example.provide.model.org.Department<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>case</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>case</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>com.example.provide.model.org.School<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>case</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>discriminator</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>resultMap</span><span class="token punctuation">&gt;</span></span>
+
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>getAll<span class="token punctuation">&quot;</span></span> <span class="token attr-name">resultMap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>orgResultMap<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    select * from org
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>&#x67E5;&#x51FA;&#x7684;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x591A;&#x6001;&#x5BF9;&#x5E94;&#xFF0C;&#x6839;&#x636E; type &#x7684;&#x503C;&#x6765;&#x5BF9;&#x5E94;</p>
+<p>0  &#x2013;&gt; department &#x90E8;&#x95E8;</p>
+<p>1 &#x2014;-&gt; school   &#x5B66;&#x6821;</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
+<span class="token annotation punctuation">@EqualsAndHashCode</span><span class="token punctuation">(</span>callSuper <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Accessors</span><span class="token punctuation">(</span>chain <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@ApiModel</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">&quot;Org&#x5BF9;&#x8C61;&quot;</span><span class="token punctuation">,</span> description<span class="token operator">=</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Org</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">long</span> serialVersionUID <span class="token operator">=</span> <span class="token number">1L</span><span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@ApiModelProperty</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">&quot;id&quot;</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@TableId</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">&quot;id&quot;</span><span class="token punctuation">,</span> type <span class="token operator">=</span> <span class="token class-name">IdType</span><span class="token punctuation">.</span>ASSIGN_UUID<span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> id<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@ApiModelProperty</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">&quot;&#x7236;ID&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> pid<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@ApiModelProperty</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">&quot;&#x540D;&#x79F0;&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@ApiModelProperty</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">&quot;&#x7C7B;&#x578B; 0: &#x90E8;&#x95E8; 1: &#x5B66;&#x6821;&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">Integer</span> type<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@ApiModelProperty</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">&quot;&#x63CF;&#x8FF0;&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> descr<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@JSONField</span><span class="token punctuation">(</span>serialize <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span>  <span class="token comment">//fastjson  &#x8BE5;&#x5B57;&#x6BB5;&#x5FFD;&#x7565;&#x5E8F;&#x5217;&#x5316;</span>
+    <span class="token annotation punctuation">@TableField</span><span class="token punctuation">(</span>exist <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Org</span><span class="token punctuation">&gt;</span></span> childrens<span class="token punctuation">;</span>
+
+
+<span class="token punctuation">}</span>
+
+
+<span class="token comment">/**
+ * @author lh  &#x63A5;&#x53E3;
+ * @date 2022-01-11 23:52
+ */</span> <span class="token comment">//fastjson  &#x6307;&#x5B9A;type &#x4EE5;&#x53CA;&#x4E24;&#x4E2A;&#x5B9E;&#x73B0;&#x7C7B; </span>
+<span class="token annotation punctuation">@JSONType</span><span class="token punctuation">(</span>typeKey <span class="token operator">=</span> <span class="token string">&quot;myType&quot;</span><span class="token punctuation">,</span>seeAlso <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token class-name">Department</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token class-name">School</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">OrgNode</span> <span class="token keyword">extends</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span>
+
+    <span class="token class-name">String</span> <span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token class-name">String</span> <span class="token function">getPid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@JSONField</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">&quot;ChildNodes&quot;</span><span class="token punctuation">)</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">OrgNode</span><span class="token punctuation">&gt;</span></span> <span class="token function">getChilds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@JSONField</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">&quot;ChildNodes&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">void</span> <span class="token function">setChilds</span><span class="token punctuation">(</span><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">OrgNode</span><span class="token punctuation">&gt;</span></span> list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+    <span class="token comment">/**
+     * @return &#x83B7;&#x53D6;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x6240;&#x6709;&#x5B50;&#x8282;&#x70B9;id &#x5305;&#x542B;&#x81EA;&#x5DF1;
+     */</span>
+    <span class="token annotation punctuation">@JSONField</span><span class="token punctuation">(</span>serialize <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token keyword">default</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> <span class="token function">getAllChildrens</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">OrgNode</span><span class="token punctuation">&gt;</span></span> childs <span class="token operator">=</span> <span class="token function">getChilds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">CollectionUtils</span><span class="token punctuation">.</span><span class="token function">isNotEmpty</span><span class="token punctuation">(</span>childs<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            childs<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>e <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
+<span class="token comment">//                list.add(e.getId());</span>
+                <span class="token comment">//&#x9012;&#x5F52; &#x8FD9;&#x91CC;&#x4E0D;&#x7528;&#x91CD;&#x590D;&#x6DFB;&#x52A0;</span>
+                    list<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getAllChildrens</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> list<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token comment">/**
+     * @return &#x83B7;&#x53D6;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x6240;&#x6709;&#x5B50;&#x8282;&#x70B9;id(&#x5B66;&#x6821;) &#x5305;&#x542B;&#x81EA;&#x5DF1;
+     */</span>
+    <span class="token annotation punctuation">@JSONField</span><span class="token punctuation">(</span>serialize <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> <span class="token function">getDownSchools</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span class="token punctuation">}</span>
 
 
 
+<span class="token comment">/**
+ * @author lh  &#x90E8;&#x95E8;&#x5B9E;&#x73B0;&#x7C7B;
+ * @date 2022-01-12 0:04
+ */</span> <span class="token comment">//fastjson  &#x6307;&#x5B9A;typeName  &#x5B57;&#x6BB5; myType:Department</span>
+<span class="token annotation punctuation">@JSONType</span><span class="token punctuation">(</span>typeKey <span class="token operator">=</span> <span class="token string">&quot;myType&quot;</span><span class="token punctuation">,</span>typeName <span class="token operator">=</span> <span class="token string">&quot;Department&quot;</span><span class="token punctuation">,</span>serialzeFeatures<span class="token operator">=</span><span class="token punctuation">{</span>
+        <span class="token class-name">SerializerFeature<span class="token punctuation">.</span>WriteClassName</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Department</span> <span class="token keyword">extends</span> <span class="token class-name">Org</span> <span class="token keyword">implements</span> <span class="token class-name">OrgNode</span> <span class="token punctuation">{</span>
 
 
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token annotation punctuation">@SuppressWarnings</span><span class="token punctuation">(</span><span class="token string">&quot;all&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">OrgNode</span><span class="token punctuation">&gt;</span></span> <span class="token function">getChilds</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token class-name">List</span><span class="token punctuation">)</span><span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getChildrens</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token annotation punctuation">@SuppressWarnings</span><span class="token punctuation">(</span><span class="token string">&quot;all&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setChilds</span><span class="token punctuation">(</span><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">OrgNode</span><span class="token punctuation">&gt;</span></span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">setChildrens</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">List</span><span class="token punctuation">)</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> <span class="token function">getDownSchools</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> idList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//&#x56E0;&#x4E3A; &#x662F;&#x90E8;&#x95E8;&#x5B9E;&#x73B0;&#x7C7B; &#x4E0D;&#x9700;&#x8981;&#x52A0;&#x5165;&#x81EA;&#x5DF1;&#x7684;id</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">OrgNode</span><span class="token punctuation">&gt;</span></span> childs <span class="token operator">=</span> <span class="token function">getChilds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">CollectionUtils</span><span class="token punctuation">.</span><span class="token function">isNotEmpty</span><span class="token punctuation">(</span>childs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">OrgNode</span> orgNode <span class="token operator">:</span> childs<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                idList<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span>orgNode<span class="token punctuation">.</span><span class="token function">getDownSchools</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> idList<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * @author lh
+ * @date 2022-01-12 0:03
+ */</span> <span class="token comment">//fastjson  &#x6307;&#x5B9A;&#x8BE5;&#x7C7B;&#x5E8F;&#x5217;&#x5316;&#x589E;&#x52A0;  &#x5B57;&#x6BB5; myType:School</span>
+<span class="token annotation punctuation">@JSONType</span><span class="token punctuation">(</span>typeKey <span class="token operator">=</span> <span class="token string">&quot;myType&quot;</span><span class="token punctuation">,</span>typeName <span class="token operator">=</span> <span class="token string">&quot;School&quot;</span><span class="token punctuation">,</span>serialzeFeatures<span class="token operator">=</span><span class="token punctuation">{</span>
+        <span class="token class-name">SerializerFeature<span class="token punctuation">.</span>WriteClassName</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">School</span> <span class="token keyword">extends</span> <span class="token class-name">Org</span> <span class="token keyword">implements</span> <span class="token class-name">OrgNode</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token annotation punctuation">@SuppressWarnings</span><span class="token punctuation">(</span><span class="token string">&quot;all&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">OrgNode</span><span class="token punctuation">&gt;</span></span> <span class="token function">getChilds</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token class-name">List</span><span class="token punctuation">)</span><span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">getChildrens</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token annotation punctuation">@SuppressWarnings</span><span class="token punctuation">(</span><span class="token string">&quot;all&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setChilds</span><span class="token punctuation">(</span><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">OrgNode</span><span class="token punctuation">&gt;</span></span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">setChildrens</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">List</span><span class="token punctuation">)</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> <span class="token function">getDownSchools</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> idList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        idList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">OrgNode</span><span class="token punctuation">&gt;</span></span> childs <span class="token operator">=</span> <span class="token function">getChilds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">CollectionUtils</span><span class="token punctuation">.</span><span class="token function">isNotEmpty</span><span class="token punctuation">(</span>childs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">OrgNode</span> orgNode <span class="token operator">:</span> childs<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                idList<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span>orgNode<span class="token punctuation">.</span><span class="token function">getDownSchools</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> idList<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="fastjson&#x591A;&#x6001;"><a href="#fastjson&#x591A;&#x6001;" class="headerlink" title="fastjson&#x591A;&#x6001;"></a>fastjson&#x591A;&#x6001;</h3><p>1.@JSONType&#x7684;&#x4F7F;&#x7528;  &#x5728;&#x5B9E;&#x4F53;&#x7C7B;&#x4E0A;&#x9762;&#xFF0C;</p>
+<p>@JSONType(includes = {&#x201C;name&#x201D;,&#x201D;sex&#x201D;})</p>
+<p>@JSONType(ignores ={&#x201C;id&#x201D;, &#x201C;sex&#x201D;})<br>&#x653E;&#x5728;&#x5B9E;&#x4F53;&#x7C7B;&#x4E2D;&#x5C31;&#x4F1A;&#x53EA;&#x88C5;&#x914D;&#x5217;&#x4E3E;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;</p>
+<p>2.@JSONField&#x7684;&#x4F7F;&#x7528;  &#x67D0;&#x4E9B;&#x5B57;&#x6BB5;&#x4E0A;&#x6216;&#x8005;&#x662F;&#x65B9;&#x6CD5;&#x4E0A;</p>
+<p>&#x653E;&#x5728;&#x65B9;&#x6CD5;&#x4E0A;&#x5373;&#x662F;&#x8BA9;&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x751F;&#x6210;&#x5B57;&#x6BB5;&#x8FD4;&#x56DE;&#x51FA;&#x53BB;&#xFF0C;&#x653E;&#x5728;&#x5B57;&#x6BB5;&#x4E0A;&#x5373;&#x662F;&#x6539;&#x53D8;&#x5B57;&#x6BB5;&#x7684;&#x540D;&#x79F0;&#x8FD4;&#x56DE;&#x51FA;&#x53BB;</p>
+<p>&#x653E;&#x5230;set&#x65B9;&#x6CD5;&#x4E0A;&#xFF0C;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x65F6;&#x5019;&#x5C06;&#x5BF9;&#x5E94;&#x7684;json&#x503C; &#x6267;&#x884C;set&#x65B9;&#x6CD5;&#x3002;</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@JSONField</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">&quot;appId&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">private</span> <span class="token class-name">String</span> appId<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>3.@JSONField(format = &#x201C;&#x201D;)   &#x67D0;&#x4E9B;&#x5B57;&#x6BB5;&#x4E0A;</p>
+<p>&#x5F53;&#x524D;&#x7AEF;&#x4F20;&#x8FC7;JSON&#x65F6;&#x95F4;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x60F3;&#x8F6C;&#x6210;Date&#xFF0C;&#x6216;&#x8005;&#x60F3;&#x6307;&#x5B9A;&#x8F6C;&#x6210;JSON&#x5B57;&#x7B26;&#x4E32;&#x65E5;&#x671F;&#x7684;&#x683C;&#x5F0F;&#x65F6;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x5230;&#x8FD9;&#x4E2A;&#x6CE8;&#x89E3;</p>
+<p>4.@JSONField(serialize = &#x5E03;&#x5C14;&#x7C7B;&#x578B;)</p>
+<p>&#x662F;&#x5426;&#x8981;&#x628A;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x5E8F;&#x5217;&#x5316;&#x6210;JSON&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;true</p>
+<p>5.@JSONField(deserialize = &#x5E03;&#x5C14;&#x7C7B;&#x578B;)</p>
+<p>&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x662F;&#x5426;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;true</p>
+<h3 id="redis-&#x8BBE;&#x7F6E;&#x5E8F;&#x5217;&#x5316;-&#x53EF;&#x4EE5;&#x53D6;&#x51FA;&#x65F6;-&#x5B9E;&#x73B0;&#x591A;&#x6001;&#x3002;"><a href="#redis-&#x8BBE;&#x7F6E;&#x5E8F;&#x5217;&#x5316;-&#x53EF;&#x4EE5;&#x53D6;&#x51FA;&#x65F6;-&#x5B9E;&#x73B0;&#x591A;&#x6001;&#x3002;" class="headerlink" title="redis &#x8BBE;&#x7F6E;&#x5E8F;&#x5217;&#x5316; &#x53EF;&#x4EE5;&#x53D6;&#x51FA;&#x65F6; &#x5B9E;&#x73B0;&#x591A;&#x6001;&#x3002;"></a>redis &#x8BBE;&#x7F6E;&#x5E8F;&#x5217;&#x5316; &#x53EF;&#x4EE5;&#x53D6;&#x51FA;&#x65F6; &#x5B9E;&#x73B0;&#x591A;&#x6001;&#x3002;</h3><p>json&#x5B57;&#x7B26;&#x4E32;&#x5B58;&#x50A8;&#x5230;redis&#xFF0C;redis&#x53D6;&#x51FA;&#x65F6;&#x76F4;&#x63A5;&#x591A;&#x6001;&#x3002;</p>
+<h3 id="jackon-&#x5E8F;&#x5217;&#x5316;"><a href="#jackon-&#x5E8F;&#x5217;&#x5316;" class="headerlink" title="jackon &#x5E8F;&#x5217;&#x5316;"></a>jackon &#x5E8F;&#x5217;&#x5316;</h3><p>&#x4F7F;&#x7528; @JsonTypeInfo  &#x5B9E;&#x73B0;&#x5E8F;&#x5217;&#x5316;&#x52A0;&#x5C5E;&#x6027; @JsonSubTypes &#x5B9E;&#x73B0; &#x53CD;&#x5E8F;&#x5217;&#x5316;&#x591A;&#x6001;</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**
+ * @author lh
+ * @date 2022-01-11 23:52
+ */</span>
+<span class="token annotation punctuation">@JsonTypeInfo</span><span class="token punctuation">(</span>use <span class="token operator">=</span> <span class="token class-name">JsonTypeInfo<span class="token punctuation">.</span>Id</span><span class="token punctuation">.</span>NAME<span class="token punctuation">,</span>property <span class="token operator">=</span> <span class="token string">&quot;myType&quot;</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@JsonSubTypes</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token annotation punctuation">@JsonSubTypes.Type</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token class-name">Department</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>name <span class="token operator">=</span> <span class="token string">&quot;department&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token annotation punctuation">@JsonSubTypes.Type</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token class-name">School</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>name <span class="token operator">=</span> <span class="token string">&quot;school&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">//@JSONType(typeKey = &quot;myType&quot;,seeAlso = {Department.class, School.class})</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">OrgNode</span> <span class="token keyword">extends</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Jackson&#x5177;&#x6709;*@JsonProperty*(&#x201C;name&#x201D;)&#x6279;&#x6CE8;,&#x8BE5;&#x6279;&#x6CE8;&#x53EF;&#x4EE5;&#x5E94;&#x7528;&#x4E8E;<em>&#x65B9;&#x6CD5;</em>-&#x8BE5;<em>&#x65B9;&#x6CD5;</em>&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x5C06;&#x5206;&#x914D;&#x7ED9;JSON&#x4E2D;&#x7684;&#x201D;name&#x201D;&#x53C2;&#x6570;. </p>
+<p>&#x53EF;&#x4EE5;&#x53EF;&#x4EE5;&#x7528;&#x5728;&#x5C5E;&#x6027;&#x4E0A;&#x3002;&#x76F8;&#x5F53;&#x4E8E;&#x53D6;&#x522B;&#x540D;</p>
+<pre class="line-numbers language-none"><code class="language-none">    @JsonProperty(&quot;childNodes&quot;)
+//    @JSONField(name = &quot;ChildNodes&quot;)
+    List&lt;OrgNode&gt; getChilds();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p> @JsonIgnore &#x5FFD;&#x7565;&#x5E8F;&#x5217;&#x5316;</p>
+<pre class="line-numbers language-none"><code class="language-none">   @JsonIgnore
+//    @JSONField(serialize = false)
+    default List&lt;String&gt; getAllChildrens(){<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p> <strong>&#x6CE8;&#x89E3;@JsonFormat&#x4E3B;&#x8981;&#x662F;&#x540E;&#x53F0;&#x5230;&#x524D;&#x53F0;&#x7684;&#x65F6;&#x95F4;&#x683C;&#x5F0F;&#x7684;&#x8F6C;&#x6362;</strong></p>
+<p> <strong>&#x6CE8;&#x89E3;@DateTimeFormat&#x4E3B;&#x8981;&#x662F;&#x524D;&#x540E;&#x5230;&#x540E;&#x53F0;&#x7684;&#x65F6;&#x95F4;&#x683C;&#x5F0F;&#x7684;&#x8F6C;&#x6362;</strong></p>
+<p>@JsonFormat</p>
+<p>Jackson &#x6846;&#x67B6;&#x63D0;&#x4F9B;&#x7684;&#x6CE8;&#x89E3;&#xFF0C;&#x5C06;Date&#x5BF9;&#x8C61;&#x6570;&#x636E;&#x89E3;&#x6790;&#x8F6C;&#x6362;&#x4E3A;JSON&#x683C;&#x5F0F;&#xFF0C;&#x8BE5;&#x6CE8;&#x89E3;&#x7528;&#x4E8E;Date&#x5B57;&#x6BB5;&#x5373;&#x53EF;&#xFF0C;&#x540C;&#x65F6;&#x6307;&#x5B9A;&#x671F;&#x671B;JSON&#x65E5;&#x671F;&#x7684;&#x683C;&#x5F0F;</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Pc</span><span class="token punctuation">{</span>    
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>        
+        <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+        <span class="token annotation punctuation">@JsonFormat</span><span class="token punctuation">(</span>timezone <span class="token operator">=</span> <span class="token string">&quot;GMT+8&quot;</span><span class="token punctuation">,</span> pattern <span class="token operator">=</span> <span class="token string">&quot;yyyy-MM-dd&quot;</span><span class="token punctuation">)</span> 
+        <span class="token keyword">private</span> <span class="token class-name">Date</span> birthday<span class="token punctuation">;</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+    <span class="token comment">// &#x6D4B;&#x8BD5; &#x5C06; Date&#x65E5;&#x671F;&#x6570;&#x636E; &#x8F6C;&#x6362;&#x4E3A; JSON&#x683C;&#x5F0F;&#x6570;&#x636E;</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">&quot;/demo2&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Pc</span> <span class="token function">demo2</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestBody</span> <span class="token class-name">Pc</span> pc<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        pc<span class="token punctuation">.</span><span class="token function">setBirthday</span><span class="token punctuation">(</span><span class="token class-name">DateTime</span><span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Brithday: &quot;</span> <span class="token operator">+</span> pc<span class="token punctuation">.</span><span class="token function">getBirthday</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Name: &quot;</span> <span class="token operator">+</span> pc<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> pc<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+&#x5411; http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>localhost<span class="token operator">:</span><span class="token number">8080</span><span class="token operator">/</span>demo2 &#x53D1;&#x9001;POST&#x8BF7;&#x6C42;&#xFF0C;&#x8BF7;&#x6C42;&#x4F53;&#x4E2D;&#x7684;JSON&#x6570;&#x636E;&#x4E3A;<span class="token operator">:</span>
+
+<span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Tony&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;birthday&quot;</span><span class="token operator">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+&#x53EF;&#x4EE5;&#x89C2;&#x5BDF;&#x5230;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x4E3A;<span class="token operator">:</span>
+
+<span class="token class-name">Brithday</span><span class="token operator">:</span> <span class="token number">2019</span><span class="token operator">-</span><span class="token number">07</span><span class="token operator">-</span><span class="token number">31</span> <span class="token number">17</span><span class="token operator">:</span><span class="token number">20</span><span class="token operator">:</span><span class="token number">04</span>
+    <span class="token class-name">Name</span><span class="token operator">:</span> <span class="token class-name">Tony</span>
+&#x800C;&#x54CD;&#x5E94;&#x4F53;&#x4E2D;&#x7684;JSON&#x5982;&#x4E0B;&#xFF1A;
+
+<span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Tony&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;birthday&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-07-31&quot;</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>@DateTimeFormat</p>
+<p>&#x6B64;&#x4E3A;Spring&#x6846;&#x67B6;&#x63D0;&#x4F9B;&#x7684;&#x6CE8;&#x89E3;&#xFF0C;&#x5C06;JSON&#x683C;&#x5F0F;&#x7684;&#x65E5;&#x671F;&#x4FE1;&#x606F;&#x4FE1;&#x606F;&#x89E3;&#x6790;&#x8F6C;&#x6362;&#x5E76;&#x7ED1;&#x5B9A;&#x5230;Date&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x8BE5;&#x6CE8;&#x89E3;&#x7528;&#x4E8E;Date&#x5B57;&#x6BB5;&#x5373;&#x53EF;&#xFF0C;&#x540C;&#x65F6;&#x6307;&#x5B9A;JSON&#x65E5;&#x671F;&#x7684;&#x683C;&#x5F0F;(pattern)</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">
+<span class="token keyword">class</span> <span class="token class-name">Pc</span><span class="token punctuation">{</span>    
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>        
+        <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+        <span class="token annotation punctuation">@DateTimeFormat</span><span class="token punctuation">(</span>pattern <span class="token operator">=</span> <span class="token string">&quot;yyyy-MM-dd&quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">private</span> <span class="token class-name">Date</span> birthday<span class="token punctuation">;</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token comment">// &#x6D4B;&#x8BD5;&#x63A5;&#x6536;json&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x65E5;&#x671F;&#x4FE1;&#x606F; &#x5C06;&#x5176;&#x89E3;&#x6790;&#x8F6C;&#x6362;&#x4E3A; Date</span>
+
+&#x5411; http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>localhost<span class="token operator">:</span><span class="token number">8080</span><span class="token operator">/</span>demo1 &#x53D1;&#x9001;POST&#x8BF7;&#x6C42;&#xFF0C;&#x8BF7;&#x6C42;&#x4F53;&#x4E2D;&#x7684;JSON&#x6570;&#x636E;&#x5982;&#x4E0B;<span class="token operator">:</span>
+
+<span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Aaron&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;birthday&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2001-06-08 11:22:33&quot;</span>
+<span class="token punctuation">}</span>
+&#x53EF;&#x4EE5;&#x89C2;&#x5BDF;&#x5230;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x4E3A;<span class="token operator">:</span>
+
+<span class="token class-name">Name</span><span class="token operator">:</span> <span class="token class-name">Aaron</span>
+    <span class="token class-name">Brithday</span><span class="token operator">:</span> <span class="token class-name">Fri</span> <span class="token class-name">Jun</span> <span class="token number">08</span> <span class="token number">00</span><span class="token operator">:</span><span class="token number">00</span><span class="token operator">:</span><span class="token number">00</span> CST <span class="token number">2001</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="&#x6811;&#x641C;&#x7D22;"><a href="#&#x6811;&#x641C;&#x7D22;" class="headerlink" title="&#x6811;&#x641C;&#x7D22;"></a>&#x6811;&#x641C;&#x7D22;</h2>
                 
             </div>
             <hr/>
@@ -1186,55 +1455,6 @@ private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><spa
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/10/21/Linux%E5%B8%B8%E8%A7%84%E5%91%BD%E4%BB%A4/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/1hhh1/1hhh1.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="linux的常规命令">
-                        
-                        <span class="card-title">linux的常规命令</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            常用命令
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/linux/" class="post-category">
-                                    linux
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2021/10/21/mysql%E7%9A%84sql%E8%AF%AD%E6%B3%95/">
                     <div class="card-image">
                         
@@ -1251,9 +1471,9 @@ private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><spa
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1279,6 +1499,56 @@ private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><spa
                     
                     <a href="/tags/mybatis-xml/">
                         <span class="chip bg-color">mybatis xml</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/10/21/workdetail/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/1hhh1/1hhh1.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="workdetail">
+                        
+                        <span class="card-title">workdetail</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            工作总结
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Markdown/" class="post-category">
+                                    Markdown
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/work/">
+                        <span class="chip bg-color">work</span>
                     </a>
                     
                 </div>
@@ -1465,7 +1735,7 @@ private Date effDatetime;<span aria-hidden="true" class="line-numbers-rows"><spa
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">30.2k</span>
+                        class="white-color">31.7k</span>
             
             
             
