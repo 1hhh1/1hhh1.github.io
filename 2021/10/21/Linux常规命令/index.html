@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-18
+                    2022-01-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    245
+                    424
                 </div>
                 
 
@@ -528,9 +528,16 @@ free -h
 <p>vim&#x7F16;&#x8F91;</p>
 <pre class="line-numbers language-none"><code class="language-none">:q! &#x9000;&#x51FA;&#x4E0D;&#x4FDD;&#x5B58;
 :wq! &#x4FDD;&#x5B58;&#x9000;&#x51FA;
+
+01	:w	write	&#x4FDD;&#x5B58;
+02	:q	quit	&#x9000;&#x51FA;
+03	:q!		&#x5F3A;&#x5236;&#x9000;&#x51FA;
+04	:wq	write &amp; quit	&#x4FDD;&#x5B58;&#x5E76;&#x9000;&#x51FA;
+05	:wq!		&#x5F3A;&#x5236;&#x4FDD;&#x5B58;&#x5E76;&#x9000;&#x51FA;
+06	:x		&#x4FDD;&#x5B58;&#x5E76;&#x9000;&#x51FA;
 &#x4ECE;&#x5F00;&#x5934;&#x641C;&#x7D22;
 &#x5728;&#x547D;&#x4EE4;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x8F93;&#x5165;/&#x4F60;&#x8981;&#x67E5;&#x627E;&#x7684;&#x5B57;&#x7B26;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>&#x5220;&#x9664;</p>
 <pre class="line-numbers language-none"><code class="language-none">rm -f + &#x6587;&#x4EF6;&#x540D;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -551,6 +558,17 @@ kill -9 pid
 </ul>
 <pre class="line-numbers language-none"><code class="language-none">nohup java -jar xxxx &gt; log.txt &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+
+
+<p>&#x5B89;&#x88C5;mysql</p>
+<p><strong>&#x67E5;&#x627E;&#x4E4B;&#x524D;&#x8001;&#x7248;&#x672C;mysql&#x7684;&#x76EE;&#x5F55;&#x3001;&#x5E76;&#x4E14;&#x5220;&#x9664;&#x8001;&#x7248;&#x672C;mysql&#x7684;&#x6587;&#x4EF6;&#x548C;&#x5E93;</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">find` `/ -name mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">rm` `-rf ``/var/lib/mysql
+rm` `-rf ``/var/lib/mysql
+rm` `-rf ``/usr/lib64/mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p> Failed to set datadir to &#x2018;/root/software/mysql-8.0/data/&#x2018; (OS errno: 13 - Permission denied)<br>2022-01-18T06:16:51.067458Z 0 [ERROR] [MY-013236] [Server] The designated data directory /root/software/mysql-8.0/data/ is unusable. You can remove all files that the server added to it.<br>2022-01-18T06:16:51.067498Z 0 [ERROR] [MY-010119] [Server] Aborting<br>2022-01-18T06:16:51.067602Z 0 [System] [MY-010910] [Server] /root/software/mysql-8.0/bin/mysqld: Shutdown complete (mysqld 8.0.20)  MySQL Community Server - GPL.</p>
 
                 
             </div>
@@ -1102,7 +1120,7 @@ kill -9 pid
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">31.7k</span>
+                        class="white-color">31.9k</span>
             
             
             
