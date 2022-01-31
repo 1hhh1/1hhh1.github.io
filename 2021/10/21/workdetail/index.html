@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-01-16
+                    2022-01-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.1k
+                    4.6k
                 </div>
                 
 
@@ -1187,7 +1187,49 @@ JSONObject jsonObject = JSON.parseObject(s, Feature.OrderedField);<span aria-hid
     <span class="token class-name">Brithday</span><span class="token operator">:</span> <span class="token class-name">Fri</span> <span class="token class-name">Jun</span> <span class="token number">08</span> <span class="token number">00</span><span class="token operator">:</span><span class="token number">00</span><span class="token operator">:</span><span class="token number">00</span> CST <span class="token number">2001</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="&#x6811;&#x641C;&#x7D22;"><a href="#&#x6811;&#x641C;&#x7D22;" class="headerlink" title="&#x6811;&#x641C;&#x7D22;"></a>&#x6811;&#x641C;&#x7D22;</h2>
+<h2 id="&#x6811;&#x641C;&#x7D22;"><a href="#&#x6811;&#x641C;&#x7D22;" class="headerlink" title="&#x6811;&#x641C;&#x7D22;"></a>&#x6811;&#x641C;&#x7D22;</h2><h2 id="springUtil"><a href="#springUtil" class="headerlink" title="springUtil"></a>springUtil</h2><h3 id="spring-&#x52A0;&#x8F7D;-&#x5982;&#x4F55;&#x5C06;&#x5916;&#x90E8;bean"><a href="#spring-&#x52A0;&#x8F7D;-&#x5982;&#x4F55;&#x5C06;&#x5916;&#x90E8;bean" class="headerlink" title="spring &#x52A0;&#x8F7D; &#x5982;&#x4F55;&#x5C06;&#x5916;&#x90E8;bean"></a>spring &#x52A0;&#x8F7D; &#x5982;&#x4F55;&#x5C06;&#x5916;&#x90E8;bean</h3><pre class="line-numbers language-none"><code class="language-none">springBoot &#x6269;&#x5C55;&#x673A;&#x5236; &#x2014;&#x2014;Spring.factories&#x6587;&#x4EF6; &#x5982;&#x4F55;&#x5C06;&#x5916;&#x90E8;&#x9879;&#x76EE;&#x52A0;&#x5165;Spring&#x5BB9;&#x5668;
+&#x25B6; &#x7B80;&#x4ECB;
+&#x7B80;&#x5355;&#x8BF4;&#x7528;&#x4E8E;&#x6A21;&#x5757;&#x4E4B;&#x95F4;&#x89E3;&#x8026;&#xFF0C;&#x5916;&#x90E8;&#x9879;&#x76EE;&#x4E0B;&#x5404;&#x79CD;&#x914D;&#x7F6E;&#x3001;&#x7C7B;&#x52A0;&#x5165;&#x5230;Spring&#x5BB9;&#x5668;&#x4E2D;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#xFF0C;&#x7C7B;&#x4F3C;JAVA&#x4E2D;SPI&#x673A;&#x5236;&#x3002;&#x673A;&#x5236;&#x81EA;&#x884C;&#x767E;&#x5EA6;&#x3002;
+&#x25B6; &#x65B9;&#x5F0F;
+&#x5C06;&#x5916;&#x90E8;&#x7C7B;&#x5F15;&#x5165;IOC&#x5BB9;&#x5668;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;
+1.@import
+2.&#x52A0;&#x5165;Spring.factories&#x6587;&#x4EF6; &#x2014; &#x4E3B;&#x8BB2;&#x8FD9;&#x4E2A;
+3.SpringFactoriesLoader&#x7C7B;&#x4F1A;&#x53BB;&#x626B;&#x63CF;&#x52A0;&#x8F7D;&#x6587;&#x4EF6;&#x4E0B;&#x5B9A;&#x4E49;&#x7C7B;&#xFF0C;&#x52A0;&#x5165;&#x5BB9;&#x5668;
+
+	org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  	com.mostsnails.common.base.utils.config.WebLogAutoConfiguration,\   //Configuration&#x914D;&#x7F6E;&#x7C7B;&#x4E2D;&#x7684;bean
+  	com.mostsnails.common.base.utils.config.RedisAutoConfiguration,\    //Configuration&#x914D;&#x7F6E;&#x7C7B;&#x4E2D;&#x7684;bean
+  	com.mostsnails.common.base.utils.test.TestClass                     //Component &#x4FEE;&#x9970;&#x7684;bean
+ 
+   
+
+&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;EnableAutoConfiguration &#xFF0C;SpringBoot&#x542F;&#x52A8;&#x7C7B;@SpringBootApplication&#x6CE8;&#x89E3;&#x5305;&#x4E0B;&#x6709;@EnableAutoConfiguration&#x548C;@ComponentScan &#x5177;&#x4F53;&#x4F5C;&#x7528;&#x5F00;&#x542F;&#x81EA;&#x52A8;&#x88C5;&#x5907;&#xFF0C;&#x5C06;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;@Configuration&#x914D;&#x7F6E;&#x52A0;&#x5165;&#x5230;SpringBoot&#x4E2D;
+
+@EnableAutoConfiguration&#x4E2D;@Import(AutoConfigurationImportSelector.class)
+AutoConfigurationImportSelector.class &#x52A0;&#x8F7D; Spring.factories &#x4E2D; bean &#x52A0;&#x8F7D;&#x5230;&#x5BB9;&#x5668;&#x4E2D;
+
+Spring.factories&#x4E5F;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x5176;&#x4ED6;&#x7C7B;&#x578B;
+	# Initializers
+org.springframework.context.ApplicationContextInitializer=\
+org.springframework.boot.autoconfigure.SharedMetadataReaderFactoryContextInitializer,\
+org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener
+
+# Application Listeners
+org.springframework.context.ApplicationListener=\
+org.springframework.boot.autoconfigure.BackgroundPreinitializer
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="AopContext"><a href="#AopContext" class="headerlink" title="AopContext"></a>AopContext</h3><p>&#x539F;&#x6765;&#x5728;springAOP&#x7684;&#x7528;&#x6CD5;&#x4E2D;&#xFF0C;&#x53EA;&#x6709;&#x4EE3;&#x7406;&#x7684;&#x7C7B;&#x624D;&#x4F1A;&#x88AB;&#x5207;&#x5165;&#xFF0C;&#x6211;&#x4EEC;&#x5728;controller&#x5C42;&#x8C03;&#x7528;service&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x662F;&#x53EF;&#x4EE5;&#x88AB;&#x5207;&#x5165;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5728;service&#x5C42; A&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x8C03;&#x7528;B&#x65B9;&#x6CD5;&#xFF0C;&#x5207;&#x70B9;&#x5207;&#x7684;&#x662F;B&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x65F6;&#x5019;&#x662F;&#x4E0D;&#x4F1A;&#x5207;&#x5165;&#x7684;&#xFF0C;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x5C31;&#x662F;&#x5982;&#x4E0A;&#x6240;&#x793A;&#xFF0C;&#x5728;A&#x65B9;&#x6CD5;&#x4E2D;&#x4F7F;&#x7528;((Service)AopContext.currentProxy()).B() &#x6765;&#x8C03;&#x7528;B&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x6837;&#x4E00;&#x6765;&#xFF0C;&#x5C31;&#x80FD;&#x5207;&#x5165;&#x4E86;&#xFF01;</p>
+<pre class="line-numbers language-none"><code class="language-none">@EnableAspectJAutoProxy(exposeProxy = true)//&#x5F00;&#x542F;spring&#x6CE8;&#x89E3;aop&#x914D;&#x7F6E;&#x7684;&#x652F;&#x6301;
+public class SpringConfiguration {
+}
+
+
+AopContext.currentProxy()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="&#x4E1A;&#x52A1;&#x9700;&#x6C42;"><a href="#&#x4E1A;&#x52A1;&#x9700;&#x6C42;" class="headerlink" title="&#x4E1A;&#x52A1;&#x9700;&#x6C42;"></a>&#x4E1A;&#x52A1;&#x9700;&#x6C42;</h2><p>&#x8BA2;&#x5355;&#x670D;&#x52A1;    &#x2014;&#x2014;&#x2013;&gt;     &#x7528;&#x6237;&#x670D;&#x52A1;    &#x7EC4;&#x88C5;&#x7528;&#x6237;&#x59D3;&#x540D;&#x4FE1;&#x606F;</p>
+<p>&#x8BA2;&#x5355;&#x670D;&#x52A1; &#x901A;&#x8FC7; &#x8C03;&#x7528; feign   &#x2014;&#x2013;&gt;&#x8BF7;&#x6C42; &#x7528;&#x6237;&#x670D;&#x52A1;</p>
+<h2 id="&#x4EE3;&#x7406;-&#xFF08;&#xFF09;"><a href="#&#x4EE3;&#x7406;-&#xFF08;&#xFF09;" class="headerlink" title="&#x4EE3;&#x7406; &#xFF08;&#xFF09;"></a>&#x4EE3;&#x7406; &#xFF08;&#xFF09;</h2>
                 
             </div>
             <hr/>
@@ -1735,7 +1777,7 @@ JSONObject jsonObject = JSON.parseObject(s, Feature.OrderedField);<span aria-hid
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">32.6k</span>
+                        class="white-color">33.1k</span>
             
             
             
