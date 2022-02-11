@@ -483,14 +483,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-01-19
+                    2022-02-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.7k
+                    3.2k
                 </div>
                 
 
@@ -809,8 +809,34 @@ END
 <p><img src="/2021/10/21/mysql%E7%9A%84sql%E8%AF%AD%E6%B3%95/E:\&#x5DE5;&#x4F5C;&#x968F;&#x7B14;\MyNotes\myBlog\source_posts\mysql&#x7684;sql&#x8BED;&#x6CD5;\image-20220104151729858.png" alt="image-20220104151729858"></p>
 <p><strong>association</strong>  &#x5BF9;&#x5E94;&#x5BF9;&#x8C61;  &#x4E00;&#x5BF9;&#x4E00;</p>
 <p><strong>collection</strong>  &#x4E00;&#x5BF9;&#x591A; </p>
-<p>&#x66F4;&#x591A;&#x5B50;&#x7C7B;</p>
-<p><a target="_blank" rel="noopener" href="https://app.yinxiang.com/fx/12ab2762-af6b-407e-8c4f-4e2a48770f59">https://app.yinxiang.com/fx/12ab2762-af6b-407e-8c4f-4e2a48770f59</a></p>
+<h3 id="&#x66F4;&#x591A;&#x6807;&#x7B7E;&#x3002;&#x3002;&#x3002;"><a href="#&#x66F4;&#x591A;&#x6807;&#x7B7E;&#x3002;&#x3002;&#x3002;" class="headerlink" title="&#x66F4;&#x591A;&#x6807;&#x7B7E;&#x3002;&#x3002;&#x3002;"></a>&#x66F4;&#x591A;&#x6807;&#x7B7E;&#x3002;&#x3002;&#x3002;</h3><p><a target="_blank" rel="noopener" href="https://app.yinxiang.com/fx/12ab2762-af6b-407e-8c4f-4e2a48770f59">https://app.yinxiang.com/fx/12ab2762-af6b-407e-8c4f-4e2a48770f59</a></p>
+<h3 id="exists"><a href="#exists" class="headerlink" title="exists"></a>exists</h3><p>&#x5148;&#x6267;&#x884C;&#x5916;&#x67E5;&#x8BE2;&#x518D;&#x6267;&#x884C;&#x5185;&#x67E5;&#x8BE2;&#x3002;&#x8FD9;&#x548C;&#x6211;&#x4EEC;&#x5B66;&#x7684;&#x5B50;&#x67E5;&#x8BE2;&#x6982;&#x5FF5;&#x5C31;&#x201C;&#x51B2;&#x7A81;&#x4E86;&#x201D;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x521A;&#x5B66;&#x5B8C;&#x5B50;&#x67E5;&#x8BE2;&#x540E;&#x518D;&#x5B66;exists&#xFF0C;&#x7B80;&#x76F4;&#x8BA9;&#x4EBA;&#x5D29;&#x6E83;</p>
+<pre class="line-numbers language-none"><code class="language-none">exists&#xFF08;sql&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x96C6;&#x4E3A;&#x771F;&#xFF09;
+not exists&#xFF08;sql&#x4E0D;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x96C6;&#x4E3A;&#x771F;&#x6216;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x96C6;&#x4E3A;&#x5047;&#xFF09;
+
+&#x8FD9;&#x770B;&#x7684;&#x633A;&#x61F5;&#x903C;&#x7684;&#xFF0C;&#x8FD9;&#x91CC;&#x8BE6;&#x7EC6;&#x7684;&#x89E3;&#x91CA;&#x4E0B;exists&#x548C;not exists&#x7684;&#x539F;&#x7406;&#x548C;&#x7528;&#x6CD5;&#x5427;&#x3002;
+
+select * from A where not exists(select * from B where A.id = B.id);
+select * from A where exists(select * from B where A.id = B.id);
+
+
+    &#x9996;&#x5148;&#x6211;&#x4EEC;&#x8981;&#x77E5;&#x9053;sql&#x8BED;&#x53E5;&#x4F7F;&#x7528;&#x4E86;exists&#x6216;not exists&#x540E;&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#xFF0C;&#x6CE8;&#x610F;&#xFF0C;&#x662F;&#x5148;&#x6267;&#x884C;&#x5916;&#x67E5;&#x8BE2;&#x518D;&#x6267;&#x884C;&#x5185;&#x67E5;&#x8BE2;&#x3002;&#x8FD9;&#x548C;&#x6211;&#x4EEC;&#x5B66;&#x7684;&#x5B50;&#x67E5;&#x8BE2;&#x6982;&#x5FF5;&#x5C31;&#x201C;&#x51B2;&#x7A81;&#x4E86;&#x201D;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x521A;&#x5B66;&#x5B8C;&#x5B50;&#x67E5;&#x8BE2;&#x540E;&#x518D;&#x5B66;exists&#xFF0C;&#x7B80;&#x76F4;&#x8BA9;&#x4EBA;&#x5D29;&#x6E83;&#x3002;
+
+
+&#x8BE6;&#x7EC6;&#x6B65;&#x9AA4;&#xFF08;&#x4F7F;&#x7528;exists&#xFF09;&#xFF1A;
+
+1&#xFF0C;&#x9996;&#x5148;&#x6267;&#x884C;&#x5916;&#x67E5;&#x8BE2;select * from A&#xFF0C;&#x7136;&#x540E;&#x4ECE;&#x5916;&#x67E5;&#x8BE2;&#x7684;&#x6570;&#x636E;&#x53D6;&#x51FA;&#x4E00;&#x6761;&#x6570;&#x636E;&#x4F20;&#x7ED9;&#x5185;&#x67E5;&#x8BE2;&#x3002;
+
+2&#xFF0C;&#x5185;&#x67E5;&#x8BE2;&#x6267;&#x884C;select * from B&#xFF0C;&#x5916;&#x67E5;&#x8BE2;&#x4F20;&#x5165;&#x7684;&#x6570;&#x636E;&#x548C;&#x5185;&#x67E5;&#x8BE2;&#x83B7;&#x5F97;&#x6570;&#x636E;&#x6839;&#x636E;where&#x540E;&#x9762;&#x7684;&#x6761;&#x4EF6;&#x505A;&#x5339;&#x5BF9;&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#x6570;&#x636E;&#x6EE1;&#x8DB3;A.id=B.id&#x5219;&#x8FD4;&#x56DE;true&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x6761;&#x90FD;&#x4E0D;&#x6EE1;&#x8DB3;&#x5219;&#x8FD4;&#x56DE;false&#x3002;
+
+3&#xFF0C;&#x5185;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;true&#xFF0C;&#x5219;&#x5916;&#x67E5;&#x8BE2;&#x7684;&#x8FD9;&#x884C;&#x6570;&#x636E;&#x4FDD;&#x7559;&#xFF0C;&#x53CD;&#x4E4B;&#x5185;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;false&#x5219;&#x5916;&#x67E5;&#x8BE2;&#x7684;&#x8FD9;&#x884C;&#x6570;&#x636E;&#x4E0D;&#x663E;&#x793A;&#x3002;&#x5916;&#x67E5;&#x8BE2;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#x9010;&#x884C;&#x67E5;&#x8BE2;&#x5339;&#x5BF9;&#x3002;
+
+not exists&#x548C;exists&#x7684;&#x7528;&#x6CD5;&#x76F8;&#x53CD;&#xFF0C;&#x5C31;&#x4E0D;&#x7EE7;&#x7EED;&#x5570;&#x55E6;&#x4E86;&#x3002;
+&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;
+&#x7248;&#x6743;&#x58F0;&#x660E;&#xFF1A;&#x672C;&#x6587;&#x4E3A;CSDN&#x535A;&#x4E3B;&#x300C;&#x522B;&#x55B7;&#x4E86;&#x6211;&#x4E0D;&#x4F1A;&#x300D;&#x7684;&#x539F;&#x521B;&#x6587;&#x7AE0;&#xFF0C;&#x9075;&#x5FAA;CC 4.0 BY-SA&#x7248;&#x6743;&#x534F;&#x8BAE;&#xFF0C;&#x8F6C;&#x8F7D;&#x8BF7;&#x9644;&#x4E0A;&#x539F;&#x6587;&#x51FA;&#x5904;&#x94FE;&#x63A5;&#x53CA;&#x672C;&#x58F0;&#x660E;&#x3002;
+&#x539F;&#x6587;&#x94FE;&#x63A5;&#xFF1A;https://blog.csdn.net/wankao/article/details/109366320<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>&#xFF1A;<a target="_blank" rel="noopener" href="https://blog.csdn.net/wankao/article/details/109366320">https://blog.csdn.net/wankao/article/details/109366320</a></p>
 
                 
             </div>
@@ -1358,7 +1384,7 @@ END
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">33.1k</span>
+                        class="white-color">33.6k</span>
             
             
             
