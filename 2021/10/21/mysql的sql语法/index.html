@@ -483,14 +483,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-02-11
+                    2022-02-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.2k
+                    3.5k
                 </div>
                 
 
@@ -538,6 +538,34 @@ base_warn_config
 CASE [col_name] WHEN [value1] THEN [result1]&#x2026;ELSE [default] END
 &#x641C;&#x7D22;&#x51FD;&#x6570;
 CASE WHEN [expr] THEN [result1]&#x2026;ELSE [default] END<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="MySQL-FIND-IN-SET&#x51FD;&#x6570;&#x7B80;&#x4ECB;"><a href="#MySQL-FIND-IN-SET&#x51FD;&#x6570;&#x7B80;&#x4ECB;" class="headerlink" title="MySQL FIND_IN_SET&#x51FD;&#x6570;&#x7B80;&#x4ECB;"></a>MySQL FIND_IN_SET&#x51FD;&#x6570;&#x7B80;&#x4ECB;</h2><pre class="line-numbers language-none"><code class="language-none">MySQL&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;FIND_IN_SET()&#x7684;&#x5185;&#x7F6E;&#x5B57;&#x7B26;&#x4E32;&#x51FD;&#x6570;&#xFF0C;&#x5141;&#x8BB8;&#x60A8;&#x5728;&#x9017;&#x53F7;&#x5206;&#x9694;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5217;&#x8868;&#x4E2D;&#x67E5;&#x627E;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x4F4D;&#x7F6E;&#x3002;
+
+&#x4E0B;&#x9762;&#x8BF4;&#x660E;&#x4E86;FIND_IN_SET()&#x51FD;&#x6570;&#x7684;&#x8BED;&#x6CD5;&#x3002;
+
+
+FIND_IN_SET(needle,haystack);
+FIND_IN_SET()&#x51FD;&#x6570;&#x63A5;&#x53D7;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;
+
+&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;needle&#x662F;&#x8981;&#x67E5;&#x627E;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;
+&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;haystack&#x662F;&#x8981;&#x641C;&#x7D22;&#x7684;&#x9017;&#x53F7;&#x5206;&#x9694;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5217;&#x8868;&#x3002;
+FIND_IN_SET()&#x51FD;&#x6570;&#x6839;&#x636E;&#x53C2;&#x6570;&#x7684;&#x503C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x6216;&#x4E00;&#x4E2A;NULL&#x503C;&#xFF1A;
+
+&#x5982;&#x679C;needle&#x6216;haystack&#x4E3A;NULL&#xFF0C;&#x5219;&#x51FD;&#x6570;&#x8FD4;&#x56DE;NULL&#x503C;&#x3002;
+&#x5982;&#x679C;needle&#x4E0D;&#x5728;haystack&#x4E2D;&#xFF0C;&#x6216;&#x8005;haystack&#x662F;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x96F6;&#x3002;
+&#x5982;&#x679C;needle&#x5728;haystack&#x4E2D;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6B63;&#x6574;&#x6570;&#x3002;
+&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x679C;needle&#x5305;&#x542B;&#x9017;&#x53F7;(&#xFF0C;)&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x5C06;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002; &#x6B64;&#x5916;&#xFF0C;&#x5982;&#x679C;needle&#x662F;&#x4E00;&#x4E2A;&#x5E38;&#x91CF;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x800C;&#x4E14;haystack&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x4E3A;SET&#x7684;&#x5217;&#xFF0C;MySQL&#x5C06;&#x4F7F;&#x7528;&#x4F4D;&#x7B97;&#x672F;&#x4F18;&#x5316;&#x3002;
+
+
+SELECT * FROM teacher WHERE FIND_IN_SET(&apos;&apos;,&apos;2,4&apos;)   null
+
+SELECT * FROM teacher WHERE FIND_IN_SET(&apos;2&apos;,&apos;2,4&apos;)   &#x6709;&#x503C;
+
+&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;
+&#x7248;&#x6743;&#x58F0;&#x660E;&#xFF1A;&#x672C;&#x6587;&#x4E3A;CSDN&#x535A;&#x4E3B;&#x300C;isxuran&#x300D;&#x7684;&#x539F;&#x521B;&#x6587;&#x7AE0;&#xFF0C;&#x9075;&#x5FAA;CC 4.0 BY-SA&#x7248;&#x6743;&#x534F;&#x8BAE;&#xFF0C;&#x8F6C;&#x8F7D;&#x8BF7;&#x9644;&#x4E0A;&#x539F;&#x6587;&#x51FA;&#x5904;&#x94FE;&#x63A5;&#x53CA;&#x672C;&#x58F0;&#x660E;&#x3002;
+&#x539F;&#x6587;&#x94FE;&#x63A5;&#xFF1A;https://blog.csdn.net/qq_21870555/article/details/81025374<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 
 <h3 id="&#x65F6;&#x95F4;&#x51FD;&#x6570;-DATE-ADD-date-INTERVAL-expr-unit"><a href="#&#x65F6;&#x95F4;&#x51FD;&#x6570;-DATE-ADD-date-INTERVAL-expr-unit" class="headerlink" title="&#x65F6;&#x95F4;&#x51FD;&#x6570;  DATE_ADD(date,INTERVAL expr unit)"></a>&#x65F6;&#x95F4;&#x51FD;&#x6570;  DATE_ADD(date,INTERVAL expr unit)</h3><pre class="line-numbers language-none"><code class="language-none">// &#x5F97;&#x5230;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x589E;&#x52A0;1&#x4E2A;&#x5C0F;&#x65F6;&#x7684;&#x7ED3;&#x679C;
 select date_add(now(),interval 1 hour)
@@ -1384,7 +1412,7 @@ not exists&#x548C;exists&#x7684;&#x7528;&#x6CD5;&#x76F8;&#x53CD;&#xFF0C;&#x5C31;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">35.3k</span>
+                        class="white-color">943.4k</span>
             
             
             
