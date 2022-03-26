@@ -479,14 +479,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-24
+                    2022-03-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    2.7k
                 </div>
                 
 
@@ -823,6 +823,43 @@ EXPOSE 6001<span aria-hidden="true" class="line-numbers-rows"><span></span><span
 <p>&#x8BBF;&#x95EE;&#x5730;&#x5740;</p>
 <p><a target="_blank" rel="noopener" href="http://124.223.102.148:8013/getTest">http://124.223.102.148:8013/getTest</a></p>
 <h3 id="docker-net"><a href="#docker-net" class="headerlink" title="docker net"></a>docker net</h3><p><img src="/2022/02/18/docker%E6%95%99%E7%A8%8B/C:\Users\17292\AppData\Roaming\Typora\typora-user-images\image-20220324204256854.png" alt="image-20220324204256854"></p>
+<h3 id="docker-&#x5BB9;&#x5668;&#x7F16;&#x6392;"><a href="#docker-&#x5BB9;&#x5668;&#x7F16;&#x6392;" class="headerlink" title="docker &#x5BB9;&#x5668;&#x7F16;&#x6392;"></a>docker &#x5BB9;&#x5668;&#x7F16;&#x6392;</h3><p><strong>&#x591A;&#x5BB9;&#x5668;&#x90E8;&#x7F72;&#x7684;&#x5DE5;&#x5177;</strong></p>
+<p>&#x4F8B;&#x5982;&#x8981;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;Web&#x5FAE;&#x670D;&#x52A1;&#x9879;&#x76EE;&#xFF0C;&#x9664;&#x4E86;Web&#x670D;&#x52A1;&#x5BB9;&#x5668;&#x672C;&#x8EAB;&#xFF0C;&#x5F80;&#x5F80;&#x8FD8;&#x9700;&#x8981;&#x518D;&#x52A0;&#x4E0A;&#x540E;&#x7AEF;&#x7684;&#x6570;&#x636E;&#x5E93;mysql&#x670D;&#x52A1;&#x5BB9;&#x5668;&#xFF0C;redis&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x6CE8;&#x518C;&#x4E2D;&#x5FC3;eureka&#xFF0C;&#x751A;&#x81F3;&#x8FD8;&#x5305;&#x62EC;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x5BB9;&#x5668;&#x7B49;&#x7B49;&#x3002;&#x3002;&#x3002;&#x3002;&#x3002;&#x3002;</p>
+<p>Compose&#x5141;&#x8BB8;&#x7528;&#x6237;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;<strong>docker-compose.yml</strong>&#x6A21;&#x677F;&#x6587;&#x4EF6;&#xFF08;YAML &#x683C;&#x5F0F;&#xFF09;&#x6765;&#x5B9A;&#x4E49;<strong>&#x4E00;&#x7EC4;&#x76F8;&#x5173;&#x8054;&#x7684;&#x5E94;&#x7528;&#x5BB9;&#x5668;</strong>&#x4E3A;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#xFF08;project&#xFF09;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x5730;&#x7528;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x591A;&#x5BB9;&#x5668;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x5B89;&#x88C5;&#x8FD9;&#x4E2A;&#x5E94;&#x7528;&#x7684;&#x6240;&#x6709;&#x4F9D;&#x8D56;&#xFF0C;&#x5B8C;&#x6210;&#x6784;&#x5EFA;&#x3002;Docker-Compose &#x89E3;&#x51B3;&#x4E86;&#x5BB9;&#x5668;&#x4E0E;&#x5BB9;&#x5668;&#x4E4B;&#x95F4;&#x5982;&#x4F55;&#x7BA1;&#x7406;&#x7F16;&#x6392;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x5B9E;&#x64CD;</p>
+<p><img src="/2022/02/18/docker%E6%95%99%E7%A8%8B/docker%E6%95%99%E7%A8%8B%5Cimage-20220326160133835.png" alt="image-20220326160133835"></p>
+<p><img src="/2022/02/18/docker%E6%95%99%E7%A8%8B/docker%E6%95%99%E7%A8%8B%5Cimage-20220326160348213.png" alt="image-20220326160348213"></p>
+<pre class="line-numbers language-none"><code class="language-none">Compose&#x5E38;&#x7528;&#x547D;&#x4EE4;
+
+docker-compose -h                           # &#x67E5;&#x770B;&#x5E2E;&#x52A9;
+
+docker-compose up                           # &#x542F;&#x52A8;&#x6240;&#x6709;docker-compose&#x670D;&#x52A1;
+
+docker-compose up -d                        # &#x542F;&#x52A8;&#x6240;&#x6709;docker-compose&#x670D;&#x52A1;&#x5E76;&#x540E;&#x53F0;&#x8FD0;&#x884C;
+
+docker-compose down                         # &#x505C;&#x6B62;&#x5E76;&#x5220;&#x9664;&#x5BB9;&#x5668;&#x3001;&#x7F51;&#x7EDC;&#x3001;&#x5377;&#x3001;&#x955C;&#x50CF;&#x3002;
+
+docker-compose exec  yml&#x91CC;&#x9762;&#x7684;&#x670D;&#x52A1;id                 # &#x8FDB;&#x5165;&#x5BB9;&#x5668;&#x5B9E;&#x4F8B;&#x5185;&#x90E8;  docker-compose exec docker-compose.yml&#x6587;&#x4EF6;&#x4E2D;&#x5199;&#x7684;&#x670D;&#x52A1;id /bin/bash
+
+docker-compose ps                      # &#x5C55;&#x793A;&#x5F53;&#x524D;docker-compose&#x7F16;&#x6392;&#x8FC7;&#x7684;&#x8FD0;&#x884C;&#x7684;&#x6240;&#x6709;&#x5BB9;&#x5668;
+
+docker-compose top                     # &#x5C55;&#x793A;&#x5F53;&#x524D;docker-compose&#x7F16;&#x6392;&#x8FC7;&#x7684;&#x5BB9;&#x5668;&#x8FDB;&#x7A0B;
+
+ 
+
+docker-compose logs  yml&#x91CC;&#x9762;&#x7684;&#x670D;&#x52A1;id     # &#x67E5;&#x770B;&#x5BB9;&#x5668;&#x8F93;&#x51FA;&#x65E5;&#x5FD7;
+
+docker-compose config     # &#x68C0;&#x67E5;&#x914D;&#x7F6E;
+
+docker-compose config -q  # &#x68C0;&#x67E5;&#x914D;&#x7F6E;&#xFF0C;&#x6709;&#x95EE;&#x9898;&#x624D;&#x6709;&#x8F93;&#x51FA;
+
+docker-compose restart   # &#x91CD;&#x542F;&#x670D;&#x52A1;
+
+docker-compose start     # &#x542F;&#x52A8;&#x670D;&#x52A1;
+
+docker-compose stop      # &#x505C;&#x6B62;&#x670D;&#x52A1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><strong>k8s docker</strong> </p>
 
                 
@@ -1359,7 +1396,7 @@ EXPOSE 6001<span aria-hidden="true" class="line-numbers-rows"><span></span><span
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">949.3k</span>
+                        class="white-color">949.7k</span>
             
             
             
