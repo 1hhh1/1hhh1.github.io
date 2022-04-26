@@ -479,14 +479,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-05
+                    2022-04-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.7k
+                    5.2k
                 </div>
                 
 
@@ -673,6 +673,199 @@ for(int i=0; i&lt; 1000; i++)
 <p>&#x7B2C;&#x4E00;&#x4E2A; &#x7B2C;&#x4E8C;&#x4E2A;  order  by &#x540E;&#x9762; &#x6700;&#x4F73;&#x5DE6;&#x524D;&#x7F00;&#x5339;&#x914D;</p>
 <p>&#x7B2C;&#x4E09;&#x4E2A; sql &#x8303;&#x56F4;&#x4E4B;&#x540E; &#x7D22;&#x5F15;&#x5931;&#x6548;</p>
 <p>&#x7B2C;&#x56DB;&#x4E2A; order by &#x540E;&#x9762;  birth,age  &#x548C; &#x8054;&#x5408;&#x7D22;&#x5F15;&#x987A;&#x5E8F; &#x76F8;&#x53CD;  age&#xFF0C;birth    </p>
+<h3 id="3-group-by&#x5206;&#x7EC4;&#x4F18;&#x5316;"><a href="#3-group-by&#x5206;&#x7EC4;&#x4F18;&#x5316;" class="headerlink" title="3.group by&#x5206;&#x7EC4;&#x4F18;&#x5316;"></a>3.group by&#x5206;&#x7EC4;&#x4F18;&#x5316;</h3><p><img src="/2021/11/03/mysql-%E4%BC%98%E5%8C%96-%E7%B4%A2%E5%BC%95/image-20220409164420089.png" alt="image-20220409164420089"></p>
+<h3 id="4-&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;"><a href="#4-&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;" class="headerlink" title="4.&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;"></a>4.&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;</h3><p>MySQL&#x7684;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x662F;MySQL&#x63D0;&#x4F9B;&#x7684;&#x4E00;&#x79CD;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#xFF0C;&#x5B83;&#x7528;&#x6765;&#x8BB0;&#x5F55;&#x5728;MySQL&#x4E2D;&#x54CD;&#x5E94;&#x65F6;&#x95F4;&#x8D85;&#x8FC7;&#x9600;&#x503C;&#x7684;&#x8BED;&#x53E5;&#xFF0C;&#x5177;&#x4F53;&#x6307;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#x8D85;&#x8FC7;long_query_time&#x503C;&#x7684;SQL&#xFF0C;&#x5219;&#x4F1A;&#x88AB;&#x8BB0;&#x5F55;&#x5230;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x4E2D;&#x3002;long_query_time&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;10&#xFF0C;&#x610F;&#x601D;&#x662F;&#x8FD0;&#x884C;10&#x79D2;&#x4EE5;&#x4E0A;&#x7684;&#x8BED;&#x53E5;&#x3002;<br>&#x7531;&#x4ED6;&#x6765;&#x67E5;&#x770B;&#x54EA;&#x4E9B;SQL&#x8D85;&#x51FA;&#x4E86;&#x6211;&#x4EEC;&#x7684;&#x6700;&#x5927;&#x5FCD;&#x8010;&#x65F6;&#x95F4;&#x503C;&#xFF0C;&#x6BD4;&#x5982;&#x4E00;&#x6761;sql&#x6267;&#x884C;&#x8D85;&#x8FC7;5&#x79D2;&#x949F;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x7B97;&#x6162;SQL&#xFF0C;&#x5E0C;&#x671B;&#x80FD;&#x6536;&#x96C6;&#x8D85;&#x8FC7;5&#x79D2;&#x7684;sql&#xFF0C;&#x7ED3;&#x5408;&#x4E4B;&#x524D;explain&#x8FDB;&#x884C;&#x5168;&#x9762;&#x5206;&#x6790;</p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;MySQL&#x6570;&#x636E;&#x5E93;&#x6CA1;&#x6709;&#x5F00;&#x542F;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x901F;&#xFF0C;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x624B;&#x52A8;&#x6765;&#x8BBE;&#x7F6E;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x4E00;&#x822C;&#x4E0D;&#x5EFA;&#x8BAE;&#x542F;&#x52A8;&#x8BE5;&#x53C2;&#x6570;&#xFF0C;&#x56E0;&#x4E3A;&#x5F00;&#x542F;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x4F1A;&#x6216;&#x591A;&#x6216;&#x5C11;&#x5E26;&#x6765;&#x4E00;&#x5B9A;&#x7684;&#x6027;&#x80FD;&#x5F71;&#x54CD;&#x3002;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x652F;&#x6301;&#x5C06;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x5199;&#x5165;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;</p>
+<p><strong>&#x67E5;&#x770B;&#x65E5;&#x5FD7;&#x662F;&#x5426;&#x5F00;&#x542F;SHOW VARIABLES LIKE &#x2018;%slow_query_log%&#x2019;;</strong><br><strong>&#x5F00;&#x542F; set global slow_query_log=1&#xFF0C;&#x53EA;&#x5BF9;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#x751F;&#x6548;&#xFF0C;&#x9ED8;&#x8BA4;&#x5173;&#x95ED;&#x7684;</strong></p>
+<p><img src="/2021/11/03/mysql-%E4%BC%98%E5%8C%96-%E7%B4%A2%E5%BC%95/image-20220409164912895.png" alt="image-20220409164912895"></p>
+<p><strong>&#x6C38;&#x4E45;&#x751F;&#x6548;</strong><br>&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;my.cnf<br>[mysqld]&#x4E0B;&#x589E;&#x52A0;&#x6216;&#x4FEE;&#x6539;&#x53C2;&#x6570;slow_query_log&#x548C;slow_query_log_file&#x540E;&#xFF0C;&#x7136;&#x540E;&#x91CD;&#x542F;MySQL&#x670D;&#x52A1;&#x5668;&#x3002;&#x4E5F;&#x5373;&#x5C06;&#x5982;&#x4E0B;&#x4E24;&#x884C;&#x914D;&#x7F6E;&#x8FDB;my.cnf&#x6587;&#x4EF6;</p>
+<pre class="line-numbers language-none"><code class="language-none">slow_query_log =1
+slow_query_log_file=/var/lib/manongyanjiuseng-slow.log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>&#x5173;&#x4E8E;&#x6162;&#x67E5;&#x8BE2;&#x7684;&#x53C2;&#x6570;slow_query_log_file&#xFF0C;&#x5B83;&#x6307;&#x5B9A;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x7684;&#x5B58;&#x653E;&#x8DEF;&#x5F84;&#xFF0C;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x4F1A;&#x7ED9;&#x4E00;&#x4E2A;&#x7F3A;&#x7701;&#x7684;&#x6587;&#x4EF6;host_name-slow.log&#xFF08;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x53C2;&#x6570;slow_query_log_file&#x7684;&#x8BDD;&#xFF09;</p>
+<p>&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x6570;&#x636E;&#x4F1A;&#x653E;&#x5230;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;<br>&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x591A;&#x957F;&#x7684;&#x65F6;&#x95F4;&#x6BB5;&#x5C31;&#x4F1A;&#x653E;&#x5230;&#x65E5;&#x5FD7;&#x4E2D;<br>&#x8FD9;&#x4E2A;&#x662F;&#x7531;&#x53C2;&#x6570;long_query_time&#x63A7;&#x5236;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;long_query_time&#x7684;&#x503C;&#x4E3A;10&#x79D2;</p>
+<ul>
+<li><p>&#x547D;&#x4EE4;&#xFF1A;SHOW VARIABLES LIKE &#x2018;long_query_time%&#x2019;;</p>
+</li>
+<li><p>&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#x6B63;&#x597D;&#x7B49;&#x4E8E;long_query_time&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5E76;&#x4E0D;&#x4F1A;&#x88AB;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#xFF0C;&#x9700;&#x5927;&#x4E8E;</p>
+</li>
+<li><p>&#x8BBE;&#x7F6E;&#x9608;&#x503C;&#x65F6;&#x95F4;&#x540E;&#x8FD8;&#x9700;&#x8981;&#x91CD;&#x542F;&#x624D;&#x53EF;&#x4EE5;&#x751F;&#x6548; set global long_query_time=3;</p>
+</li>
+<li><p>&#x67E5;&#x8BE2;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x4E2D;&#x6709;&#x591A;&#x5C11;&#x6761;&#x6162;&#x67E5;&#x8BE2;&#x8BB0;&#x5F55; show global status like &#x2018;%Slow_queries%&#x2019;;</p>
+</li>
+</ul>
+<p>&#x5982;&#x679C;&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x8BBE;&#x7F6E;&#x9608;&#x503C;<br>&#x5177;&#x4F53;&#x914D;&#x7F6E;&#x5982;&#x4E0B;</p>
+<p>#[mysqld]&#x4E0B;&#x914D;&#x7F6E;:</p>
+<pre class="line-numbers language-none"><code class="language-none">slow_query_log=1;
+slow_query_log_file=/var/lib/mysql/atguigu-slow.log
+long_query_time=3;
+log_output=FILE;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>==&#x7ED3;&#x5408;&#x5DE5;&#x5177;&#x8FDB;&#x884C;&#x5206;&#x6790;mysqldumpslow ==<br>&#x5728;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x624B;&#x5DE5;&#x5206;&#x6790;&#x65E5;&#x5FD7;&#xFF0C;&#x67E5;&#x627E;&#x3001;&#x5206;&#x6790;SQL&#xFF0C;&#x663E;&#x7136;&#x662F;&#x4E2A;&#x4F53;&#x529B;&#x6D3B;&#xFF0C;MySQL&#x63D0;&#x4F9B;&#x4E86;&#x65E5;&#x5FD7;&#x5206;&#x6790;&#x5DE5;&#x5177;mysqldumpslow&#x3002;</p>
+<p>&#x67E5;&#x770B;mysqldumpslow&#x7684;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#xFF0C;mysqldumpslow &#x2013;help&#x3002;</p>
+<p><strong>&#x5DE5;&#x4F5C;&#x5E38;&#x7528;&#x53C2;&#x8003;</strong></p>
+<ul>
+<li>&#x5F97;&#x5230;&#x8FD4;&#x56DE;&#x8BB0;&#x5F55;&#x96C6;&#x6700;&#x591A;&#x7684;10&#x4E2A;SQL &#xFF0C;mysqldumpslow -s r -t 10 /var/lib/mysql/atguigu-slow.log</li>
+<li>&#x5F97;&#x5230;&#x8BBF;&#x95EE;&#x6B21;&#x6570;&#x6700;&#x591A;&#x7684;10&#x4E2A;SQL&#xFF0C;mysqldumpslow -s c -t 10 /var/lib/mysql/atguigu-slow.log</li>
+<li>&#x5F97;&#x5230;&#x6309;&#x7167;&#x65F6;&#x95F4;&#x6392;&#x5E8F;&#x7684;&#x524D;10&#x6761;&#x91CC;&#x9762;&#x542B;&#x6709;&#x5DE6;&#x8FDE;&#x63A5;&#x7684;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#xFF0C;mysqldumpslow -s t -t 10 -g &#x201C;left join&#x201D; /var/lib/mysql/atguigu-slow.log</li>
+<li>&#x53E6;&#x5916;&#x5EFA;&#x8BAE;&#x5728;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x547D;&#x4EE4;&#x65F6;&#x7ED3;&#x5408;&#x2502;&#x548C;more &#x4F7F;&#x7528;&#xFF0C;&#x5426;&#x5219;&#x6709;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7206;&#x5C4F;&#x60C5;&#x51B5;&#xFF0C;mysqldumpslow -s r-t 10 /ar/lib/mysql/atguigu-slow.log | more</li>
+</ul>
+<h3 id="5-&#x51FD;&#x6570;&#x548C;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;"><a href="#5-&#x51FD;&#x6570;&#x548C;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;" class="headerlink" title="5.&#x51FD;&#x6570;&#x548C;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;"></a>5.&#x51FD;&#x6570;&#x548C;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;</h3><p>&#x521B;&#x5EFA;&#x51FD;&#x6570;&#xFF0C;&#x4FDD;&#x8BC1;&#x6BCF;&#x6761;&#x6570;&#x636E;&#x90FD;&#x4E0D;&#x540C;</p>
+<p>&#x968F;&#x673A;&#x4EA7;&#x751F;&#x5B57;&#x7B26;&#x4E32;</p>
+<pre class="line-numbers language-none"><code class="language-none">delimiter $$ # &#x4E24;&#x4E2A; $$ &#x8868;&#x793A;&#x7ED3;&#x675F;
+create function rand_string(n int) returns varchar(255)
+begin
+    declare chars_str varchar(100) default &apos;abcdefghijklmnopqrstuvwxyz&apos;;
+    declare return_str varchar(255) default &apos;&apos;;
+    declare i int default 0;
+    while i &lt; n do
+        set return_str = concat(return_str,substring(chars_str,floor(1+rand()*52),1));
+        set i=i+1;
+    end while;
+    return return_str;
+end $$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>&#x6267;&#x884C;&#x5B8C;&#x8BED;&#x53E5;&#x540E;&#xFF0C;&#x5728;&#x7EC8;&#x7AEF;&#x4E0A;&#x8F93;&#x5165;select rand_string(2)$$;&#xFF0C;&#x8981;&#x4EE5;$$&#x7ED3;&#x5C3E;</p>
+<p>&#x968F;&#x673A;&#x4EA7;&#x751F;&#x90E8;&#x95E8;&#x7F16;&#x53F7;</p>
+<pre class="line-numbers language-none"><code class="language-none">delimiter $$
+create function rand_num() returns int(5)
+begin
+    declare i int default 0;
+    set i=floor(100+rand()*10);
+    return i;
+end $$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>&#x6267;&#x884C;&#x5B8C;&#x8BED;&#x53E5;&#x540E;&#xFF0C;&#x5728;&#x7EC8;&#x7AEF;&#x4E0A;&#x8F93;&#x5165;select rand_num()$$&#xFF0C;&#x8981;&#x4EE5;$$&#x7ED3;&#x5C3E;</p>
+<p>&#x521B;&#x5EFA;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#xFF0C;&#x521B;&#x5EFA;&#x5F80;emp&#x8868;&#x4E2D;&#x63D2;&#x5165;&#x6570;&#x636E;&#x7684;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;</p>
+<pre class="line-numbers language-none"><code class="language-none">delimiter $$
+create procedure insert_emp(in start int(10),in max_num int(10))
+begin
+    declare i int default 0;
+    set autocommit = 0;
+    repeat
+        set i = i+1;
+        insert into emp(empno,ename,job,mgr,hiredate,sal,comm,deptno) values((start+i),rand_string(6),&apos;salesman&apos;,0001,curdate(),2000,400,rand_num());
+        until i=max_num
+        end repeat;
+    commit;
+end $$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>&#x521B;&#x5EFA;&#x5F80;dept&#x8868;&#x4E2D;&#x63D2;&#x5165;&#x6570;&#x636E;&#x7684;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;</p>
+<pre class="line-numbers language-none"><code class="language-none">delimiter $$
+create procedure insert_dept(in start int(10),in max_num int(10))
+begin
+    declare i int default 0;
+    set autocommit = 0;
+    repeat
+        set i = i+1;
+        insert into dept(deptno,dname,loc) values((start+i),rand_string(10),rand_string(8));
+        until i=max_num
+        end repeat;
+    commit;
+end $$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>&#x8C03;&#x7528;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;<br>&#x5F80;dept&#x8868;&#x4E2D;&#x63D2;&#x5165;&#x6570;&#x636E;</p>
+<pre class="line-numbers language-none"><code class="language-none">DELIMITER ;
+CALL insert_dept(100, 10);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+<p>&#x5F80;emp&#x8868;&#x4E2D;&#x63D2;&#x5165;50&#x4E07;&#x6570;&#x636E;</p>
+<pre class="line-numbers language-none"><code class="language-none">DELIMITER ;
+CALL insert_emp(100001, 500000);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="6-Show-Profile"><a href="#6-Show-Profile" class="headerlink" title="6.Show Profile"></a>6.Show Profile</h3><p><strong>Show Profile</strong>&#x662F;mysql&#x63D0;&#x4F9B;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5206;&#x6790;&#x5F53;&#x524D;&#x4F1A;&#x8BDD;&#x4E2D;&#x8BED;&#x53E5;&#x6267;&#x884C;&#x7684;&#x8D44;&#x6E90;&#x6D88;&#x8017;&#x60C5;&#x51B5;&#x3002;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;SQL&#x7684;&#x8C03;&#x4F18;&#x7684;&#x6D4B;&#x91CF;</p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53C2;&#x6570;&#x5904;&#x4E8E;&#x5173;&#x95ED;&#x72B6;&#x6001;&#xFF0C;&#x5E76;&#x4FDD;&#x5B58;&#x6700;&#x8FD1;15&#x6B21;&#x7684;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x3002;</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x67E5;&#x770B;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x662F;&#x5426;&#x5F00;&#x542F;&#x4E86;&#xFF0C; show variables like &apos;profiling&apos;;
+&#x5F00;&#x542F; &#xFF0C;set profiling=on;
+&#x901A;&#x8FC7;&#x6267;&#x884C;show profiles;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/11/03/mysql-%E4%BC%98%E5%8C%96-%E7%B4%A2%E5%BC%95/image-20220409173402845.png" alt="image-20220409173402845"></p>
+<pre class="line-numbers language-none"><code class="language-none">
+&#x8BCA;&#x65AD;SQL&#xFF0C;show profile cpu,block io for query &#x4E0A;&#x4E00;&#x6B65;&#x524D;&#x9762;&#x7684;&#x95EE;&#x9898; Query_ID ;
+&#x4F8B;&#x5982;show profile cpu,block io for query 1;
+  
+&#x5177;&#x4F53;&#x7684;&#x53C2;&#x6570;&#x4ECB;&#x7ECD;
+ALL&#xFF1A;&#x663E;&#x793A;&#x6240;&#x6709;&#x7684;&#x5F00;&#x9500;&#x4FE1;&#x606F;&#x3002;
+BLOCK IO&#xFF1A;&#x663E;&#x793A;&#x5757;lO&#x76F8;&#x5173;&#x5F00;&#x9500;&#x3002;
+CONTEXT SWITCHES &#xFF1A;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362;&#x76F8;&#x5173;&#x5F00;&#x9500;&#x3002;
+CPU&#xFF1A;&#x663E;&#x793A;CPU&#x76F8;&#x5173;&#x5F00;&#x9500;&#x4FE1;&#x606F;&#x3002;
+IPC&#xFF1A;&#x663E;&#x793A;&#x53D1;&#x9001;&#x548C;&#x63A5;&#x6536;&#x76F8;&#x5173;&#x5F00;&#x9500;&#x4FE1;&#x606F;&#x3002;
+MEMORY&#xFF1A;&#x663E;&#x793A;&#x5185;&#x5B58;&#x76F8;&#x5173;&#x5F00;&#x9500;&#x4FE1;&#x606F;&#x3002;
+PAGE FAULTS&#xFF1A;&#x663E;&#x793A;&#x9875;&#x9762;&#x9519;&#x8BEF;&#x76F8;&#x5173;&#x5F00;&#x9500;&#x4FE1;&#x606F;&#x3002;
+SOURCE&#xFF1A;&#x663E;&#x793A;&#x548C;Source_function&#xFF0C;Source_file&#xFF0C;Source_line&#x76F8;&#x5173;&#x7684;&#x5F00;&#x9500;&#x4FE1;&#x606F;&#x3002;
+SWAPS&#xFF1A;&#x663E;&#x793A;&#x4EA4;&#x6362;&#x6B21;&#x6570;&#x76F8;&#x5173;&#x5F00;&#x9500;&#x7684;&#x4FE1;&#x606F;&#x3002;
+
+
+&#x5728;&#x67E5;&#x8BE2;&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x4E86;&#x8FD9;&#x4E9B;&#x4E00;&#x5B9A;&#x8981;&#x7279;&#x522B;&#x6CE8;&#x610F;
+converting HEAP to MyISAM &#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x592A;&#x5927;&#xFF0C;&#x5185;&#x5B58;&#x90FD;&#x4E0D;&#x591F;&#x7528;&#x4E86;&#x5F80;&#x78C1;&#x76D8;&#x4E0A;&#x642C;&#x4E86;&#x3002;
+Creating tmp table &#x521B;&#x5EFA;&#x4E34;&#x65F6;&#x8868;&#xFF0C;&#x62F7;&#x8D1D;&#x6570;&#x636E;&#x5230;&#x4E34;&#x65F6;&#x8868;&#xFF0C;&#x7528;&#x5B8C;&#x518D;&#x5220;&#x9664;
+Copying to tmp table on disk &#x628A;&#x5185;&#x5B58;&#x4E2D;&#x4E34;&#x65F6;&#x8868;&#x590D;&#x5236;&#x5230;&#x78C1;&#x76D8;&#xFF0C;&#x5371;&#x9669;!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+<h1 id="&#x9501;&#x673A;&#x5236;"><a href="#&#x9501;&#x673A;&#x5236;" class="headerlink" title="&#x9501;&#x673A;&#x5236;"></a>&#x9501;&#x673A;&#x5236;</h1><h2 id="&#x9501;&#x7684;&#x5206;&#x7C7B;"><a href="#&#x9501;&#x7684;&#x5206;&#x7C7B;" class="headerlink" title="&#x9501;&#x7684;&#x5206;&#x7C7B;"></a><strong>&#x9501;&#x7684;&#x5206;&#x7C7B;</strong></h2><p> <strong>&#x4ECE;&#x5BF9;&#x6570;&#x636E;&#x64CD;&#x4F5C;&#x7684;&#x7C7B;&#x578B;</strong></p>
+<ul>
+<li>&#x8BFB;&#x9501;&#xFF08;&#x5171;&#x4EAB;&#x9501;&#xFF09;&#xFF1A;&#x9488;&#x5BF9;&#x540C;&#x4E00;&#x4EFD;&#x6570;&#x636E;&#xFF0C;&#x591A;&#x4E2A;&#x8BFB;&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x8FDB;&#x884C;&#x800C;&#x4E0D;&#x4F1A;&#x4E92;&#x76F8;&#x5F71;&#x54CD;&#x3002;</li>
+<li>&#x5199;&#x9501;&#xFF08;&#x6392;&#x5B83;&#x9501;&#xFF09;&#xFF1A;&#x5F53;&#x524D;&#x5199;&#x64CD;&#x4F5C;&#x6CA1;&#x6709;&#x5B8C;&#x6210;&#x524D;&#xFF0C;&#x5B83;&#x4F1A;&#x963B;&#x65AD;&#x5176;&#x4ED6;&#x5199;&#x9501;&#x548C;&#x8BFB;&#x9501;&#x3002;</li>
+</ul>
+<p><strong>&#x4ECE;&#x5BF9;&#x6570;&#x636E;&#x64CD;&#x4F5C;&#x7684;&#x7C92;&#x5EA6;&#x5206;</strong></p>
+<ul>
+<li>&#x8868;&#x9501; &#xFF08;&#x504F;&#x5199;&#xFF09;</li>
+<li>&#x884C;&#x9501;  &#xFF08;&#x504F;&#x8BFB;&#xFF09;</li>
+</ul>
+<h2 id="1-&#x8868;&#x9501;&#xFF08;&#x8BFB;&#x5199;&#x9501;&#xFF09;&#xFF08;MyISAM-&#x504F;&#x5199;&#xFF09;"><a href="#1-&#x8868;&#x9501;&#xFF08;&#x8BFB;&#x5199;&#x9501;&#xFF09;&#xFF08;MyISAM-&#x504F;&#x5199;&#xFF09;" class="headerlink" title="1. &#x8868;&#x9501;&#xFF08;&#x8BFB;&#x5199;&#x9501;&#xFF09;&#xFF08;MyISAM &#x504F;&#x5199;&#xFF09;"></a>1. &#x8868;&#x9501;&#xFF08;<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%AF%BB%E5%86%99%E9%94%81&amp;spm=1001.2101.3001.7020">&#x8BFB;&#x5199;&#x9501;</a>&#xFF09;&#xFF08;MyISAM &#x504F;&#x5199;&#xFF09;</h2><ul>
+<li>&#x8868;&#x9501;&#xFF1A;<br>&#x7279;&#x70B9;&#xFF1A;&#x504F;&#x5411;MyISAM&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#xFF0C;&#x5F00;&#x9500;&#x5C0F;&#xFF0C;&#x52A0;&#x9501;&#x5FEB;&#xFF1B;&#x65E0;&#x6B7B;&#x9501;&#xFF1B;<br><code>&#x9501;&#x5B9A;&#x7C92;&#x5EA6;&#x5927;&#xFF0C;&#x53D1;&#x751F;&#x9501;&#x51B2;&#x7A81;&#x7684;&#x6982;&#x7387;&#x6700;&#x9AD8;&#xFF0C;&#x5E76;&#x53D1;&#x5EA6;&#x6700;&#x4F4E;&#x3002;</code></li>
+</ul>
+<p>&#x6848;&#x4F8B;1&#xFF1A;<br><strong>1. &#x5982;&#x679C;A&#x52A0;&#x4E86;&#x8BFB;&#x9501;</strong></p>
+<p>A&#x53EF;&#x4EE5;&#x67E5;&#x81EA;&#x5DF2;&#x7684;&#x8868;&#xFF0C;&#x4F46;&#x4E0D;&#x80FD;&#x66F4;&#x65B0;&#x6216;&#x8005;&#x589E;&#x52A0;&#x81EA;&#x5DF2;&#x7684;&#x8868;&#x6570;&#x636E;&#x3002;A&#x4E5F;&#x4E0D;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x5176;&#x4ED6;&#x7684;&#x8868;&#x3002;</p>
+<p>B&#x53EF;&#x4EE5;&#x67E5;A&#x7684;&#x8868;&#xFF0C;&#x4F46;&#x4E0D;&#x80FD;&#x66F4;&#x65B0;&#x6216;&#x8005;&#x589E;&#x52A0;A&#x7684;&#x8868;&#x6570;&#x636E;&#xFF08;&#x4F1A;&#x963B;&#x585E;&#xFF09;&#xFF0C;&#x76F4;&#x5230;A&#x91CA;&#x653E;&#x4E86;&#x8BFB;&#x9501;</p>
+<p>&#x76F4;&#x5230;A&#x91CA;&#x653E;&#x9501;&#xFF0C;B&#x624D;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x4E0D;&#x7136;&#x5C31;&#x4E00;&#x76F4;&#x963B;&#x585E;&#x3002;</p>
+<p>&#x6848;&#x4F8B;2&#xFF1A;</p>
+<p><strong>2. &#x5982;&#x679C;A&#x52A0;&#x4E86;&#x5199;&#x9501;</strong>&#xFF08;&#x72EC;&#x5360;&#x9501;&#xFF09;</p>
+<p>A&#x53EF;&#x4EE5;&#x67E5;&#x81EA;&#x5DF2;&#x7684;&#x8868;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x66F4;&#x65B0;&#x6216;&#x8005;&#x6DFB;&#x52A0;&#x81EA;&#x5DF2;&#x7684;&#x8868;&#x6570;&#x636E;</p>
+<p>B&#x4E0D;&#x53EF;&#x4EE5;&#x67E5;A&#x7684;&#x8868;&#xFF0C;&#x4E5F;&#x4E0D;&#x80FD;&#x66F4;&#x65B0;&#x6216;&#x8005;&#x589E;&#x52A0;A&#x7684;&#x6570;&#x636E;&#xFF08;&#x4F1A;&#x963B;&#x585E;&#xFF09;&#xFF0C;&#x76F4;&#x5230;A&#x91CA;&#x653E;&#x4E86;&#x5199;&#x9501;</p>
+<p>&#x603B;&#x7ED3;</p>
+<p>&#x901A;&#x8FC7;&#x5982;&#x4E0A;&#x7684;&#x52A0;&#x8BFB;&#x5199;&#x9501;&#xFF1A;</p>
+<p>&#x5BF9;MyISAM&#x8868;&#x7684;&#x8BFB;&#x64CD;&#x4F5C;&#xFF08;&#x52A0;&#x8BFB;&#x9501;&#xFF09;&#xFF0C;&#x4E0D;&#x4F1A;&#x963B;&#x585E;&#x5176;&#x4ED6;&#x8FDB;&#x7A0B;&#x5BF9;&#x540C;&#x4E00;&#x8868;&#x7684;&#x8BFB;&#x8BF7;&#x6C42;&#xFF0C;&#x4F46;&#x4F1A;&#x963B;&#x585E;&#x5BF9;&#x540C;&#x4E00;&#x8868;&#x7684;&#x5199;&#x8BF7;&#x6C42;&#x3002;&#x53EA;&#x6709;&#x5F53;&#x8BFB;&#x9501;&#x91CA;&#x653E;&#x540E;&#xFF0C;&#x624D;&#x4F1A;&#x6267;&#x884C;&#x5176;&#x5B83;&#x8FDB;&#x7A0B;&#x7684;&#x5199;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x5BF9;MyISAM&#x8868;&#x7684;&#x5199;&#x64CD;&#x4F5C;&#x3008;&#x52A0;&#x5199;&#x9501;&#xFF09;&#xFF0C;&#x4E0D;&#x4F1A;&#x963B;&#x585E;&#x5BF9;&#x540C;&#x4E00;&#x8868;&#x7684;&#x8BFB;&#x8BF7;&#x6C42;&#xFF0C;&#x4F1A;&#x963B;&#x585E;&#x5176;&#x4ED6;&#x8FDB;&#x7A0B;&#x5BF9;&#x540C;&#x4E00;&#x8868;&#x7684;&#x8BFB;&#x548C;&#x5199;&#x64CD;&#x4F5C;&#xFF0C;&#x53EA;&#x6709;&#x5F53;&#x5199;&#x9501;&#x91CA;&#x653E;&#x540E;&#xFF0C;&#x624D;&#x4F1A;&#x6267;&#x884C;&#x5176;&#x5B83;&#x8FDB;&#x7A0B;&#x7684;&#x8BFB;&#x5199;&#x64CD;&#x4F5C;&#x3002;</p>
+<p><strong>&#x7B80;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;&#x5C31;&#x662F;&#x8BFB;&#x9501;&#x4F1A;&#x963B;&#x585E;&#x5199;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x4F1A;&#x5835;&#x585E;&#x8BFB;&#x3002;&#x800C;&#x5199;&#x9501;&#x5219;&#x4F1A;&#x628A;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x8BFB;&#x548C;&#x5199;&#x90FD;&#x5835;&#x585E;&#x3002;&#x4E0D;&#x4F1A;&#x963B;&#x585E;&#x540C;&#x4E00;&#x7EBF;&#x7A0B;&#x8BFB;&#x3002;</strong></p>
+<p>&#x6B64;&#x5916;&#xFF0C;MyISAM&#x7684;&#x8BFB;&#x5199;&#x9501;&#x8C03;&#x5EA6;&#x662F;&#x5199;&#x4F18;&#x5148;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;MyISAM&#x4E0D;&#x9002;&#x5408;&#x505A;&#x5199;&#x4E3A;&#x4E3B;&#x8868;&#x7684;&#x5F15;&#x64CE;&#x3002;&#x56E0;&#x4E3A;&#x5199;&#x9501;&#x540E;&#xFF0C;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x4E0D;&#x80FD;&#x505A;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;&#xFF0C;&#x5927;&#x91CF;&#x7684;&#x66F4;&#x65B0;&#x4F1A;&#x4F7F;&#x67E5;&#x8BE2;&#x5F88;&#x96BE;&#x5F97;&#x5230;&#x9501;&#xFF0C;&#x4ECE;&#x800C;&#x9020;&#x6210;&#x6C38;&#x8FDC;&#x963B;&#x585E;&#x3002;<strong>&#x6240;&#x4EE5; MyISAM &#x504F;&#x8BFB;</strong>&#x3002;</p>
+<h1 id="2-&#x884C;&#x9501;"><a href="#2-&#x884C;&#x9501;" class="headerlink" title="2. &#x884C;&#x9501;"></a>2. &#x884C;&#x9501;</h1><p>&#x504F;&#x5411;InnoDB&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#xFF0C;&#x5F00;&#x9500;&#x5927;&#xFF0C;&#x52A0;&#x9501;&#x6162;&#xFF1B;&#x4F1A;&#x51FA;&#x73B0;&#x6B7B;&#x9501;&#xFF1B;&#x9501;&#x5B9A;&#x7C92;&#x5EA6;&#x6700;&#x5C0F;&#xFF0C;&#x53D1;&#x751F;&#x9501;&#x51B2;&#x7A81;&#x7684;&#x6982;&#x7387;&#x6700;&#x4F4E;&#xFF0C;&#x5E76;&#x53D1;&#x5EA6;&#x4E5F;&#x6700;&#x9AD8;&#x3002;</p>
+<p>InnoDB&#x4E0E;MyISAM&#x7684;&#x6700;&#x5927;&#x4E0D;&#x540C;&#x6709;&#x4E24;&#x70B9;&#xFF1A;&#x4E00;&#x662F;&#x652F;&#x6301;&#x4E8B;&#x52A1;(TRANSACTION)&#xFF1B;&#x4E8C;&#x662F;&#x91C7;&#x7528;&#x4E86;&#x884C;&#x7EA7;&#x9501;</p>
+<p>&#x5173;&#x4E8E;&#x4E8B;&#x52A1;&#x7684;&#x76F8;&#x5173;&#x5185;&#x5BB9;&#x53EF;&#x770B;&#x6211;&#x4E4B;&#x524D;&#x7684;&#x6587;&#x7AE0;</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_47872288/article/details/121491730?spm=1001.2014.3001.5502">&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x4E8B;&#x52A1;(Transaction)&#x7684;&#x8BE6;&#x89E3;</a></p>
+<p>&#x600E;&#x4E48;&#x64CD;&#x4F5C;&#x884C;&#x9501;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x5176;&#x81EA;&#x52A8;&#x63D0;&#x4EA4;&#x5173;&#x95ED;&#x5373;&#x53EF;<br>&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x7684; <code>SET autocommit=0;</code>&#x8BE5;&#x547D;&#x4EE4;&#x662F;&#x5F00;&#x542F;&#x624B;&#x52A8;&#x63D0;&#x4EA4;&#x4E8B;&#x52A1;</p>
+<hr>
+<p>&#x6848;&#x4F8B;1&#xFF1A;</p>
+<ul>
+<li><p>&#x4E24;&#x4E2A;&#x8FDB;&#x7A0B;&#x90FD;&#x5F00;&#x542F;&#x624B;&#x52A8;&#x63D0;&#x4EA4;&#xFF0C;&#x800C;&#x4E14;&#x4FEE;&#x6539;&#x540C;&#x4E00;&#x884C;&#x6570;&#x636E;</p>
+</li>
+<li><p>&#x5982;&#x679C;A&#x8FDB;&#x7A0B;&#x4FEE;&#x6539;&#x4E86;&#x4E8B;&#x52A1;&#xFF0C;B&#x4E8B;&#x52A1;&#x6253;&#x7B97;&#x4FEE;&#x6539;&#x7684;&#x8BDD;&#xFF0C;&#x8FDB;&#x7A0B;&#x4F1A;&#x88AB;&#x963B;&#x585E;</p>
+</li>
+</ul>
+<p><img src="/2021/11/03/mysql-%E4%BC%98%E5%8C%96-%E7%B4%A2%E5%BC%95/image-20220410085347126.png" alt="image-20220410085347126"></p>
+<p>&#x53EA;&#x6709;&#x5F53;A&#x63D0;&#x4EA4;&#x4E86;&#x4E8B;&#x52A1;&#x4E4B;&#x540E;&#xFF0C;B&#x8FDB;&#x7A0B;&#x624D;&#x4F1A;&#x89E3;&#x9664;&#x963B;&#x585E;</p>
+<p><img src="/2021/11/03/mysql-%E4%BC%98%E5%8C%96-%E7%B4%A2%E5%BC%95/image-20220410085423406.png" alt="image-20220410085423406"></p>
+<p>&#x6848;&#x4F8B;2&#xFF1A;</p>
+<ul>
+<li>&#x4E24;&#x4E2A;&#x8FDB;&#x7A0B;&#x90FD;&#x5F00;&#x542F;&#x624B;&#x52A8;&#x63D0;&#x4EA4;&#xFF0C;&#x4FEE;&#x6539;&#x4E0D;&#x540C;&#x884C;&#x6570;&#x636E;</li>
+</ul>
+<p><img src="/2021/11/03/mysql-%E4%BC%98%E5%8C%96-%E7%B4%A2%E5%BC%95/image-20220410094053020.png" alt="image-20220410094053020"></p>
+<p>&#x90FD;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x4E8B;&#x52A1;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x53EA;&#x6709;&#x90FD;&#x63D0;&#x4EA4;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x624D;&#x4F1A;&#x66F4;&#x65B0;<br><img src="/2021/11/03/mysql-%E4%BC%98%E5%8C%96-%E7%B4%A2%E5%BC%95/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA56CB5Yac56CU56m25YOn,size_17,color_FFFFFF,t_70,g_se,x_16" alt="&#x5728;&#x8FD9;&#x91CC;&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63CF;&#x8FF0;"></p>
+<hr>
+<p>&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;<br>&#x7248;&#x6743;&#x58F0;&#x660E;&#xFF1A;&#x672C;&#x6587;&#x4E3A;CSDN&#x535A;&#x4E3B;&#x300C;&#x7801;&#x519C;&#x7814;&#x7A76;&#x50E7;&#x300D;&#x7684;&#x539F;&#x521B;&#x6587;&#x7AE0;&#xFF0C;&#x9075;&#x5FAA;CC 4.0 BY-SA&#x7248;&#x6743;&#x534F;&#x8BAE;&#xFF0C;&#x8F6C;&#x8F7D;&#x8BF7;&#x9644;&#x4E0A;&#x539F;&#x6587;&#x51FA;&#x5904;&#x94FE;&#x63A5;&#x53CA;&#x672C;&#x58F0;&#x660E;&#x3002;<br>&#x539F;&#x6587;&#x94FE;&#x63A5;&#xFF1A;<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_47872288/article/details/122201154">https://blog.csdn.net/weixin_47872288/article/details/122201154</a></p>
+<hr>
+<p>&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;<br>&#x7248;&#x6743;&#x58F0;&#x660E;&#xFF1A;&#x672C;&#x6587;&#x4E3A;CSDN&#x535A;&#x4E3B;&#x300C;&#x7801;&#x519C;&#x7814;&#x7A76;&#x50E7;&#x300D;&#x7684;&#x539F;&#x521B;&#x6587;&#x7AE0;&#xFF0C;&#x9075;&#x5FAA;CC 4.0 BY-SA&#x7248;&#x6743;&#x534F;&#x8BAE;&#xFF0C;&#x8F6C;&#x8F7D;&#x8BF7;&#x9644;&#x4E0A;&#x539F;&#x6587;&#x51FA;&#x5904;&#x94FE;&#x63A5;&#x53CA;&#x672C;&#x58F0;&#x660E;&#x3002;<br>&#x539F;&#x6587;&#x94FE;&#x63A5;&#xFF1A;<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_47872288/article/details/122111013">https://blog.csdn.net/weixin_47872288/article/details/122111013</a></p>
 <h1 id="MySQL-explain-&#x547D;&#x4EE4;&#x662F;&#x67E5;&#x8BE2;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x4E0D;&#x53EF;&#x7F3A;&#x5C11;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x8BE5;&#x6587;&#x4E3B;&#x8981;&#x8BB2;&#x89E3;-explain-&#x547D;&#x4EE4;&#x7684;&#x4F7F;&#x7528;&#x53CA;&#x76F8;&#x5173;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x3002;"><a href="#MySQL-explain-&#x547D;&#x4EE4;&#x662F;&#x67E5;&#x8BE2;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x4E0D;&#x53EF;&#x7F3A;&#x5C11;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x8BE5;&#x6587;&#x4E3B;&#x8981;&#x8BB2;&#x89E3;-explain-&#x547D;&#x4EE4;&#x7684;&#x4F7F;&#x7528;&#x53CA;&#x76F8;&#x5173;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x3002;" class="headerlink" title="MySQL explain &#x547D;&#x4EE4;&#x662F;&#x67E5;&#x8BE2;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x4E0D;&#x53EF;&#x7F3A;&#x5C11;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x8BE5;&#x6587;&#x4E3B;&#x8981;&#x8BB2;&#x89E3; explain &#x547D;&#x4EE4;&#x7684;&#x4F7F;&#x7528;&#x53CA;&#x76F8;&#x5173;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x3002;"></a>MySQL explain &#x547D;&#x4EE4;&#x662F;&#x67E5;&#x8BE2;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x4E0D;&#x53EF;&#x7F3A;&#x5C11;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x8BE5;&#x6587;&#x4E3B;&#x8981;&#x8BB2;&#x89E3; explain &#x547D;&#x4EE4;&#x7684;&#x4F7F;&#x7528;&#x53CA;&#x76F8;&#x5173;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x3002;</h1><hr>
 <h2 id="explain-&#x547D;&#x4EE4;&#x57FA;&#x672C;&#x4F7F;&#x7528;"><a href="#explain-&#x547D;&#x4EE4;&#x57FA;&#x672C;&#x4F7F;&#x7528;" class="headerlink" title="explain &#x547D;&#x4EE4;&#x57FA;&#x672C;&#x4F7F;&#x7528;"></a>explain &#x547D;&#x4EE4;&#x57FA;&#x672C;&#x4F7F;&#x7528;</h2><p>&#x5728;&#x65E5;&#x5E38;&#x5DE5;&#x4F5C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x6709;&#x65F6;&#x4F1A;&#x5F00;&#x6162;&#x67E5;&#x8BE2;&#x53BB;&#x8BB0;&#x5F55;&#x4E00;&#x4E9B;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x6BD4;&#x8F83;&#x4E45;&#x7684; SQL &#x8BED;&#x53E5;&#xFF0C;&#x627E;&#x51FA;&#x8FD9;&#x4E9B; SQL &#x8BED;&#x53E5;&#x5E76;&#x4E0D;&#x610F;&#x5473;&#x7740;&#x5B8C;&#x4E8B;&#x4E86;&#x3002;</p>
 <p><strong>&#x6B64;&#x65F6;&#x6211;&#x4EEC;&#x5E38;&#x5E38;&#x7528;&#x5230; explain &#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x6765;&#x67E5;&#x770B;&#x4E00;&#x4E2A;&#x8FD9;&#x4E9B; SQL &#x8BED;&#x53E5;&#x7684;&#x6267;&#x884C;&#x8BA1;&#x5212;&#xFF0C;&#x67E5;&#x770B;&#x8BE5; SQL &#x8BED;&#x53E5;&#x6709;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x4E0A;&#x4E86;&#x7D22;&#x5F15;&#xFF0C;&#x6709;&#x6CA1;&#x6709;&#x505A;&#x5168;&#x8868;&#x626B;&#x63CF;&#x3002;</strong></p>
@@ -1256,7 +1449,7 @@ for(int i=0; i&lt; 1000; i++)
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">950.7k</span>
+                        class="white-color">959.9k</span>
             
             
             

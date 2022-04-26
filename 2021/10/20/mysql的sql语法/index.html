@@ -463,14 +463,14 @@ title: mysql&amp;#x7684;sql&amp;#x8BED;&amp;#x6CD5;author: hhhsummary:  mysql&am
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-23
+                    2022-04-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.7k
+                    5.1k
                 </div>
                 
 
@@ -770,7 +770,9 @@ select LAST_DAY(MAKEDATE(EXTRACT(YEAR FROM CURDATE()),1) + interval QUARTER(CURD
 &#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x3002;
 &#x539F;&#x6587;&#x94FE;&#x63A5;&#xFF1A;https://blog.csdn.net/qq_29308413/article/details/109390444<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="mybatis-xml-&#x6587;&#x4EF6;&#x5173;&#x952E;&#x6807;&#x7B7E;&#x7528;&#x6CD5;"><a href="#mybatis-xml-&#x6587;&#x4EF6;&#x5173;&#x952E;&#x6807;&#x7B7E;&#x7528;&#x6CD5;" class="headerlink" title="mybatis xml &#x6587;&#x4EF6;&#x5173;&#x952E;&#x6807;&#x7B7E;&#x7528;&#x6CD5;"></a>mybatis xml &#x6587;&#x4EF6;&#x5173;&#x952E;&#x6807;&#x7B7E;&#x7528;&#x6CD5;</h1><h3 id="trim-&#x6807;&#x7B7E;"><a href="#trim-&#x6807;&#x7B7E;" class="headerlink" title="trim &#x6807;&#x7B7E;"></a>trim &#x6807;&#x7B7E;</h3><pre class="line-numbers language-none"><code class="language-none">&lt; trim&gt;&#x6807;&#x7B7E;
+
+
+<h2 id="UNION&#x53BB;&#x91CD;&#x4E14;&#x6392;&#x5E8F;&#xFF0C;UNION-ALL&#x4E0D;&#x53BB;&#x91CD;&#x4E0D;&#x6392;&#x5E8F;&#x3002;"><a href="#UNION&#x53BB;&#x91CD;&#x4E14;&#x6392;&#x5E8F;&#xFF0C;UNION-ALL&#x4E0D;&#x53BB;&#x91CD;&#x4E0D;&#x6392;&#x5E8F;&#x3002;" class="headerlink" title="UNION&#x53BB;&#x91CD;&#x4E14;&#x6392;&#x5E8F;&#xFF0C;UNION ALL&#x4E0D;&#x53BB;&#x91CD;&#x4E0D;&#x6392;&#x5E8F;&#x3002;"></a>UNION&#x53BB;&#x91CD;&#x4E14;&#x6392;&#x5E8F;&#xFF0C;UNION ALL&#x4E0D;&#x53BB;&#x91CD;&#x4E0D;&#x6392;&#x5E8F;&#x3002;</h2><h1 id="mybatis-xml-&#x6587;&#x4EF6;&#x5173;&#x952E;&#x6807;&#x7B7E;&#x7528;&#x6CD5;"><a href="#mybatis-xml-&#x6587;&#x4EF6;&#x5173;&#x952E;&#x6807;&#x7B7E;&#x7528;&#x6CD5;" class="headerlink" title="mybatis xml &#x6587;&#x4EF6;&#x5173;&#x952E;&#x6807;&#x7B7E;&#x7528;&#x6CD5;"></a>mybatis xml &#x6587;&#x4EF6;&#x5173;&#x952E;&#x6807;&#x7B7E;&#x7528;&#x6CD5;</h1><h3 id="trim-&#x6807;&#x7B7E;"><a href="#trim-&#x6807;&#x7B7E;" class="headerlink" title="trim &#x6807;&#x7B7E;"></a>trim &#x6807;&#x7B7E;</h3><pre class="line-numbers language-none"><code class="language-none">&lt; trim&gt;&#x6807;&#x7B7E;
 &lt; trim &gt; : &#x662F;&#x4E00;&#x4E2A;&#x683C;&#x5F0F;&#x5316;&#x7684;&#x6807;&#x8BB0;&#xFF0C;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;set&#x6216;&#x8005;&#x662F;where&#x6807;&#x8BB0;&#x7684;&#x529F;&#x80FD;&#x3002;
 
 &#x793A;&#x4F8B;1&#xFF1A;
@@ -899,6 +901,34 @@ END
 <p>set global event_scheduler=1</p>
 <h3 id="&#x590D;&#x5236;sql-&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x548C;&#x89E6;&#x53D1;&#x5668;-&#x6709;&#x6743;&#x9650;&#x9650;&#x5236;-&#x521B;&#x5EFA;&#x8005;&#x6743;&#x9650;"><a href="#&#x590D;&#x5236;sql-&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x548C;&#x89E6;&#x53D1;&#x5668;-&#x6709;&#x6743;&#x9650;&#x9650;&#x5236;-&#x521B;&#x5EFA;&#x8005;&#x6743;&#x9650;" class="headerlink" title="&#x590D;&#x5236;sql  &#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x548C;&#x89E6;&#x53D1;&#x5668; &#x6709;&#x6743;&#x9650;&#x9650;&#x5236; &#x521B;&#x5EFA;&#x8005;&#x6743;&#x9650;"></a>&#x590D;&#x5236;sql  &#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x548C;&#x89E6;&#x53D1;&#x5668; &#x6709;&#x6743;&#x9650;&#x9650;&#x5236; &#x521B;&#x5EFA;&#x8005;&#x6743;&#x9650;</h3><p><em>&#x67E5;&#x770B;&#x89E6;&#x53D1;&#x5668;</em> SHOW <em>TRIGGERS</em></p>
 <p>definer</p>
+<p>SQL SECURITY INVOKER</p>
+<p>&#x521B;&#x5EFA;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x6307;&#x5B9A; SQL SECURITY&#x5C5E;&#x6027;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E3A; DEFINER &#x6216;&#x8005;INVOKER&#xFF0C;&#x7528;&#x6765;&#x544A;&#x8BC9;mysql&#x5728;&#x6267;&#x884C;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x662F;&#x4EE5;DEFINER&#x7528;&#x6237;&#x7684;&#x6743;&#x9650;&#x6765;&#x6267;&#x884C;&#xFF0C;&#x8FD8;&#x662F;&#x4EE5;&#x8C03;&#x7528;&#x8005;&#x7684;&#x6743;&#x9650;&#x6765;&#x6267;&#x884C;&#x3002;</p>
+<pre><code>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F7F;&#x7528;DEFINER&#x65B9;&#x5F0F;&#xFF0C;&#x6B64;&#x65F6;&#x8C03;&#x7528;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x7684;&#x7528;&#x6237;&#x5FC5;&#x987B;&#x6709;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x7684;EXECUTE&#x6743;&#x9650;&#xFF0C;&#x5E76;&#x4E14;DEFINER&#x6307;&#x5B9A;&#x7684;&#x7528;&#x6237;&#x5FC5;&#x987B;&#x662F;&#x5728;mysql.user&#x8868;&#x4E2D;&#x5B58;&#x5728;&#x7684;&#x7528;&#x6237;&#x3002;
+
+DEFINER&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x9ED8;&#x8BA4;DEFINER=CURRENT_USER&#xFF0C;&#x5728;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x6267;&#x884C;&#x65F6;&#xFF0C;mysql&#x4F1A;&#x68C0;&#x67E5;DEFINER&#x5B9A;&#x4E49;&#x7684;&#x7528;&#x6237;&apos;user_name&apos;@&apos;host_name&apos;&#x7684;&#x6743;&#x9650;&#xFF1B;
+
+INVOKER&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x5728;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x4F1A;&#x68C0;&#x67E5;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x8C03;&#x7528;&#x8005;&#x7684;&#x6743;&#x9650;&#x3002;
+</code></pre>
+<p>   &#x6848;&#x4F8B;&#x4E00;&#xFF1A;DEFINER</p>
+<pre><code>CREATE DEFINER = &apos;admin&apos;@&apos;localhost&apos; PROCEDURE account_count()
+
+BEGIN
+    SELECT &apos;Number of accounts:&apos;, COUNT(*) FROM mysql.user;
+END;
+
+&#x5728;&#x8FD9;&#x4E2A;&#x6848;&#x4F8B;&#x4E2D;&#xFF0C;&#x4E0D;&#x8BBA;&#x54EA;&#x4E2A;&#x7528;&#x6237;A&#x8C03;&#x7528;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#xFF0C;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x90FD;&#x4F1A;&#x4EE5;&apos;admin&apos;@&apos;localhost&apos;&#x7684;&#x6743;&#x9650;&#x53BB;&#x6267;&#x884C;&#xFF0C;&#x5373;&#x4F7F;&#x8FD9;&#x4E2A;&#x7528;&#x6237;A&#x6CA1;&#x6709;&#x67E5;&#x8BE2;mysql.user&#x8868;&#x7684;&#x6743;&#x9650;&#x3002;
+</code></pre>
+<p>  &#x6848;&#x4F8B;&#x4E8C;&#xFF1A;INVOKER</p>
+<pre><code>CREATE DEFINER = &apos;admin&apos;@&apos;localhost&apos; PROCEDURE account_count()
+    SQL SECURITY INVOKER
+BEGIN
+    SELECT &apos;Number of accounts:&apos;, COUNT(*) FROM mysql.user;
+END;
+
+&#x5728;&#x8FD9;&#x4E2A;&#x6848;&#x4F8B;&#x4E2D;&#xFF0C;&#x867D;&#x7136;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x8BED;&#x53E5;&#x4E2D;&#x4ECD;&#x7136;&#x5E26;&#x6709;DEFINER&#x53C2;&#x6570;&#xFF0C;&#x4F46;&#x662F;&#x7531;&#x4E8E;SQL SECURITY&#x6307;&#x5B9A;&#x4E86;INVOKER&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x4EE5;&#x8C03;&#x7528;&#x8005;&#x7684;&#x989D;&#x8EAB;&#x4EFD;&#x53BB;&#x6267;&#x884C;&#x3002;&#x6B64;&#x65F6;&#x8FD9;&#x4E2A;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x662F;&#x5426;&#x80FD;&#x6210;&#x529F;&#x6267;&#x884C;&#xFF0C;&#x53D6;&#x51B3;&#x4E8E;&#x8C03;&#x7528;&#x8005;&#x662F;&#x5426;&#x6709;mysql.user&#x8868;&#x7684;&#x67E5;&#x8BE2;&#x6743;&#x9650;&#x3002;
+</code></pre>
+<hr>
+<p>mysql &#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x4E2D;definer&#x548C;invoker&#x8BE6;&#x89E3;<br><a target="_blank" rel="noopener" href="https://blog.51cto.com/wwdyl/1641018">https://blog.51cto.com/wwdyl/1641018</a></p>
 <h1 id="xml-&#x6807;&#x7B7E;"><a href="#xml-&#x6807;&#x7B7E;" class="headerlink" title="xml &#x6807;&#x7B7E;"></a>xml &#x6807;&#x7B7E;</h1><p><strong>resultMap</strong></p>
 <p>&#x6620;&#x5C04;&#x7ED3;&#x679C;&#x96C6; &#x5230; &#x5B9E;&#x4F53;&#x7C7B;</p>
 <p>resultMap&#x662F;&#xFF2D;yBatis&#x4E2D;&#x6700;&#x91CD;&#x8981;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x56E0;&#x4E3A;&#x5C06;&#x7ED3;&#x679C;&#x96C6;&#x6620;&#x5C04;&#x5230;&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x57FA;&#x672C;&#x90FD;&#x7528;resultMap&#x6765;&#x5B8C;&#x6210;&#x3002;&#x4F7F;&#x7528;resultMap&#x53EF;&#x4EE5;&#x8BA9;&#x4F60;&#x7701;&#x53BB;90&#xFF05;&#x7684;JDBC&#x4EE3;&#x7801;&#xFF0C;resultMap&#x5176;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4E00;&#x4E9B;JDBC&#x505A;&#x4E0D;&#x5230;&#x7684;&#x4E8B;&#x3002;MyBatis&#x81EA;&#x52A8;&#x521B;&#x5EFA;ResultMap&#xFF0C;&#x57FA;&#x4E8E;&#x540D;&#x79F0;&#x81EA;&#x52A8;&#x6620;&#x5C04;&#x5217;&#x5230;JavaBean&#x7684;&#x5C5E;&#x6027;&#x4E0A;&#xFF0C; &#x5982;&#x679C;&#x5217;&#x540D;&#x548C;JavaBean&#x7684;&#x5C5E;&#x6027;&#x5339;&#x914D;&#x4E0D;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x5217;&#x540D;&#x4E0A;&#x4F7F;&#x7528;select&#x5B50;&#x53E5;&#x522B;&#x540D;&#xFF08;&#x6807;&#x51C6;SQL&#x7279;&#x6027;&#xFF09;&#x6765;&#x521B;&#x5EFA;&#x6807;&#x7B7E;&#x5339;&#x914D;</p>
@@ -1527,7 +1557,7 @@ not exists&#x548C;exists&#x7684;&#x7528;&#x6CD5;&#x76F8;&#x53CD;&#xFF0C;&#x5C31;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">950.7k</span>
+                        class="white-color">959.9k</span>
             
             
             
