@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-01-22
+                    2022-05-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.6k
+                    4.8k
                 </div>
                 
 
@@ -1229,7 +1229,55 @@ AopContext.currentProxy()<span aria-hidden="true" class="line-numbers-rows"><spa
 
 <h2 id="&#x4E1A;&#x52A1;&#x9700;&#x6C42;"><a href="#&#x4E1A;&#x52A1;&#x9700;&#x6C42;" class="headerlink" title="&#x4E1A;&#x52A1;&#x9700;&#x6C42;"></a>&#x4E1A;&#x52A1;&#x9700;&#x6C42;</h2><p>&#x8BA2;&#x5355;&#x670D;&#x52A1;    &#x2014;&#x2014;&#x2013;&gt;     &#x7528;&#x6237;&#x670D;&#x52A1;    &#x7EC4;&#x88C5;&#x7528;&#x6237;&#x59D3;&#x540D;&#x4FE1;&#x606F;</p>
 <p>&#x8BA2;&#x5355;&#x670D;&#x52A1; &#x901A;&#x8FC7; &#x8C03;&#x7528; feign   &#x2014;&#x2013;&gt;&#x8BF7;&#x6C42; &#x7528;&#x6237;&#x670D;&#x52A1;</p>
-<h2 id="&#x4EE3;&#x7406;-&#xFF08;&#xFF09;"><a href="#&#x4EE3;&#x7406;-&#xFF08;&#xFF09;" class="headerlink" title="&#x4EE3;&#x7406; &#xFF08;&#xFF09;"></a>&#x4EE3;&#x7406; &#xFF08;&#xFF09;</h2>
+<h2 id="&#x4EE3;&#x7406;-&#xFF08;&#xFF09;"><a href="#&#x4EE3;&#x7406;-&#xFF08;&#xFF09;" class="headerlink" title="&#x4EE3;&#x7406; &#xFF08;&#xFF09;"></a>&#x4EE3;&#x7406; &#xFF08;&#xFF09;</h2><h3 id="sql-&#x8BED;&#x53E5;-&#x4E24;&#x4E2A;or-&#x548C;-and-&#x8FDE;&#x7528;"><a href="#sql-&#x8BED;&#x53E5;-&#x4E24;&#x4E2A;or-&#x548C;-and-&#x8FDE;&#x7528;" class="headerlink" title="sql &#x8BED;&#x53E5;  &#x4E24;&#x4E2A;or &#x548C; and &#x8FDE;&#x7528;"></a>sql &#x8BED;&#x53E5;  &#x4E24;&#x4E2A;or &#x548C; and &#x8FDE;&#x7528;</h3><p> and &#x548C; &#x4E24;&#x4E2A; or &#x8FDE;&#x7528; &#xFF0C;and &#x53EA;&#x548C; &#x6700;&#x8FD1; &#x7684;or &#x4F18;&#x5148;&#x7EA7;</p>
+<pre class="line-numbers language-none"><code class="language-none">SELECT  *
+FROM    REFUND_ORDER
+WHERE   MODIFY_DATE IS NULL
+AND     ( 
+        REFUND_OP_ID = &apos;99041&apos;
+AND     ORDER_STATUS = 1
+OR      REFUND_BUSI_TYPE = 1
+OR      REASONVERSION = &apos;&apos; 
+
+);
+
+SELECT  *
+FROM    REFUND_ORDER
+WHERE   MODIFY_DATE IS NULL
+AND     ( 
+(
+        REFUND_OP_ID = &apos;99041&apos;
+AND     ORDER_STATUS = 1
+OR      REFUND_BUSI_TYPE = 1
+)
+
+OR      REASONVERSION = &apos;&apos; 
+
+);
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="&#x524D;&#x7AEF;&#x4E0B;&#x8F7D;&#x6587;&#x4EF6;"><a href="#&#x524D;&#x7AEF;&#x4E0B;&#x8F7D;&#x6587;&#x4EF6;" class="headerlink" title="&#x524D;&#x7AEF;&#x4E0B;&#x8F7D;&#x6587;&#x4EF6;"></a>&#x524D;&#x7AEF;&#x4E0B;&#x8F7D;&#x6587;&#x4EF6;</h2><pre class="line-numbers language-none"><code class="language-none">downLoadPrepare(fileName) {
+  // let downloadFileName = fileName;
+  const a = document.createElement(&apos;a&apos;);
+  let downLoadfileName = fileName.replace(&apos;RefundRetention&apos;, &apos;&#x6570;&#x5BB6;&#x633D;&#x7559;&#x7528;&#x6237;&#x9000;&#x8D39;&#x62A5;&#x8868;_&apos;);
+  a.setAttribute(&apos;download&apos;, downLoadfileName)
+  a.setAttribute(&apos;target&apos;, &apos;_blank&apos;)
+
+  const token = localStorage.getItem(&apos;token&apos;)
+  const opId = localStorage.getItem(&apos;opId&apos;)
+  let path = &quot;http://&quot;+window.location.host
+  let outSysName = sessionStorage.getItem(&quot;outSysName&quot;);
+  if (outSysName == &apos;ONLINE&apos;) {
+    path = &quot;http://&quot;+window.location.host+&quot;/refundCasAuthByOutAccess&quot;
+  }
+  let uri = `${path}/refund/refundRegisterCountController/downLoadFile?fileName=${fileName}&amp;token=${token}&amp;opId=${opId}`
+  alert(uri)
+  console.log(uri)
+  a.setAttribute(&apos;href&apos;, uri)
+  a.click()
+},<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -1756,7 +1804,7 @@ AopContext.currentProxy()<span aria-hidden="true" class="line-numbers-rows"><spa
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">959.9k</span>
+                        class="white-color">962.5k</span>
             
             
             
