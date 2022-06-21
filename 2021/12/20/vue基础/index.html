@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-23
+                    2022-05-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.7k
+                    3.9k
                 </div>
                 
 
@@ -909,10 +909,24 @@ vm._data.message=&quot;11&quot;
 
 
 
-<h1 id="&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;"><a href="#&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;" class="headerlink" title="&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;"></a>&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;</h1><p>&#x7236;&#x4F20;&#x5B50; props</p>
-<p>&#x5B50;&#x4F20;&#x7236;   &#x7236;&#x8C03;&#x7528; props &#x4E2D; &#x7236;&#x4F20;&#x7684;get&#x65B9;&#x6CD5; &#x5728;get&#x65B9;&#x6CD5;&#x4E2D;&#x8FD4;&#x56DE;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x503C;</p>
-<p>&#x5B50;&#x8C03;&#x7528;&#x7236;&#x65B9;&#x6CD5;  this.$emit(&#x2018;closeDialog&#x2019;,11)  </p>
-<p>this.$emit(&#x201C;function&#x201D;,param);   //&#x5176;&#x4E2D;function&#x4E3A;&#x7236;&#x7EC4;&#x4EF6;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#xFF0C;param&#x4E3A;&#x9700;&#x8981;&#x4F20;&#x9012;&#x53C2;&#x6570;</p>
+<h1 id="&#x76D1;&#x542C;&#x5668;"><a href="#&#x76D1;&#x542C;&#x5668;" class="headerlink" title="&#x76D1;&#x542C;&#x5668;"></a>&#x76D1;&#x542C;&#x5668;</h1><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">watch<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&apos;cityName.name&apos;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">handler</span><span class="token punctuation">(</span><span class="token parameter">newName<span class="token punctuation">,</span> oldName</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// ...</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      deep<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      immediate<span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>-&#x8BBE;&#x7F6E;deep: true &#x5219;&#x53EF;&#x4EE5;&#x76D1;&#x542C;&#x5230;cityName.name&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x6B64;&#x65F6;&#x4F1A;&#x7ED9;cityName&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x90FD;&#x52A0;&#x4E0A;&#x8FD9;&#x4E2A;&#x76D1;&#x542C;&#x5668;&#xFF0C;&#x5F53;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x8F83;&#x591A;&#x65F6;&#xFF0C;&#x6BCF;&#x4E2A;&#x5C5E;&#x6027;&#x503C;&#x7684;&#x53D8;&#x5316;&#x90FD;&#x4F1A;&#x6267;&#x884C;handler&#x3002;&#x5982;&#x679C;&#x53EA;&#x9700;&#x8981;&#x76D1;&#x542C;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x503C;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x505A;&#x4EE5;&#x4E0B;&#x4F18;&#x5316;&#xFF1A;&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5F62;&#x5F0F;&#x76D1;&#x542C;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;</p>
+<h1 id="&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;"><a href="#&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;" class="headerlink" title="&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;"></a>&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;</h1><p>&#x7236;&#x4F20;&#x5B50; props                                                                                                                 //&#x5C5E;&#x6027;</p>
+<p>&#x5B50;&#x4F20;&#x7236;   &#x7236;&#x8C03;&#x7528; props &#x4E2D; &#x7236;&#x4F20;&#x7684;get&#x65B9;&#x6CD5;  &#x5728;get&#x65B9;&#x6CD5;&#x4E2D;&#x8FD4;&#x56DE;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x503C;              //&#x65B9;&#x6CD5;</p>
+<p>&#x5B50;&#x8C03;&#x7528;&#x7236;&#x65B9;&#x6CD5;  this.$emit(&#x2018;closeDialog&#x2019;,11)                                                                //&#x5B50;&#x8C03;&#x7528;&#x7236;&#x65B9;&#x6CD5;</p>
+<p>this.$emit(&#x201C;function&#x201D;,param);   //&#x5176;&#x4E2D;function&#x4E3A;&#x7236; &#x7ED9; &#x5B50;&#x7EC4;&#x4EF6; &#x8D4B;&#x503C;&#x7684;&#x51FD;&#x6570;&#x5C5E;&#x6027; &#xFF0C;param&#x4E3A;&#x9700;&#x8981;&#x4F20;&#x9012;&#x53C2;&#x6570;</p>
+<p>&lt;&#x5B50;  @funcion=&#x201D;fsf&#x201D;&gt;</p>
+<p>fsf(e){}</p>
+<p>&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D; this.$emit(&#x201C;function&#x201D;,param);  &#x7B49;&#x4E8E;&#x8C03;&#x7528;&#x7236;&#x7EC4;&#x4EF6;&#x4E2D; fsf(param) &#x65B9;&#x6CD5;</p>
 <pre class="line-numbers language-none"><code class="language-none">template&gt;
  &lt;div class=&quot;school&quot;&gt;
   &lt;h2&gt;&#x5B66;&#x6821;&#x540D;&#x79F0;&#xFF1A;{{name}}&lt;/h2&gt;
@@ -1599,7 +1613,7 @@ handleClose(val){
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">962.5k</span>
+                        class="white-color">963k</span>
             
             
             
