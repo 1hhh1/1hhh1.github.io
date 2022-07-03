@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-25
+                    2022-07-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.9k
+                    4.1k
                 </div>
                 
 
@@ -1066,7 +1066,33 @@ handleClose(val){
 &#x7248;&#x6743;&#x58F0;&#x660E;&#xFF1A;&#x672C;&#x6587;&#x4E3A;CSDN&#x535A;&#x4E3B;&#x300C;BBBBobo&#x300D;&#x7684;&#x539F;&#x521B;&#x6587;&#x7AE0;&#xFF0C;&#x9075;&#x5FAA;CC 4.0 BY-SA&#x7248;&#x6743;&#x534F;&#x8BAE;&#xFF0C;&#x8F6C;&#x8F7D;&#x8BF7;&#x9644;&#x4E0A;&#x539F;&#x6587;&#x51FA;&#x5904;&#x94FE;&#x63A5;&#x53CA;&#x672C;&#x58F0;&#x660E;&#x3002;
 &#x539F;&#x6587;&#x94FE;&#x63A5;&#xFF1A;https://blog.csdn.net/BBBBobo/article/details/121869585<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h1 id="date&#x901A;&#x7528;&#x683C;&#x5F0F;&#x5316;&#x65B9;&#x6CD5;"><a href="#date&#x901A;&#x7528;&#x683C;&#x5F0F;&#x5316;&#x65B9;&#x6CD5;" class="headerlink" title="date&#x901A;&#x7528;&#x683C;&#x5F0F;&#x5316;&#x65B9;&#x6CD5;"></a>date&#x901A;&#x7528;&#x683C;&#x5F0F;&#x5316;&#x65B9;&#x6CD5;</h1><pre class="line-numbers language-none"><code class="language-none">//&#x5F53;&#x524D;&#x65F6;&#x95F4; &#x76F8;&#x52A0;&#x5929;&#x6570;
+Date.prototype.addDay = function(day){
+    let date = this;
+    date.setDate(this.getDate()+(day))
+    return date
+}
 
+//&#x683C;&#x5F0F;&#x5316;&#x65F6;&#x95F4;
+Date.prototype.Format = function (fmt) { //author: meizz
+    var o = {
+        &quot;M+&quot;: this.getMonth() + 1, //&#x6708;&#x4EFD;
+        &quot;d+&quot;: this.getDate(), //&#x65E5;
+        &quot;H+&quot;: this.getHours(), //&#x5C0F;&#x65F6;
+        &quot;m+&quot;: this.getMinutes(), //&#x5206;
+        &quot;s+&quot;: this.getSeconds(), //&#x79D2;
+        &quot;q+&quot;: Math.floor((this.getMonth() + 3) / 3), //&#x5B63;&#x5EA6;
+        &quot;S&quot;: this.getMilliseconds() //&#x6BEB;&#x79D2;
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + &quot;&quot;).substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp(&quot;(&quot; + k + &quot;)&quot;).test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : ((&quot;00&quot; + o[k]).substr((&quot;&quot; + o[k]).length)));
+    return fmt;
+}
+
+//&#x8C03;&#x7528;
+new Date().addDay(-7).Format(&apos;yyyyMMddHHmmss&apos;),              //&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x51CF;&#x4E03;&#x5929;
+new Date(1656778136452).addDay(-7).Format(&apos;yyyyMMddHHmmss&apos;), //&#x94C1;&#x5B9A;&#x65F6;&#x95F4;&#x51CF;&#x4E03;&#x5929;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -1613,7 +1639,7 @@ handleClose(val){
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">963k</span>
+                        class="white-color">963.2k</span>
             
             
             
