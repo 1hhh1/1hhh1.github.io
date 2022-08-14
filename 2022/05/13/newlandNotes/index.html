@@ -443,12 +443,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Typora/">
-                                <span class="chip bg-color">Typora</span>
-                            </a>
-                        
                             <a href="/tags/Markdown/">
                                 <span class="chip bg-color">Markdown</span>
+                            </a>
+                        
+                            <a href="/tags/Typora/">
+                                <span class="chip bg-color">Typora</span>
                             </a>
                         
                     </div>
@@ -479,14 +479,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-06-13
+                    2022-08-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    299
+                    862
                 </div>
                 
 
@@ -564,10 +564,56 @@
 
 
 
+<pre class="line-numbers language-none"><code class="language-none">   String[] dbiOne = {&quot;AA&quot;, &quot;AB&quot;, &quot;AC&quot;, &quot;AD&quot;, &quot;AE&quot;, &quot;AF&quot;, &quot;AG&quot;};
+
+    Integer[] busiType = {1, 6, 5, 7, 2, 3, 4};
+
+    String[] busiName = {&quot;&#x5957;&#x9910;&#x53CA;&#x56FA;&#x5B9A;&#x8D39;&#x7528;&quot;, &quot;&#x5957;&#x9910;&#x5916;&#x8BED;&#x97F3;&#x8D39;&quot;, &quot;&#x5957;&#x9910;&#x5916;&#x4E0A;&#x7F51;&#x8D39;&quot;, &quot;&#x5957;&#x9910;&#x5916;&#x77ED;&#x5F69;&#x4FE1;&#x8D39;&quot;, &quot;&#x589E;&#x503C;&#x4E1A;&#x52A1;&#x8D39;&quot;, &quot;&#x4EE3;&#x6536;&#x8D39;&quot;, &quot;&#x5176;&#x4ED6;&#x8D39;&#x7528;&quot;};
+
+    for (int i = 0; i &lt; dbiOne.length; i++) {
+        Map&lt;String, Object&gt; busiMap = new HashMap&lt;&gt;();
+        busiMap.put(&quot;busiType&quot;, busiType[i]);
+        busiMap.put(&quot;busiName&quot;, busiName[i]);
+
+        map.put(dbiOne[i], busiMap);
+    }
+
+    return map;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
+<p>&#x62A5;&#x8868;&#x6D41;&#x7A0B;</p>
+<hr>
+<p>1.&#x6279;&#x91CF;&#x5E73;&#x53F0;&#x5B9A;&#x4E49;&#x811A;&#x672C;&#x53CA;&#x811A;&#x672C; taskId</p>
+<p>2.&#x9000;&#x8D39;&#x7CFB;&#x7EDF;-&gt;&#x63D2;&#x5165;&#x9000;&#x8D39;&#x4EFB;&#x52A1;&#x8868; &#xFF0C; &#x5E76; &#x4F20;&#x9012;&#x53C2;&#x6570; &#x8C03;&#x7528;&#x6279;&#x91CF;&#x5E73;&#x53F0;&#x811A;&#x672C;</p>
+<p>3.&#x811A;&#x672C;&#x6267;&#x884C; &#x66F4;&#x65B0;&#x9000;&#x8D39;&#x4EFB;&#x52A1;&#x8868; &#x72B6;&#x6001;</p>
+<p>4.&#x6587;&#x4EF6;&#x5217;&#x8868;&#x5C55;&#x793A; &#xFF0C;&#x66F4;&#x5177;&#x9000;&#x8D39;&#x4EFB;&#x52A1;&#x8868;&#x72B6;&#x6001;&#x5C55;&#x793A; &#x6570;&#x636E;&#x5904;&#x7406;&#x5B8C;&#x6210;&#x8FD8;&#x662F;&#x6570;&#x636E;&#x5904;&#x7406;&#x4E2D;&#xFF0C;</p>
+<p>5.&#x6587;&#x4EF6;&#x4E0B;&#x8F7D; &#xFF0C;&#x8C03;&#x7528;&#x9000;&#x8D39;&#x7CFB;&#x7EDF; api  &#x9000;&#x8D39;&#x7CFB;&#x7EDF;&#x540E;&#x53F0;&#x8FDE;&#x63A5;ftp&#x66F4;&#x5177;&#x6587;&#x4EF6;&#x540D;&#x8FDB;&#x884C;&#x4E0B;&#x8F7D;&#x8FD4;&#x56DE;&#x524D;&#x7AEF;</p>
+<pre class="line-numbers language-none"><code class="language-none">{&quot;queryMonth&quot;:&quot;202202&quot;,&quot;fileName&quot;:&quot;1-2201-06_202202_rptType3.xlsx&quot;,&quot;reportId&quot;:&quot;1-2201-06&quot;,&quot;processId&quot;:&quot;6&quot;,&quot;taskId&quot;:220714100690,&quot;rptType&quot;:3}
 
+
+
+&lt;{processDefinitionId=[1583], workerGroup=[boss], startNodeListStr=[{&quot;queryMonth&quot;:&quot;202202&quot;,&quot;fileName&quot;:&quot;1-2201-06_202202_rptType3.xlsx&quot;,&quot;reportId&quot;:&quot;1-2201-06&quot;,&quot;processId&quot;:&quot;6&quot;,&quot;taskId&quot;:220714100690,&quot;rptType&quot;:3}]},{token=[3cf4acaf2d703606adfeaa4085f3b992], Content-Type=[multipart/form-data]}&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<hr>
+<p>BOSSVIEW&#x8FD9;&#x5468;&#x76EE;&#x6807;<br>  1.&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x8C03;&#x901A;&#xFF0C;&#x8BB0;&#x5F55;&#x4E0B;&#x8C03;&#x8BD5;&#x6570;&#x636E;<br>  2.&#x68B3;&#x7406;&#x529F;&#x80FD;&#x70B9;&#x4E2D;&#x7528;&#x5230;&#x7684;&#x6240;&#x6709;&#x8868;&#xFF0C;&#x586B;&#x5199;&#x5230;excel&#x4E2D;<br>  3.&#x6CE8;&#x610F;&#x4E00;&#x4E0B;accouting&#xFF0C;sps&#x6709;&#x6CA1;&#x6709;&#x6DF7;&#x7528;   &#xFF08;&#x6BD4;&#x5982;&#x5207;&#x5E93;accouting&#xFF0C;sql&#x91CC;&#x5374;&#x5199;sps.&#x8868;&#x540D;&#xFF09;<br>  4.&#x6709;&#x6307;&#x7EB9;&#x7684;&#xFF0C;&#x4F18;&#x5148;&#x5728;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x641E;&#x8D77;&#x6765;</p>
+<p>BOSSVIEW&#x8FD9;&#x5468;&#x76EE;&#x6807;<br>  1.&#x628A;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x8C03;&#x901A;<br>  2.&#x68B3;&#x7406;&#x529F;&#x80FD;&#x70B9;&#x4E2D;&#x7528;&#x5230;&#x7684;&#x6240;&#x6709;&#x8868;<br>  3.&#x6CE8;&#x610F;&#x4E00;&#x4E0B;accouting&#xFF0C;sps&#x6709;&#x6CA1;&#x6709;&#x6DF7;&#x7528;   &#xFF08;&#x6BD4;&#x5982;&#x5207;&#x5E93;accouting&#xFF0C;sql&#x91CC;&#x5374;&#x5199;sps.&#x8868;&#x540D;&#xFF09;</p>
+<p> [&#x8BB0;&#x8D26;&#x5E93;&#x5272;&#x63A5;&#x529F;&#x80FD;&#x68B3;&#x7406;&#x9A8C;&#x8BC1;.zip](D:\weChatFile\newWeChat Files\WeChat Files\wxid_lq71yr8q6zcb21\FileStorage\MsgAttach\1529640ed027c71ce96f672d9812bf47\File\2022-07\&#x8BB0;&#x8D26;&#x5E93;&#x5272;&#x63A5;&#x529F;&#x80FD;&#x68B3;&#x7406;&#x9A8C;&#x8BC1;.zip) </p>
+<hr>
+<p>Jenkins &#x914D;&#x7F6E;</p>
+<p>&#x5E94;&#x7528;&#x548C;jar&#x7ED1;&#x5B9A;</p>
+<p>&#x6D41;&#x6C34;&#x7EBF;&#x7533;&#x8BF7;</p>
+<p>&#x4E00;&#x4E2A;&#x5730;&#x5E02;&#x4E00;&#x4E2A;&#x6D41;&#x6C34;&#x7EBF;</p>
+<p>7                            1 </p>
+<p>7&#x4E2A;&#x5730;&#x52BF;</p>
+<p>&#x7A3D;&#x6838;&#x6D4B;&#x8BD5;</p>
+<hr>
+<p>1.&#x6D4B;&#x8BD5;&#x8FDB;&#x7A0B;</p>
+<p>2.&#x8FDB;&#x7A0B;&#x811A;&#x672C;</p>
+<p>3.python &#x811A;&#x672C;&#x4FEE;&#x6539;</p>
 
                 
             </div>
@@ -632,12 +678,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Typora/">
-                                    <span class="chip bg-color">Typora</span>
-                                </a>
-                            
                                 <a href="/tags/Markdown/">
                                     <span class="chip bg-color">Markdown</span>
+                                </a>
+                            
+                                <a href="/tags/Typora/">
+                                    <span class="chip bg-color">Typora</span>
                                 </a>
                             
                         </div>
@@ -836,52 +882,46 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/05/13/newlandNotes/">
+                <a href="/2022/08/07/guli/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/1hhh1/1hhh1.github.io/medias/featureimages/18.jpg" class="responsive-img" alt="newlandNotes">
+                        <img src="https://cdn.jsdelivr.net/gh/1hhh1/1hhh1.github.io/medias/featureimages/19.jpg" class="responsive-img" alt="guli">
                         
-                        <span class="card-title">newlandNotes</span>
+                        <span class="card-title">guli</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+                            谷类商城
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-13
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-07
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Markdown/" class="post-category">
-                                    Markdown
+                            <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="post-category">
+                                    项目
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
-                    </a>
-                    
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/%E9%A1%B9%E7%9B%AE/">
+                        <span class="chip bg-color">项目</span>
                     </a>
                     
                 </div>
@@ -929,12 +969,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
-                    </a>
-                    
                     <a href="/tags/Markdown/">
                         <span class="chip bg-color">Markdown</span>
+                    </a>
+                    
+                    <a href="/tags/Typora/">
+                        <span class="chip bg-color">Typora</span>
                     </a>
                     
                 </div>
@@ -1121,7 +1161,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">963.2k</span>
+                        class="white-color">980.6k</span>
             
             
             

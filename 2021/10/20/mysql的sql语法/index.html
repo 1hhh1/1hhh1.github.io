@@ -463,14 +463,14 @@ title: mysql&amp;#x7684;sql&amp;#x8BED;&amp;#x6CD5;author: hhhsummary:  mysql&am
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-09
+                    2022-08-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.1k
+                    5.4k
                 </div>
                 
 
@@ -1033,7 +1033,32 @@ not exists&#x548C;exists&#x7684;&#x7528;&#x6CD5;&#x76F8;&#x53CD;&#xFF0C;&#x5C31;
 &#x539F;&#x6587;&#x94FE;&#x63A5;&#xFF1A;https://blog.csdn.net/wankao/article/details/109366320<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>&#xFF1A;<a target="_blank" rel="noopener" href="https://blog.csdn.net/wankao/article/details/109366320">https://blog.csdn.net/wankao/article/details/109366320</a></p>
+<h1 id="oracle&#x8BED;&#x6CD5;"><a href="#oracle&#x8BED;&#x6CD5;" class="headerlink" title="oracle&#x8BED;&#x6CD5;"></a>oracle&#x8BED;&#x6CD5;</h1><h6 id="oracle&#x8BA1;&#x7B97;&#x4E24;&#x4E2A;&#x65E5;&#x671F;&#x7684;&#x76F8;&#x5DEE;&#x7684;&#x5C0F;&#x65F6;&#x6570;&#x3001;&#x5206;&#x949F;&#x6570;&#x3001;&#x79D2;&#x6570;"><a href="#oracle&#x8BA1;&#x7B97;&#x4E24;&#x4E2A;&#x65E5;&#x671F;&#x7684;&#x76F8;&#x5DEE;&#x7684;&#x5C0F;&#x65F6;&#x6570;&#x3001;&#x5206;&#x949F;&#x6570;&#x3001;&#x79D2;&#x6570;" class="headerlink" title="oracle&#x8BA1;&#x7B97;&#x4E24;&#x4E2A;&#x65E5;&#x671F;&#x7684;&#x76F8;&#x5DEE;&#x7684;&#x5C0F;&#x65F6;&#x6570;&#x3001;&#x5206;&#x949F;&#x6570;&#x3001;&#x79D2;&#x6570;"></a>oracle&#x8BA1;&#x7B97;&#x4E24;&#x4E2A;&#x65E5;&#x671F;&#x7684;&#x76F8;&#x5DEE;&#x7684;&#x5C0F;&#x65F6;&#x6570;&#x3001;&#x5206;&#x949F;&#x6570;&#x3001;&#x79D2;&#x6570;</h6><pre class="line-numbers language-none"><code class="language-none">-- &#x76F8;&#x5DEE;&#x5C0F;&#x65F6;&#x6570;
+select (TO_DATE(&apos;2020-06-20 08:01:00&apos;, &apos;yyyy-MM-dd hh24:mi:ss&apos;)-TO_DATE(&apos;2020-06-20 07:58:00&apos;,&apos;yyyy-MM-dd hh24:mi:ss&apos;))*24 &#x76F8;&#x5DEE;&#x5C0F;&#x65F6;&#x6570; 
+from dual;
+---------result:0.05
 
+-- &#x76F8;&#x5DEE;&#x5206;&#x949F;&#x6570;
+select (TO_DATE(&apos;2020-06-20 08:01:00&apos;, &apos;yyyy-MM-dd hh24:mi:ss&apos;)-TO_DATE(&apos;2020-06-20 07:58:00&apos;,&apos;yyyy-MM-dd hh24:mi:ss&apos;))*24*60 &#x76F8;&#x5DEE;&#x5206;&#x949F;&#x6570;
+from dual;
+----------result:3
+
+-- &#x76F8;&#x5DEE;&#x79D2;&#x6570;
+select (TO_DATE(&apos;2020-06-20 08:01:00&apos;, &apos;yyyy-MM-dd hh24:mi:ss&apos;)-TO_DATE(&apos;2020-06-20 07:58:00&apos;,&apos;yyyy-MM-dd hh24:mi:ss&apos;))*24*60*60 &#x76F8;&#x5DEE;&#x79D2;&#x6570;
+from dual;
+----------result:180
+&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;
+&#x7248;&#x6743;&#x58F0;&#x660E;&#xFF1A;&#x672C;&#x6587;&#x4E3A;CSDN&#x535A;&#x4E3B;&#x300C;Nansen0324&#x300D;&#x7684;&#x539F;&#x521B;&#x6587;&#x7AE0;&#xFF0C;&#x9075;&#x5FAA;CC 4.0 BY-SA&#x7248;&#x6743;&#x534F;&#x8BAE;&#xFF0C;&#x8F6C;&#x8F7D;&#x8BF7;&#x9644;&#x4E0A;&#x539F;&#x6587;&#x51FA;&#x5904;&#x94FE;&#x63A5;&#x53CA;&#x672C;&#x58F0;&#x660E;&#x3002;
+&#x539F;&#x6587;&#x94FE;&#x63A5;&#xFF1A;https://blog.csdn.net/nansen0324/article/details/122545528<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-none"><code class="language-none">to_char(t.refund_date, &apos;yyyymmdd&apos;) = #{refundMonth}
+
+
+to_number()
+
+ to_date(#{inure_date},&apos;yyyymmddhh24miss&apos;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -1557,7 +1582,7 @@ not exists&#x548C;exists&#x7684;&#x7528;&#x6CD5;&#x76F8;&#x53CD;&#xFF0C;&#x5C31;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">963.2k</span>
+                        class="white-color">980.6k</span>
             
             
             
