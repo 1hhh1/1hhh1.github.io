@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-14
+                    2022-08-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    862
+                    999
                 </div>
                 
 
@@ -610,6 +610,42 @@
 <p>1.&#x6D4B;&#x8BD5;&#x8FDB;&#x7A0B;</p>
 <p>2.&#x8FDB;&#x7A0B;&#x811A;&#x672C;</p>
 <p>3.python &#x811A;&#x672C;&#x4FEE;&#x6539;</p>
+<p>DB32_SUB_SYS_REFUND</p>
+<hr>
+<p>SELECT </p>
+<p>*</p>
+<p>&#x2013; o.CREATE_DATE,</p>
+<p>&#x2013; o.REFUND_DATE,</p>
+<p>&#x2013; o.PHONE_NUMBER,</p>
+<p>&#x2013; o.DEST_NUMBER,</p>
+<p>&#x2013; o.CITY_ID,</p>
+<p>&#x2013; o.DEST_CITY_ID,</p>
+<p>&#x2013; c.REFUND_OP_ID,</p>
+<p>&#x2013; inf.REFUND_LEVEL,</p>
+<p>&#x2013; o.AREA_ID,</p>
+<p>&#x2013; inf.GROUP_ID,</p>
+<p>&#x2013; o.REFUND_REMARK,</p>
+<p>&#x2013; o.ORDER_ID,</p>
+<p>&#x2013; o.SEQ_REL,</p>
+<p>&#x2013; o.REFUND_BUSI_TYPE,</p>
+<p>&#x2013; b.audit_time,</p>
+<p>&#x2013; b.audit_op_id,</p>
+<p>&#x2013; infe.REFUND_LEVEL,</p>
+<p>&#x2013; infe.AREA_ID,</p>
+<p>&#x2013; c.CHECK_ID,</p>
+<p>&#x2013; c.CHECK_TYPE,</p>
+<p>&#x2013; c.CHECK_TIME</p>
+<p> FROM REFUND_CHECK c LEFT JOIN REFUND_ORDER o on c.ORDER_ID = o.ORDER_ID</p>
+<p> left join refund_op_info inf on c.REFUND_OP_ID = inf.OP_ID</p>
+<p> left join (</p>
+<p>   SELECT a.order_id as ORDER_ID,max(a.AUDIT_SEQ) as AUDIT_SEQ FROM refund_order_trans_inf a </p>
+<p>   where a.audit_process = 2 and a.audit_status = 2 GROUP BY a.ORDER_ID</p>
+<p> ) b on b.order_id == o.ORDER_ID</p>
+<p> left JOIN refund_op_info infe on b.audit_op_id = infe.OP_ID</p>
+<p>;</p>
+<p>select * from REFUND_CHECK</p>
+<p>select * from REFUND_OP_INFO</p>
+<p>select * from refund_order_trans_inf</p>
 
                 
             </div>
@@ -939,7 +975,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            新大陆
+                            newla
                         
                     </div>
                     <div class="publish-info">
@@ -1153,7 +1189,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">980.6k</span>
+                        class="white-color">981k</span>
             
             
             

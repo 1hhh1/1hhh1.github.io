@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-14
+                    2022-08-31
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.5k
+                    3.6k
                 </div>
                 
 
@@ -676,7 +676,9 @@ character_set_server = utf8<span aria-hidden="true" class="line-numbers-rows"><s
 -v /app/redis/redis.conf:/etc/redis/redis.conf 
 -v /app/redis/data:/data 
 -d redis:6.0.8 
-redis-server /etc/redis/redis.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+redis-server /etc/redis/redis.conf
+
+docker run -p 6380:6380 --name myr3 --privileged=true -v /app/redis/redis.conf:/etc/redis/redis.conf -v /app/redis/data:/data -d redis:6.2 redis-server /etc/redis/redis.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>3.&#x767B;&#x5F55;</p>
 <p>[root@VM-16-12-centos redis]# docker exec -it 8e09f386cf9f redis-cli -p 6380<br>127.0.0.1:6380&gt; auth 123456<br>OK</p>
@@ -1582,7 +1584,7 @@ docker update --restart=always &#x5BB9;&#x5668;ID(&#x6216;&#x8005;&#x5BB9;&#x566
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">980.6k</span>
+                        class="white-color">981k</span>
             
             
             

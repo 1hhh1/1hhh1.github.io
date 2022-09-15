@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-08
+                    2022-08-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.9k
+                    5.1k
                 </div>
                 
 
@@ -1279,7 +1279,7 @@ OR      REASONVERSION = &apos;&apos;
   a.click()
 },<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="oracle-&#x5E8F;&#x5217;-&#x5728;for&#x5FAA;&#x73AF;&#x4E2D;&#x91CD;&#x590D;"><a href="#oracle-&#x5E8F;&#x5217;-&#x5728;for&#x5FAA;&#x73AF;&#x4E2D;&#x91CD;&#x590D;" class="headerlink" title="oracle &#x5E8F;&#x5217; &#x5728;for&#x5FAA;&#x73AF;&#x4E2D;&#x91CD;&#x590D;"></a>oracle &#x5E8F;&#x5217; &#x5728;for&#x5FAA;&#x73AF;&#x4E2D;&#x91CD;&#x590D;</h3><pre class="line-numbers language-none"><code class="language-none">useCache=&quot;false&quot; flushCache=&quot;true&quot; 
+<h2 id="oracle-&#x5E8F;&#x5217;-&#x5728;for&#x5FAA;&#x73AF;&#x4E2D;&#x91CD;&#x590D;"><a href="#oracle-&#x5E8F;&#x5217;-&#x5728;for&#x5FAA;&#x73AF;&#x4E2D;&#x91CD;&#x590D;" class="headerlink" title="oracle &#x5E8F;&#x5217; &#x5728;for&#x5FAA;&#x73AF;&#x4E2D;&#x91CD;&#x590D;"></a>oracle &#x5E8F;&#x5217; &#x5728;for&#x5FAA;&#x73AF;&#x4E2D;&#x91CD;&#x590D;</h2><pre class="line-numbers language-none"><code class="language-none">useCache=&quot;false&quot; flushCache=&quot;true&quot; 
 &#x8FD9;&#x8DDF;Mybatis&#x7684;&#x7F13;&#x5B58;&#x673A;&#x5236;&#x6709;&#x5173;&#xFF0C;&#x540C;&#x4E00;&#x4E2A;SqlSession &#x5185;&#x6267;&#x884C;&#x540C;&#x4E00;&#x4E2A;SQL&#x4F1A;&#x4ECE;&#x7F13;&#x5B58;&#x4E2D;&#x53D6;&#x503C;&#x800C;&#x975E;&#x91CD;&#x65B0;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#x5E93;
 &#x6DFB;&#x52A0;useCache=&quot;false&quot; flushCache=&quot;true&quot;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x53D6;&#x503C;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x91CD;&#x590D;&#x503C;&#x3002;
 
@@ -1288,6 +1288,51 @@ OR      REASONVERSION = &apos;&apos;
         select REFUND_CHECK_SEQ.nextval
         from dual
     &lt;/select&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="sql-join-on-&#x540E;&#x9762;&#x52A0;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x548C;where-&#x540E;&#x9762;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;"><a href="#sql-join-on-&#x540E;&#x9762;&#x52A0;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x548C;where-&#x540E;&#x9762;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;" class="headerlink" title="sql join on &#x540E;&#x9762;&#x52A0;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x548C;where &#x540E;&#x9762;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;"></a>sql join on &#x540E;&#x9762;&#x52A0;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x548C;where &#x540E;&#x9762;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;</h2><h4 id="left-join-on-&#x540E;&#x9762;&#x8FC7;&#x6EE4;-&#x53EA;&#x5BF9;-&#x53F3;&#x8868;&#x751F;&#x6548;-&#x9700;&#x8981;&#x5728;where&#x540E;&#x9762;-&#x5BF9;&#x53F3;&#x8868;&#x4E3B;&#x952E;&#x8FDB;&#x884C;-is-not-null"><a href="#left-join-on-&#x540E;&#x9762;&#x8FC7;&#x6EE4;-&#x53EA;&#x5BF9;-&#x53F3;&#x8868;&#x751F;&#x6548;-&#x9700;&#x8981;&#x5728;where&#x540E;&#x9762;-&#x5BF9;&#x53F3;&#x8868;&#x4E3B;&#x952E;&#x8FDB;&#x884C;-is-not-null" class="headerlink" title="left join  on &#x540E;&#x9762;&#x8FC7;&#x6EE4; &#x53EA;&#x5BF9; &#x53F3;&#x8868;&#x751F;&#x6548;, &#x9700;&#x8981;&#x5728;where&#x540E;&#x9762; &#x5BF9;&#x53F3;&#x8868;&#x4E3B;&#x952E;&#x8FDB;&#x884C; is not null"></a>left join  on &#x540E;&#x9762;&#x8FC7;&#x6EE4; &#x53EA;&#x5BF9; &#x53F3;&#x8868;&#x751F;&#x6548;, &#x9700;&#x8981;&#x5728;where&#x540E;&#x9762; &#x5BF9;&#x53F3;&#x8868;&#x4E3B;&#x952E;&#x8FDB;&#x884C; is not null</h4><pre class="line-numbers language-none"><code class="language-none">a   id  name 
+     1   &#x4E00;		
+     2   &#x4E8C;
+     3   &#x4E09;
+     
+b   id   name 
+     1	 &#x5F20;&#x4E09;
+     2   &#x674E;&#x56DB;
+    
+
+select * from a join b on a.id = b.id and b.name = &quot;&#x5F20;&#x4E09;&quot;
+
+a.id  b.id b.name
+1      1    &#x5F20;&#x4E09;
+2      null   null
+3      null   null
+
+select * from a join b on a.id = b.id and a.id = 1
+
+a.id  b.id b.name
+1      1    &#x5F20;&#x4E09;
+2      null   null
+3      null   null
+
+
+select * from a join b on a.id = b.id and a.id = 1 where b.id is not null
+
+a.id  b.id b.name
+1      1    &#x5F20;&#x4E09;
+
+
+&#x7B49;&#x540C;&#x4E8E;
+select * from a join b on a.id = b.id and a.id = 1 where b.id is not null
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+
 
 
                 
@@ -1816,7 +1861,7 @@ OR      REASONVERSION = &apos;&apos;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">980.6k</span>
+                        class="white-color">981k</span>
             
             
             
