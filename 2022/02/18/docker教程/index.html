@@ -558,7 +558,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-31
+                    2022-11-21
                 </div>
                 
 
@@ -611,8 +611,7 @@
 <li>&#x4ED3;&#x5E93;   &#x5B58;&#x653E;&#x955C;&#x50CF;&#x7684;&#x5730;&#x65B9;</li>
 </ul>
 <p><img src="/2022/02/18/docker%E6%95%99%E7%A8%8B/image-20220217173656400.png" alt="image-20220217173656400"></p>
-<h2 id="&#x955C;&#x50CF;"><a href="#&#x955C;&#x50CF;" class="headerlink" title="&#x955C;&#x50CF;"></a>&#x955C;&#x50CF;</h2><p><strong>&#x955C;&#x50CF;&#x64CD;&#x4F5C;&#x547D;&#x4EE4;</strong></p>
-<p>docker rmi xxx        &#x5220;&#x9664;&#x955C;&#x50CF;      docker rmi -f xxx  (&#x5F3A;&#x5236;&#x5220;&#x9664;)</p>
+<h2 id="&#x955C;&#x50CF;"><a href="#&#x955C;&#x50CF;" class="headerlink" title="&#x955C;&#x50CF;"></a>&#x955C;&#x50CF;</h2><h6 id="&#x955C;&#x50CF;&#x64CD;&#x4F5C;&#x547D;&#x4EE4;"><a href="#&#x955C;&#x50CF;&#x64CD;&#x4F5C;&#x547D;&#x4EE4;" class="headerlink" title="&#x955C;&#x50CF;&#x64CD;&#x4F5C;&#x547D;&#x4EE4;"></a><strong>&#x955C;&#x50CF;&#x64CD;&#x4F5C;&#x547D;&#x4EE4;</strong></h6><p>docker rmi xxx        &#x5220;&#x9664;&#x955C;&#x50CF;      docker rmi -f xxx  (&#x5F3A;&#x5236;&#x5220;&#x9664;)</p>
 <p>docker  search xx   &#x641C;&#x7D22;&#x955C;&#x50CF;      docker search &#x2013;limit 5 redis</p>
 <p>docker pull xx         &#x62C9;&#x53D6;&#x955C;&#x50CF;       docker pull mysql/<strong>mysql-server</strong>:8.0.18</p>
 <p>docker system df   &#x67E5;&#x770B;&#x955C;&#x50CF;&#x5BB9;&#x5668;&#x6240;&#x5360;&#x7A7A;&#x95F4;</p>
@@ -642,24 +641,19 @@
 <p>docker ps -n 2</p>
 <h1 id="Docker-ps-&#x67E5;&#x770B;&#x5B8C;&#x6574;command"><a href="#Docker-ps-&#x67E5;&#x770B;&#x5B8C;&#x6574;command" class="headerlink" title="Docker ps &#x67E5;&#x770B;&#x5B8C;&#x6574;command"></a>Docker ps &#x67E5;&#x770B;&#x5B8C;&#x6574;command</h1><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker ps --no-trunc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><strong>&#x542F;&#x52A8;&#x5BB9;&#x5668;</strong>    </p>
-<p>docker run  xxx</p>
+<h6 id="&#x542F;&#x52A8;&#x5BB9;&#x5668;"><a href="#&#x542F;&#x52A8;&#x5BB9;&#x5668;" class="headerlink" title="&#x542F;&#x52A8;&#x5BB9;&#x5668;"></a><strong>&#x542F;&#x52A8;&#x5BB9;&#x5668;</strong></h6><p>docker run  xxx</p>
 <p>&#x540E;&#x53F0;&#x8FD0;&#x884C;  docker run -d xxx</p>
 <p>&#x4EA4;&#x4E92;&#x8FD0;&#x884C;  docker run -it ubuntu                   exit &#x9000;&#x51FA;</p>
 <p>docker run -it &#x2013;name=my111 ubuntu bash     //&#x6307;&#x5B9A;&#x5BB9;&#x5668;&#x540D;&#x5B57;&#x5E76;&#x4EA4;&#x4E92;&#x8FD0;&#x884C;</p>
 <p>docker run -d &#x2013;name mynginx -p 3344:80 -v /root/nginxConfig/nginx.conf:/etc/nginx/nginx.conf -v /root/nginxConfig/nginx/logs:/var/log/nginx -v /root/nginxConfig/nginx/html:/usr/share/nginx/html -v /root/nginxConfig/nginx/conf:/etc/nginx/conf.d &#x2013;privileged=true nginx</p>
-<p><strong>&#x9000;&#x51FA;&#x5BB9;&#x5668;</strong></p>
-<p>exit &#xFF08;&#x9000;&#x51FA;&#x5BB9;&#x5668;&#xFF09;  ctrl+p+q&#xFF08;&#x9000;&#x51FA;&#x5BB9;&#x5668; &#x4E0D;&#x505C;&#x6B62;&#x5BB9;&#x5668;&#xFF09;</p>
-<p><strong>&#x542F;&#x52A8;&#x5DF2;&#x7ECF;&#x505C;&#x6B62;&#x7684;&#x5BB9;&#x5668;</strong></p>
-<p>docker starat    &#x5BB9;&#x5668;id /(&#x5BB9;&#x5668;&#x540D;)</p>
+<h6 id="&#x9000;&#x51FA;&#x5BB9;&#x5668;"><a href="#&#x9000;&#x51FA;&#x5BB9;&#x5668;" class="headerlink" title="&#x9000;&#x51FA;&#x5BB9;&#x5668;"></a><strong>&#x9000;&#x51FA;&#x5BB9;&#x5668;</strong></h6><p>exit &#xFF08;&#x9000;&#x51FA;&#x5BB9;&#x5668;&#xFF09;  ctrl+p+q&#xFF08;&#x9000;&#x51FA;&#x5BB9;&#x5668; &#x4E0D;&#x505C;&#x6B62;&#x5BB9;&#x5668;&#xFF09;</p>
+<h6 id="&#x542F;&#x52A8;&#x5DF2;&#x7ECF;&#x505C;&#x6B62;&#x7684;&#x5BB9;&#x5668;"><a href="#&#x542F;&#x52A8;&#x5DF2;&#x7ECF;&#x505C;&#x6B62;&#x7684;&#x5BB9;&#x5668;" class="headerlink" title="&#x542F;&#x52A8;&#x5DF2;&#x7ECF;&#x505C;&#x6B62;&#x7684;&#x5BB9;&#x5668;"></a><strong>&#x542F;&#x52A8;&#x5DF2;&#x7ECF;&#x505C;&#x6B62;&#x7684;&#x5BB9;&#x5668;</strong></h6><p>docker starat    &#x5BB9;&#x5668;id /(&#x5BB9;&#x5668;&#x540D;)</p>
 <p>docker stop    xx/xx</p>
 <p>docker restart  xx/xx</p>
 <p>docker kill   xx/xx</p>
-<p><strong>&#x5220;&#x9664;&#x5DF2;&#x7ECF;&#x505C;&#x6B62;&#x7684;&#x5BB9;&#x5668;</strong></p>
-<p>docker rm xx/xx</p>
+<h6 id="&#x5220;&#x9664;&#x5DF2;&#x7ECF;&#x505C;&#x6B62;&#x7684;&#x5BB9;&#x5668;"><a href="#&#x5220;&#x9664;&#x5DF2;&#x7ECF;&#x505C;&#x6B62;&#x7684;&#x5BB9;&#x5668;" class="headerlink" title="&#x5220;&#x9664;&#x5DF2;&#x7ECF;&#x505C;&#x6B62;&#x7684;&#x5BB9;&#x5668;"></a><strong>&#x5220;&#x9664;&#x5DF2;&#x7ECF;&#x505C;&#x6B62;&#x7684;&#x5BB9;&#x5668;</strong></h6><p>docker rm xx/xx</p>
 <p>docker rm -f xx/xx</p>
-<p><strong>&#x91CD;&#x8981;</strong></p>
-<p>&#x540E;&#x53F0;&#x8FD0;&#x884C;  docker  run  -d  xx (&#x540E;&#x53F0;&#x8FD0;&#x884C; &#x5B88;&#x62A4;&#x5F0F;&#x5BB9;&#x5668;)</p>
+<h6 id="&#x91CD;&#x8981;"><a href="#&#x91CD;&#x8981;" class="headerlink" title="&#x91CD;&#x8981;"></a><strong>&#x91CD;&#x8981;</strong></h6><p>&#x540E;&#x53F0;&#x8FD0;&#x884C;  docker  run  -d  xx (&#x540E;&#x53F0;&#x8FD0;&#x884C; &#x5B88;&#x62A4;&#x5F0F;&#x5BB9;&#x5668;)</p>
 <p>docker run -d redis</p>
 <p>&#x542F;&#x52A8;&#x4E86;&#x4EE5;&#x540E; &#x600E;&#x4E48;&#x8FDB;&#x5165;&#x5230; redis&#x4E2D;&#x5462; ?  docker exec -it 1b0a549244d2 /bin/bash</p>
 <p>&#x67E5;&#x770B;&#x5BB9;&#x5668;&#x65E5;&#x5FD7;               docker logs  &#x5BB9;&#x5668;id</p>
@@ -672,17 +666,15 @@
 <li>docker exec -it  xx   /bin/bash              exit &#x5BB9;&#x5668; &#x4E0D;&#x4F1A;&#x505C;&#x6B62;&#x5BB9;&#x5668;  &#xFF08;&#x63A8;&#x8350;exec&#xFF09;</li>
 <li>docker attach  xx                                    exit &#x5BB9;&#x5668;   &#x4F1A;&#x505C;&#x6B62;&#x5BB9;&#x5668;</li>
 </ul>
-<p><strong>&#x5BB9;&#x5668;&#x62F7;&#x8D1D;&#x6587;&#x4EF6;&#x5230;&#x4E3B;&#x673A;</strong></p>
-<p>docker cp  id:&#x6E90;&#x8DEF;&#x5F84;   &#x76EE;&#x6807;&#x8DEF;&#x5F84;</p>
+<h6 id="&#x5BB9;&#x5668;&#x62F7;&#x8D1D;&#x6587;&#x4EF6;&#x5230;&#x4E3B;&#x673A;"><a href="#&#x5BB9;&#x5668;&#x62F7;&#x8D1D;&#x6587;&#x4EF6;&#x5230;&#x4E3B;&#x673A;" class="headerlink" title="&#x5BB9;&#x5668;&#x62F7;&#x8D1D;&#x6587;&#x4EF6;&#x5230;&#x4E3B;&#x673A;"></a><strong>&#x5BB9;&#x5668;&#x62F7;&#x8D1D;&#x6587;&#x4EF6;&#x5230;&#x4E3B;&#x673A;</strong></h6><p>docker cp  id:&#x6E90;&#x8DEF;&#x5F84;   &#x76EE;&#x6807;&#x8DEF;&#x5F84;</p>
 <p>docker cp 8e55a435ed80:/opt/sdf.txt  /opt</p>
 <p>   docker cp &#x8981;&#x62F7;&#x8D1D;&#x7684;&#x6587;&#x4EF6;&#x8DEF;&#x5F84; &#x5BB9;&#x5668;&#x540D;&#xFF1A;&#x8981;&#x62F7;&#x8D1D;&#x5230;&#x5BB9;&#x5668;&#x91CC;&#x9762;&#x5BF9;&#x5E94;&#x7684;&#x8DEF;&#x5F84;</p>
 <p>docker payment.html 6c368afaf7f3</p>
-<p><strong>&#x5907;&#x4EFD;&#x5BB9;&#x5668; &#x5BFC;&#x5165; &#x5BFC;&#x51FA;</strong></p>
-<p>&#x5BFC;&#x51FA;       docker export 8e55a435ed80 &gt; hhh.tar                find -name sdf.txt &#x5BFB;&#x627E;&#x6539;&#x6587;&#x4EF6;</p>
+<h6 id="&#x5907;&#x4EFD;&#x5BB9;&#x5668;-&#x5BFC;&#x5165;-&#x5BFC;&#x51FA;"><a href="#&#x5907;&#x4EFD;&#x5BB9;&#x5668;-&#x5BFC;&#x5165;-&#x5BFC;&#x51FA;" class="headerlink" title="&#x5907;&#x4EFD;&#x5BB9;&#x5668; &#x5BFC;&#x5165; &#x5BFC;&#x51FA;"></a><strong>&#x5907;&#x4EFD;&#x5BB9;&#x5668; &#x5BFC;&#x5165; &#x5BFC;&#x51FA;</strong></h6><p>&#x5BFC;&#x51FA;       docker export 8e55a435ed80 &gt; hhh.tar                find -name sdf.txt &#x5BFB;&#x627E;&#x6539;&#x6587;&#x4EF6;</p>
 <p>&#x5BFC;&#x5165;        cat hhh.tar | docker import - hhh/mydemo:1.1</p>
 <p>[root@VM-16-12-centos opt]# docker run -it hhh/mydemo:1.1 /bin/bash<br>root@41632106a878:/# find -name sdf.txt<br>./opt/sdf.txt</p>
-<p><strong>&#x5BB9;&#x5668;&#x5377;</strong></p>
-<p>docker run -d -p 5000:5000 -v /zzyyuse/myregistry/:/tmp/registry &#x2013;privileged=true registry</p>
+<h6 id="&#x7AEF;&#x53E3;&#x6620;&#x5C04;"><a href="#&#x7AEF;&#x53E3;&#x6620;&#x5C04;" class="headerlink" title="&#x7AEF;&#x53E3;&#x6620;&#x5C04;"></a>&#x7AEF;&#x53E3;&#x6620;&#x5C04;</h6><p>-p 5000:5000</p>
+<h6 id="&#x5BB9;&#x5668;&#x5377;"><a href="#&#x5BB9;&#x5668;&#x5377;" class="headerlink" title="&#x5BB9;&#x5668;&#x5377;"></a><strong>&#x5BB9;&#x5668;&#x5377;</strong></h6><p>docker run -d -p 5000:5000 -v /zzyyuse/myregistry/:/tmp/registry &#x2013;privileged=true registry</p>
 <p>&#x200B;              &#x540E;&#x53F0;&#x5B88;&#x62A4;  &#x7AEF;&#x53E3;&#x6620;&#x5C04;     &#x5BB9;&#x5668;&#x5377;</p>
 <p><strong>&#x2013;privileged=true</strong>    </p>
 <ul>
@@ -1667,7 +1659,7 @@ docker update --restart=always &#x5BB9;&#x5668;ID(&#x6216;&#x8005;&#x5BB9;&#x566
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">985.4k</span>
+                        class="white-color">985.5k</span>
             
             
             

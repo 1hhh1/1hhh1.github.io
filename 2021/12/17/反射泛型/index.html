@@ -569,7 +569,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8.9k
+                    9.1k
                 </div>
                 
 
@@ -1822,7 +1822,32 @@ flatMap(Function mapper)
 user.ifPresent(u -&gt; System.out.println(&quot;Username is: &quot; + u.getUsername()));
 &#x590D;&#x5236;&#x4EE3;&#x7801;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="3-2-2&#x3001;orElse"><a href="#3-2-2&#x3001;orElse" class="headerlink" title="3.2.2&#x3001;orElse"></a>3.2.2&#x3001;orElse</h5><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript">    <span class="token keyword">public</span> <span class="token constant">T</span> <span class="token function">orElse</span><span class="token punctuation">(</span><span class="token constant">T</span> other<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<h5 id="3-2-2&#x3001;orElse-&#x6CE8;&#x610F;"><a href="#3-2-2&#x3001;orElse-&#x6CE8;&#x610F;" class="headerlink" title="3.2.2&#x3001;orElse &#x6CE8;&#x610F;"></a>3.2.2&#x3001;orElse &#x6CE8;&#x610F;</h5><ol>
+<li>&#x8C03;&#x7528;&#x94FE;&#x4E0A;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#xFF0C;&#x90A3;&#x4E48;&#x7ED3;&#x679C;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x8BBE;&#x7F6E;&#x7684;&#x9ED8;&#x8BA4;&#x503C;</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">/**
+ * &#x83B7;&#x53D6;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x503C; &#xFF08;&#x5FFD;&#x7565;&#x5BF9;&#x8C61;&#x4E3A; null&#xFF09;
+ * @author lh
+ * @date 2021/12/8 9:40
+ * @param t
+ * @param function
+ * @return R
+ */
+public static &lt;T, R&gt; R getBeanValue(T t, Function&lt;T,R&gt; function) {
+    return Optional.ofNullable(t).map(function).orElse(null);
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-none"><code class="language-none">Optional.ofNullable(productVO).flatMap(data -&gt; Optional.ofNullable(shopVO.getShopVO()))
+            .map(ShopVO::getName).orElse(&quot;&quot;)
+&#x4F5C;&#x8005;&#xFF1A;&#x5C0F;&#x90ED;&#x7684;&#x6280;&#x672F;&#x7B14;&#x8BB0;
+&#x94FE;&#x63A5;&#xFF1A;https://juejin.cn/post/7168020414138941471
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/2021/12/17/%E5%8F%8D%E5%B0%84%E6%B3%9B%E5%9E%8B/%E5%8F%8D%E5%B0%84%E6%B3%9B%E5%9E%8B%5COptional_orElse.png" alt="Optional_orElse"></p>
+<p>&#x57FA;&#x672C;&#x7528;&#x6CD5;</p>
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript">    <span class="token keyword">public</span> <span class="token constant">T</span> <span class="token function">orElse</span><span class="token punctuation">(</span><span class="token constant">T</span> other<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> value <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">?</span> value <span class="token operator">:</span> other<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 &#x590D;&#x5236;&#x4EE3;&#x7801;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
@@ -2519,7 +2544,7 @@ System.out.println(longName.orElse(&quot;The name is less than 6 characters&quot
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">985.4k</span>
+                        class="white-color">985.5k</span>
             
             
             
