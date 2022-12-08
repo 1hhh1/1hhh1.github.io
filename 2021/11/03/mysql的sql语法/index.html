@@ -570,14 +570,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-23
+                    2022-12-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.4k
+                    5.6k
                 </div>
                 
 
@@ -1133,6 +1133,30 @@ not exists&#x548C;exists&#x7684;&#x7528;&#x6CD5;&#x76F8;&#x53CD;&#xFF0C;&#x5C31;
 &#x539F;&#x6587;&#x94FE;&#x63A5;&#xFF1A;https://blog.csdn.net/wankao/article/details/109366320<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>&#xFF1A;<a target="_blank" rel="noopener" href="https://blog.csdn.net/wankao/article/details/109366320">https://blog.csdn.net/wankao/article/details/109366320</a></p>
+<h2 id="mybatis-ognl-xml&#x4E2D;&#x8C03;&#x7528;java&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;"><a href="#mybatis-ognl-xml&#x4E2D;&#x8C03;&#x7528;java&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;" class="headerlink" title="mybatis_ognl_xml&#x4E2D;&#x8C03;&#x7528;java&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;"></a>mybatis_ognl_xml&#x4E2D;&#x8C03;&#x7528;java&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;</h2><pre class="line-numbers language-none"><code class="language-none">&#x5728;mybatis&#x7684;&#x6620;&#x5C04;xml&#x6587;&#x4EF6;&#x8C03;&#x7528;java&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;
+
+&#x4F7F;&#x7528;&#x7684;&#x662F;OGNL&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x8868;&#x8FBE;&#x5F0F;&#x683C;&#x5F0F;&#x4E3A;&#xFF1A;${@prefix@methodName(&#x4F20;&#x9012;&#x53C2;&#x6570;&#x540D;&#x79F0;)}
+
+1.&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x6240;&#x793A;&#xFF1A;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x4E3A;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF1B;&#x4EE5;&#x4E0B;&#x6211;&#x53EA;&#x662F;&#x6F14;&#x793A;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#xFF0C;&#x968F;&#x4FBF;&#x7528;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x5DE5;&#x5177;&#x7C7B;
+
+SELECT * FROM USER WHERE name=&apos;${@org.apache.commons.lang3@StringUtils(name)}&apos;
+2.&#x83B7;&#x53D6;&#x7C7B;&#x91CC;&#x9762;&#x7684;&#x5E38;&#x91CF;&#xFF0C;&#x83B7;&#x53D6;&#x7684;&#x683C;&#x5F0F;&#x548C;&#x4E0A;&#x9762;&#x4E00;&#x6837;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;@&#x662F;&#x5E38;&#x91CF; &#xFF1A;
+
+&lt;span style=&quot;font-size:18px;&quot;&gt;${@classpath@ static const name}&lt;/span&gt;
+3.&#x5224;&#x65AD;&#x53D8;&#x91CF;&#x4E0D;&#x4E3A;null:
+
+&lt;span style=&quot;font-size:18px;&quot;&gt;&lt;if test=&quot;@org.apache.commons.lang.StringUtils@isNotBlank(name)&quot;&gt;name=#{name}&lt;/if&gt;&lt;/span&gt;
+
+
+    SELECT id,name,card,phone,vip_level,order_money,integral FROM luck_user
+    &lt;where&gt;
+        &lt;if test=&quot;name != null and @org.apache.commons.lang3.StringUtils@isNotEmpty(name) &quot;&gt;
+            and name = #{name}
+        &lt;/if&gt;
+    &lt;/where&gt;    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h1 id="oracle&#x8BED;&#x6CD5;"><a href="#oracle&#x8BED;&#x6CD5;" class="headerlink" title="oracle&#x8BED;&#x6CD5;"></a>oracle&#x8BED;&#x6CD5;</h1><h6 id="oracle&#x8BA1;&#x7B97;&#x4E24;&#x4E2A;&#x65E5;&#x671F;&#x7684;&#x76F8;&#x5DEE;&#x7684;&#x5C0F;&#x65F6;&#x6570;&#x3001;&#x5206;&#x949F;&#x6570;&#x3001;&#x79D2;&#x6570;"><a href="#oracle&#x8BA1;&#x7B97;&#x4E24;&#x4E2A;&#x65E5;&#x671F;&#x7684;&#x76F8;&#x5DEE;&#x7684;&#x5C0F;&#x65F6;&#x6570;&#x3001;&#x5206;&#x949F;&#x6570;&#x3001;&#x79D2;&#x6570;" class="headerlink" title="oracle&#x8BA1;&#x7B97;&#x4E24;&#x4E2A;&#x65E5;&#x671F;&#x7684;&#x76F8;&#x5DEE;&#x7684;&#x5C0F;&#x65F6;&#x6570;&#x3001;&#x5206;&#x949F;&#x6570;&#x3001;&#x79D2;&#x6570;"></a>oracle&#x8BA1;&#x7B97;&#x4E24;&#x4E2A;&#x65E5;&#x671F;&#x7684;&#x76F8;&#x5DEE;&#x7684;&#x5C0F;&#x65F6;&#x6570;&#x3001;&#x5206;&#x949F;&#x6570;&#x3001;&#x79D2;&#x6570;</h6><pre class="line-numbers language-none"><code class="language-none">-- &#x76F8;&#x5DEE;&#x5C0F;&#x65F6;&#x6570;
 select (TO_DATE(&apos;2020-06-20 08:01:00&apos;, &apos;yyyy-MM-dd hh24:mi:ss&apos;)-TO_DATE(&apos;2020-06-20 07:58:00&apos;,&apos;yyyy-MM-dd hh24:mi:ss&apos;))*24 &#x76F8;&#x5DEE;&#x5C0F;&#x65F6;&#x6570; 
 from dual;
@@ -1710,7 +1734,7 @@ to_date(#{inure_date},&apos;yyyymmddhh24miss&apos;)
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">985.5k</span>
+                        class="white-color">985.9k</span>
             
             
             
